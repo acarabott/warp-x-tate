@@ -59,9 +59,9 @@ p = [
 		nil,  nil,  nil,  nil,  
 		nil,  nil,  nil,  nil ],  
 	// Set
-	4, [ array: o[5],  size: 0 ],  
+	4, [ array: o[5],  size: 1 ],  
 	// Array
-	5, [ nil,  nil,  nil,  nil ],  
+	5, [ nil,  nil,  12,  nil ],  
 	// IdentityDictionary
 	6, [ array: o[7],  size: 22,  
 		proto: nil,  parent: nil,  
