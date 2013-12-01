@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PatternBank>
+	<Pattern application="Phoscyon" name="Acid Tracks" length="8" shuffle="0"
+	         tempo="120">
+	  <Step note="1" octaveUp="0" octaveDown="1" gate="1" accent="0" slide="0"
+	        gateLevel="0" accentLevel="0" slideLevel="0"/>
+	  <Step note="1" octaveUp="1" octaveDown="0" gate="1" accent="0" slide="0"
+	        gateLevel="0" accentLevel="0" slideLevel="0"/>
+	  <Step note="1" octaveUp="0" octaveDown="1" gate="1" accent="0" slide="0"
+	        gateLevel="0" accentLevel="0" slideLevel="0"/>
+	  <Step note="10" octaveUp="0" octaveDown="0" gate="1" accent="0" slide="0"
+	        gateLevel="0" accentLevel="0" slideLevel="0"/>
+	  <Step note="9" octaveUp="1" octaveDown="0" gate="1" accent="0" slide="1"
+	        gateLevel="0" accentLevel="0" slideLevel="0"/>
+	  <Step note="9" octaveUp="0" octaveDown="0" gate="1" accent="0" slide="0"
+	        gateLevel="0" accentLevel="0" slideLevel="0"/>
+	  <Step note="1" octaveUp="0" octaveDown="1" gate="1" accent="1" slide="0"
+	        gateLevel="0" accentLevel="0" slideLevel="0"/>
+	  <Step note="10" octaveUp="0" octaveDown="0" gate="1" accent="1" slide="0"
+	        gateLevel="0" accentLevel="0" slideLevel="0"/>
+	</Pattern>
+	<Pattern application="Phoscyon" name="Da Funk" length="16" shuffle="0"
+	         tempo="120">
+	  <Step note="7" octaveUp="0" octaveDown="1" gate="1" accent="0" slide="0"
+	        gateLevel="0" accentLevel="0" slideLevel="0"/>
+	  <Step note="10" octaveUp="1" octaveDown="0" gate="1" accent="0" slide="0"
+	        gateLevel="0" accentLevel="0" slideLevel="0"/>
+	  <Step note="7" octaveUp="0" octaveDown="0" gate="1" accent="0" slide="1"
+	        gateLevel="0" accentLevel="0" slideLevel="0"/>
+	  <Step note="7" octaveUp="1" octaveDown="1" gate="1" accent="0" slide="0"
+	        gateLevel="0" accentLevel="0" slideLevel="0"/>
+	  <Step note="3" octaveUp="1" octaveDown="0" gate="1" accent="1" slide="1"
+	        gateLevel="0" accentLevel="0" slideLevel="0"/>
+	  <Step note="1" octaveUp="1" octaveDown="0" gate="0" accent="0" slide="0"
+	        gateLevel="0" accentLevel="0" slideLevel="0"/>
+	  <Step note="3" octaveUp="0" octaveDown="1" gate="1" accent="1" slide="1"
+	        gateLevel="0" accentLevel="0" slideLevel="0"/>
+	  <Step note="7" octaveUp="1" octaveDown="0" gate="1" accent="0" slide="0"
+	        gateLevel="0" accentLevel="0" slideLevel="0"/>
+	  <Step note="3" octaveUp="1" octaveDown="0" gate="1" accent="0" slide="1"
+	        gateLevel="0" accentLevel="0" slideLevel="0"/>
+	  <Step note="7" octaveUp="0" octaveDown="1" gate="1" accent="0" slide="0"
+	        gateLevel="0" accentLevel="0" slideLevel="0"/>
+	  <Step note="5" octaveUp="1" octaveDown="0" gate="1" accent="0" slide="1"
+	        gateLevel="0" accentLevel="0" slideLevel="0"/>
+	  <Step note="7" octaveUp="1" octaveDown="0" gate="1" accent="1" slide="1"
+	        gateLevel="0" accentLevel="0" slideLevel="0"/>
+	  <Step note="7" octaveUp="0" octaveDown="1" gate="1" accent="0" slide="0"
+	        gateLevel="0" accentLevel="0" slideLevel="0"/>
+	  <Step note="7" octaveUp="0" octaveDown="0" gate="1" accent="0" slide="1"
+	        gateLevel="0" accentLevel="0" slideLevel="0"/>
+	  <Step note="10" octaveUp="0" octaveDown="1" gate="1" accent="0" slide="1"
+	        gateLevel="0" accentLevel="0" slideLevel="0"/>
+	  <Step note="7" octaveUp="1" octaveDown="0" gate="1" accent="0" slide="1"
+	        gateLevel="0" accentLevel="0" slideLevel="0"/>
+	</Pattern>
+</PatternBank>

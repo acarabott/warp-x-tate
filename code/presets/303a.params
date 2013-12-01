@@ -1,0 +1,44 @@
+var o, p;
+o = [
+	IdentityDictionary.prNew,  Array.prNew(128)
+];
+p = [
+	// IdentityDictionary
+	0, [ array: o[1],  size: 22,  
+		proto: nil,  parent: nil,  
+		know: false ],  
+	// Array
+	1, [ nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  'res',  16,  
+		'envatt',  19,  'accvol',  23,  
+		nil,  nil,  'slidetime',  14,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		'diston',  25,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  'accdec',  21,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		'distpre',  27,  'envdec',  20,  
+		'distsize',  28,  nil,  nil,  
+		'distclip',  30,  nil,  nil,  
+		'cutoff',  15,  nil,  nil,  
+		'envmod',  18,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  'distden',  29,  
+		nil,  nil,  nil,  nil,  
+		'tuning',  9,  'waveform',  3,  
+		'steplen',  24,  'distbright',  32,  
+		'distwet',  31,  'vol',  33,  
+		nil,  nil,  'distmode',  26,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  'envacc',  22,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  'sweep',  17,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil ]
+];
+prUnarchive(o,p);

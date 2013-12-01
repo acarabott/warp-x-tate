@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<MidiControlMap name="Phoscyon">
+  <assign CC="3" param="Waveform"/>
+  <assign CC="9" param="Tuning"/>
+  <assign CC="14" param="Slide Time"/>
+  <assign CC="15" param="Cutoff"/>
+  <assign CC="16" param="Resonance"/>
+  <assign CC="17" param="Sweep Time"/>
+  <assign CC="18" param="Env Mod"/>
+  <assign CC="19" param="Env Attack"/>
+  <assign CC="20" param="Env Decay"/>
+  <assign CC="21" param="Accent Decay"/>
+  <assign CC="22" param="Env Accent"/>
+  <assign CC="23" param="Accent Volume"/>
+  <assign CC="24" param="Step Length"/>
+  <assign CC="25" param="Distortion State"/>
+  <assign CC="26" param="Distortion Route"/>
+  <assign CC="27" param="Distortion Preamp"/>
+  <assign CC="28" param="Distortion Size"/>
+  <assign CC="29" param="Distortion Density"/>
+  <assign CC="30" param="Distortion Clip"/>
+  <assign CC="31" param="Distortion Wetness"/>
+  <assign CC="32" param="Distortion Brightness"/>
+  <assign CC="33" param="Main Volume"/>
+</MidiControlMap>
