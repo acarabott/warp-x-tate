@@ -49,7 +49,7 @@ WarpTate {
 		clock.tempo = tempo / 60;
 	}
 
-	addTrack {|trackKey, channel, sensorKey|
+	addTrack {|trackKey, sensorKey, channel|
 		tracks[trackKey] = WarpTrack(this, trackKey, channel);
 
 		if(sensorKey.notNil) {
