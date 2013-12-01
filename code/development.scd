@@ -1,26 +1,7 @@
 x = WarpTate();
-~three = x.addTrack('303', 0, '303a');
-x.addTrack('808', 1);
-x.addTrack('808hits', 2);
-
-x.on('303', 24);
-x.assign('303', 'cutoff', 3);
-x.assign('303', 'preamp', 8);
-x.assign('303', 'clip', 9);
-x.assign('303', 'res', 14);
-x.assign('303', 'tuning');
 
 
-
-x.tracks['303'].addFunc('filter', {|val|
-	x.setParam('303', 'cutoff', val);
-	x.setParam('303', 'res', val.linlin(0, 127, 50, 110));
-	x.setParam('303', 'clip', val.linlin(0, 127, 50, 30));
-	x.setParam('303', 'preamp', val.linlin(0, 127, 50, 30));
-});
-
-x.tracks['303'].removeFunc('filter');
-
+~three = x.loadTrack('303', '303a', "~/Projects/13-11_warp/code/presets/303a.trackpreset".standardizePath);
 
 a = EZSlider(w, 280@20, label:"label");
 a.action_({|ez|
@@ -48,28 +29,3 @@ Tdef(\snarerush, {
 		2.wait;
 	}
 }).play(x.clock, quant:Quant(1));
-
-x.availableControls.size
-
-
-~three.assign('tranup');
-
-~three.params.keysValuesDo { |key, value|
-	key.postln;
-	value.postln;
-};
-
-~three.params.writeArchive("/Volumes/Data/Users/arthurc/Projects/13-11_warp/code/presets/303a.params");
-
-~three.loadParams("/Volumes/Data/Users/arthurc/Projects/13-11_warp/code/presets/303a.params");
-~three.params
-
-~three.setParam('cutoff', 0);
-
-
-// Preset...
-
-// Set the synth params
-// play the correct note
-// Setup the interactions
-
