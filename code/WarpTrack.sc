@@ -1,3 +1,7 @@
+// A WarpTrack represents a single layer in an interaction
+// e.g. a 303 playing patterns
+//
+
 WarpTrack {
 	var <parent;
 	var <key;
@@ -86,23 +90,25 @@ WarpTrack {
 		}
 	}
 
-	assign {|paramKey, num|
+	assign {|paramKey, num, learn=false|
 		if(num.notNil) {
-			this.assignAll(IdentityDictionary[paramKey -> num]);
+			this.assignAll(IdentityDictionary[paramKey -> num], learn);
 		} {
 			parent.assign(key, paramKey);
 		};
 	}
 
-	assignAll {|paramControls, callback|
-		{
+	assignAll {|paramControls, learn=false, callback|
+		var action = {
 			paramControls.keysValuesDo { |paramKey, num|
 				if(parent.isControlAvailable(num)) {
 					settings['paramControls'][paramKey] = num;
 					parent.setControl(num, paramKey);
-					parent.control(settings['midiChannel'], num, 127);
-					0.05.wait;
-					parent.control(settings['midiChannel'], num, 0);
+					if(learn) {
+						parent.control(settings['midiChannel'], num, 127);
+						0.05.wait;
+						parent.control(settings['midiChannel'], num, 0);
+					};
 					paramKey ++ " assigned to controlNum " ++ num;
 				} {
 					("this controlNum " ++ num ++ " is already assigned!").postln;
@@ -110,7 +116,16 @@ WarpTrack {
 			};
 
 			callback.();
-		}.fork;
+		};
+
+		if(learn) {
+			{
+				action.();
+			}.fork;
+		} {
+			action.();
+		};
+
 	}
 
 	initParams {
@@ -132,13 +147,15 @@ WarpTrack {
 			settings['patternTrack'] 	= preset['patternTrack'];
 			settings['params'] 			= preset['params'];
 
-			this.assignAll(preset['paramControls'], {
-				this.initParams();
-			});
-
 			if(settings['patternTrack']) {
 				settings['notes'] = preset['notes'];
 			};
+
+			this.assignAll(preset['paramControls'], false);
+
+			this.initParams();
+			this.on(settings['notes'].asArray[0]);
+
 		}.fork;
 	}
 

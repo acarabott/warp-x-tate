@@ -118,13 +118,13 @@ WarpTate {
 		availableControls.remove(num);
 	}
 
-	assign {|trackKey, paramKey, controlNum|
+	assign {|trackKey, paramKey, controlNum, learn=false|
 		if(controlNum.notNil && this.isControlAvailable(controlNum)) {
-			tracks[trackKey].assign(paramKey, controlNum);
+			tracks[trackKey].assign(paramKey, controlNum, learn);
 			availableControls.removeAt(0);
 		} {
 			if(availableControls.size > 0) {
-				tracks[trackKey].assign(paramKey, availableControls[0]);
+				tracks[trackKey].assign(paramKey, availableControls[0], learn);
 				availableControls.removeAt(0);
 			} {
 				"no controls left!".postln;
