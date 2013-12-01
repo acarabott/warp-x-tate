@@ -1,20 +1,36 @@
 var o, p;
 o = [
-	WarpTrackPreset.prNew,  IdentityDictionary.prNew,  Array.prNew(128)
+	IdentityDictionary.prNew,  Array.prNew(24),  IdentityDictionary.prNew,  Array.prNew(128),  
+	Set.prNew,  Array.prNew(4),  IdentityDictionary.prNew,  Array.prNew(88),  
+	IdentityDictionary.prNew,  Array.prNew(4),  {|track, val|
+	track.setParam('cutoff', val);
+	track.setParam('res', val.linlin(0, 127, 50, 110));
+	track.setParam('distclip', val.linlin(0, 127, 80, 50));
+	track.setParam('distpre', val.linlin(0, 127, 80, 50));
+}
 ];
 p = [
-	// WarpTrackPreset
-	0, [ params: o[1] ],  
 	// IdentityDictionary
-	1, [ array: o[2],  size: 22,  
+	0, [ array: o[1],  size: 6,  
 		proto: nil,  parent: nil,  
 		know: false ],  
 	// Array
-	2, [ nil,  nil,  nil,  nil,  
+	1, [ 'paramControls',  o[2],  nil,  nil,  
+		'midiChannel',  0,  'patternTrack',  true,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  'notes',  o[4],  
+		nil,  nil,  'params',  o[6],  
+		nil,  nil,  'sensorFuncs',  o[8] ],  
+	// IdentityDictionary
+	2, [ array: o[3],  size: 22,  
+		proto: nil,  parent: nil,  
+		know: false ],  
+	// Array
+	3, [ nil,  nil,  nil,  nil,  
 		nil,  nil,  nil,  nil,  
 		nil,  nil,  nil,  nil,  
-		nil,  nil,  'res',  16,  
-		'envatt',  19,  'accvol',  23,  
+		nil,  nil,  'envatt',  19,  
+		'accvol',  23,  'res',  16,  
 		nil,  nil,  'slidetime',  14,  
 		nil,  nil,  nil,  nil,  
 		nil,  nil,  nil,  nil,  
@@ -41,6 +57,43 @@ p = [
 		nil,  nil,  nil,  nil,  
 		nil,  nil,  'sweep',  17,  
 		nil,  nil,  nil,  nil,  
-		nil,  nil,  nil,  nil ]
+		nil,  nil,  nil,  nil ],  
+	// Set
+	4, [ array: o[5],  size: 0 ],  
+	// Array
+	5, [ nil,  nil,  nil,  nil ],  
+	// IdentityDictionary
+	6, [ array: o[7],  size: 22,  
+		proto: nil,  parent: nil,  
+		know: false ],  
+	// Array
+	7, [ nil,  nil,  'envdec',  0,  
+		nil,  nil,  'distmode',  23,  
+		nil,  nil,  'distsize',  110,  
+		nil,  nil,  'accdec',  0,  
+		'diston',  127,  'waveform',  30,  
+		nil,  nil,  'res',  127,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  'slidetime',  64,  
+		'envmod',  0,  'distden',  23,  
+		'cutoff',  90,  nil,  nil,  
+		'distbright',  71,  nil,  nil,  
+		nil,  nil,  'envacc',  30,  
+		nil,  nil,  'steplen',  77,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		'tuning',  64,  'distclip',  55,  
+		'distwet',  127,  'sweep',  127,  
+		'distpre',  51,  'vol',  127,  
+		nil,  nil,  nil,  nil,  
+		'accvol',  3,  nil,  nil,  
+		nil,  nil,  'envatt',  0 ],  
+	// IdentityDictionary
+	8, [ array: o[9],  size: 1,  
+		proto: nil,  parent: nil,  
+		know: false ],  
+	// Array
+	9, [ nil,  nil,  'filter',  o[10] ]
 ];
 prUnarchive(o,p);
