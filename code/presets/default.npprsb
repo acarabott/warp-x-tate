@@ -1,0 +1,965 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PresetBank name="Nepheton Factory Presets">
+  <PresetGroup name="All presets">
+    <Preset application="Nepheton" name="808 Default">
+      <param name="Bass Drum Level" value="0.5"/>
+      <param name="Snare Drum Level" value="0.5"/>
+      <param name="Low Conga Level" value="0.5"/>
+      <param name="Mid Conga Level" value="0.5"/>
+      <param name="Hi Conga Level" value="0.5"/>
+      <param name="Low Tom Level" value="0.5"/>
+      <param name="Mid Tom Level" value="0.5"/>
+      <param name="Hi Tom Level" value="0.5"/>
+      <param name="Claves Level" value="0.5"/>
+      <param name="Rim Shot Level" value="0.5"/>
+      <param name="Maracas Level" value="0.5"/>
+      <param name="Hand Clap Level" value="0.5"/>
+      <param name="Cow Bell Level" value="0.5"/>
+      <param name="Laser Gun Level" value="0.5"/>
+      <param name="Cymbal Level" value="0.5"/>
+      <param name="Open Hi Hat Level" value="0.5"/>
+      <param name="Closed Hi Hat Level" value="0.5"/>
+      <param name="Accent Level" value="0.5"/>
+      <param name="Bass Drum Tone" value="0.5"/>
+      <param name="Bass Drum Decay" value="0.5"/>
+      <param name="Bass Drum Sweep" value="0.5"/>
+      <param name="Snare Drum Tone" value="0.5"/>
+      <param name="Snare Drum Decay" value="0.5"/>
+      <param name="Snare Drum Snappy" value="0.5"/>
+      <param name="Low Conga Tunning" value="0.5"/>
+      <param name="Low Conga Decay" value="0.5"/>
+      <param name="Mid Conga Tunning" value="0.5"/>
+      <param name="Mid Conga Decay" value="0.5"/>
+      <param name="Hi Conga Tunning" value="0.5"/>
+      <param name="Hi Conga Decay" value="0.5"/>
+      <param name="Low Tom Tunning" value="0.5"/>
+      <param name="Low Tom Decay" value="0.5"/>
+      <param name="Low Tom Snappy" value="1"/>
+      <param name="Mid Tom Tunning" value="0.5"/>
+      <param name="Mid Tom Decay" value="0.5"/>
+      <param name="Mid Tom Snappy" value="1"/>
+      <param name="Hi Tom Tunning" value="0.5"/>
+      <param name="Hi Tom Decay" value="0.5"/>
+      <param name="Hi Tom Snappy" value="1"/>
+      <param name="Claves Tunning" value="0.5"/>
+      <param name="Claves Decay" value="0.5"/>
+      <param name="Rim Shot Tunning" value="0.5"/>
+      <param name="Rim Shot Decay" value="0.5"/>
+      <param name="Maracas Tone" value="0.5"/>
+      <param name="Hand Clap Tone" value="0.5"/>
+      <param name="Hand Clap Reverb" value="1"/>
+      <param name="Cow Bell Tunning" value="0.5"/>
+      <param name="Cow Bell Decay" value="1"/>
+      <param name="Laser Gun Depth" value="1"/>
+      <param name="Laser Gun Decay" value="0"/>
+      <param name="Laser Gun Sweep" value="0"/>
+      <param name="Cymbal Tone" value="0.5"/>
+      <param name="Cymbal Decay" value="0.5"/>
+      <param name="Open Hi Hat Tone" value="0.5"/>
+      <param name="Open Hi Hat Decay" value="0.5"/>
+      <param name="Closed Hi Hat Tone" value="0.5"/>
+      <param name="Closed Hi Hat Decay" value="0.5"/>
+      <param name="Hi Hat Filters Freq" value="0.5"/>
+    </Preset>
+    <Preset application="Nepheton" name="Afro">
+      <param name="Bass Drum Level" value="0.99"/>
+      <param name="Snare Drum Level" value="0.5"/>
+      <param name="Low Conga Level" value="0.5"/>
+      <param name="Mid Conga Level" value="0.5"/>
+      <param name="Hi Conga Level" value="0.5"/>
+      <param name="Low Tom Level" value="0.5"/>
+      <param name="Mid Tom Level" value="0.5"/>
+      <param name="Hi Tom Level" value="0.805"/>
+      <param name="Claves Level" value="0.455"/>
+      <param name="Rim Shot Level" value="0.265"/>
+      <param name="Maracas Level" value="0.33"/>
+      <param name="Hand Clap Level" value="0.09"/>
+      <param name="Cow Bell Level" value="1"/>
+      <param name="Laser Gun Level" value="1"/>
+      <param name="Cymbal Level" value="0.5"/>
+      <param name="Open Hi Hat Level" value="0.3"/>
+      <param name="Closed Hi Hat Level" value="0.665"/>
+      <param name="Accent Level" value="0.5"/>
+      <param name="Bass Drum Tone" value="0.77"/>
+      <param name="Bass Drum Decay" value="0.06"/>
+      <param name="Bass Drum Sweep" value="0.5"/>
+      <param name="Snare Drum Tone" value="0.025"/>
+      <param name="Snare Drum Decay" value="0"/>
+      <param name="Snare Drum Snappy" value="1"/>
+      <param name="Low Conga Tunning" value="0"/>
+      <param name="Low Conga Decay" value="0.175"/>
+      <param name="Mid Conga Tunning" value="0.5"/>
+      <param name="Mid Conga Decay" value="0.5"/>
+      <param name="Hi Conga Tunning" value="0.5"/>
+      <param name="Hi Conga Decay" value="0.5"/>
+      <param name="Low Tom Tunning" value="0.54"/>
+      <param name="Low Tom Decay" value="0.48"/>
+      <param name="Low Tom Snappy" value="0"/>
+      <param name="Mid Tom Tunning" value="1"/>
+      <param name="Mid Tom Decay" value="0.635"/>
+      <param name="Mid Tom Snappy" value="0.09"/>
+      <param name="Hi Tom Tunning" value="0.3"/>
+      <param name="Hi Tom Decay" value="0.455"/>
+      <param name="Hi Tom Snappy" value="1"/>
+      <param name="Claves Tunning" value="0.5"/>
+      <param name="Claves Decay" value="0.5"/>
+      <param name="Rim Shot Tunning" value="0.9"/>
+      <param name="Rim Shot Decay" value="1"/>
+      <param name="Maracas Tone" value="0.865"/>
+      <param name="Hand Clap Tone" value="0.38"/>
+      <param name="Hand Clap Reverb" value="0"/>
+      <param name="Cow Bell Tunning" value="0.175"/>
+      <param name="Cow Bell Decay" value="0.18"/>
+      <param name="Laser Gun Depth" value="0.525"/>
+      <param name="Laser Gun Decay" value="0.17"/>
+      <param name="Laser Gun Sweep" value="0.715"/>
+      <param name="Cymbal Tone" value="0.5"/>
+      <param name="Cymbal Decay" value="0.5"/>
+      <param name="Open Hi Hat Tone" value="0.805"/>
+      <param name="Open Hi Hat Decay" value="0.5"/>
+      <param name="Closed Hi Hat Tone" value="0.84"/>
+      <param name="Closed Hi Hat Decay" value="0.43"/>
+      <param name="Hi Hat Filters Freq" value="0.4"/>
+    </Preset>
+    <Preset application="Nepheton" name="Break Beat">
+      <param name="Bass Drum Level" value="0.5"/>
+      <param name="Snare Drum Level" value="0.5"/>
+      <param name="Low Conga Level" value="0.5"/>
+      <param name="Mid Conga Level" value="0.5"/>
+      <param name="Hi Conga Level" value="0.5"/>
+      <param name="Low Tom Level" value="0.5"/>
+      <param name="Mid Tom Level" value="0.5"/>
+      <param name="Hi Tom Level" value="0.5"/>
+      <param name="Claves Level" value="0.455"/>
+      <param name="Rim Shot Level" value="0.265"/>
+      <param name="Maracas Level" value="0.5"/>
+      <param name="Hand Clap Level" value="0.09"/>
+      <param name="Cow Bell Level" value="0.5"/>
+      <param name="Laser Gun Level" value="1"/>
+      <param name="Cymbal Level" value="0.5"/>
+      <param name="Open Hi Hat Level" value="0.3"/>
+      <param name="Closed Hi Hat Level" value="0.665"/>
+      <param name="Accent Level" value="0.5"/>
+      <param name="Bass Drum Tone" value="0.77"/>
+      <param name="Bass Drum Decay" value="0.06"/>
+      <param name="Bass Drum Sweep" value="0.5"/>
+      <param name="Snare Drum Tone" value="0.735"/>
+      <param name="Snare Drum Decay" value="0.27"/>
+      <param name="Snare Drum Snappy" value="0.5"/>
+      <param name="Low Conga Tunning" value="0.5"/>
+      <param name="Low Conga Decay" value="0.5"/>
+      <param name="Mid Conga Tunning" value="0.5"/>
+      <param name="Mid Conga Decay" value="0.5"/>
+      <param name="Hi Conga Tunning" value="0.5"/>
+      <param name="Hi Conga Decay" value="0.5"/>
+      <param name="Low Tom Tunning" value="0.5"/>
+      <param name="Low Tom Decay" value="0.5"/>
+      <param name="Low Tom Snappy" value="0.5"/>
+      <param name="Mid Tom Tunning" value="0.5"/>
+      <param name="Mid Tom Decay" value="0.35"/>
+      <param name="Mid Tom Snappy" value="0.5"/>
+      <param name="Hi Tom Tunning" value="0.5"/>
+      <param name="Hi Tom Decay" value="0.22"/>
+      <param name="Hi Tom Snappy" value="1"/>
+      <param name="Claves Tunning" value="0.5"/>
+      <param name="Claves Decay" value="0.5"/>
+      <param name="Rim Shot Tunning" value="0.9"/>
+      <param name="Rim Shot Decay" value="1"/>
+      <param name="Maracas Tone" value="0.5"/>
+      <param name="Hand Clap Tone" value="0"/>
+      <param name="Hand Clap Reverb" value="1"/>
+      <param name="Cow Bell Tunning" value="0.5"/>
+      <param name="Cow Bell Decay" value="0.5"/>
+      <param name="Laser Gun Depth" value="0.525"/>
+      <param name="Laser Gun Decay" value="0.17"/>
+      <param name="Laser Gun Sweep" value="0.715"/>
+      <param name="Cymbal Tone" value="0.5"/>
+      <param name="Cymbal Decay" value="0.5"/>
+      <param name="Open Hi Hat Tone" value="0.805"/>
+      <param name="Open Hi Hat Decay" value="0.5"/>
+      <param name="Closed Hi Hat Tone" value="0.84"/>
+      <param name="Closed Hi Hat Decay" value="0.43"/>
+      <param name="Hi Hat Filters Freq" value="0.4"/>
+    </Preset>
+    <Preset application="Nepheton" name="Classic Kit">
+      <param name="Bass Drum Level" value="0.7"/>
+      <param name="Snare Drum Level" value="0.76"/>
+      <param name="Low Conga Level" value="0.255"/>
+      <param name="Mid Conga Level" value="0.5"/>
+      <param name="Hi Conga Level" value="0.5"/>
+      <param name="Low Tom Level" value="0.5"/>
+      <param name="Mid Tom Level" value="0.5"/>
+      <param name="Hi Tom Level" value="0.5"/>
+      <param name="Claves Level" value="0.5"/>
+      <param name="Rim Shot Level" value="0.81"/>
+      <param name="Maracas Level" value="0.5"/>
+      <param name="Hand Clap Level" value="0.165"/>
+      <param name="Cow Bell Level" value="0.5"/>
+      <param name="Laser Gun Level" value="0.5"/>
+      <param name="Cymbal Level" value="0.5"/>
+      <param name="Open Hi Hat Level" value="0.705"/>
+      <param name="Closed Hi Hat Level" value="1"/>
+      <param name="Accent Level" value="0.5"/>
+      <param name="Bass Drum Tone" value="0.87"/>
+      <param name="Bass Drum Decay" value="0.17"/>
+      <param name="Bass Drum Sweep" value="0.165"/>
+      <param name="Snare Drum Tone" value="0.255"/>
+      <param name="Snare Drum Decay" value="0.27"/>
+      <param name="Snare Drum Snappy" value="0.33"/>
+      <param name="Low Conga Tunning" value="0.13"/>
+      <param name="Low Conga Decay" value="0.115"/>
+      <param name="Mid Conga Tunning" value="0.19"/>
+      <param name="Mid Conga Decay" value="0"/>
+      <param name="Hi Conga Tunning" value="0.5"/>
+      <param name="Hi Conga Decay" value="0.5"/>
+      <param name="Low Tom Tunning" value="0.5"/>
+      <param name="Low Tom Decay" value="0.5"/>
+      <param name="Low Tom Snappy" value="0.5"/>
+      <param name="Mid Tom Tunning" value="0.5"/>
+      <param name="Mid Tom Decay" value="0.5"/>
+      <param name="Mid Tom Snappy" value="0.5"/>
+      <param name="Hi Tom Tunning" value="0.5"/>
+      <param name="Hi Tom Decay" value="0.5"/>
+      <param name="Hi Tom Snappy" value="0.5"/>
+      <param name="Claves Tunning" value="0.065"/>
+      <param name="Claves Decay" value="0.305"/>
+      <param name="Rim Shot Tunning" value="0.62"/>
+      <param name="Rim Shot Decay" value="0.13"/>
+      <param name="Maracas Tone" value="0.895"/>
+      <param name="Hand Clap Tone" value="1"/>
+      <param name="Hand Clap Reverb" value="0"/>
+      <param name="Cow Bell Tunning" value="0.5"/>
+      <param name="Cow Bell Decay" value="0.5"/>
+      <param name="Laser Gun Depth" value="0.5"/>
+      <param name="Laser Gun Decay" value="0.5"/>
+      <param name="Laser Gun Sweep" value="0.5"/>
+      <param name="Cymbal Tone" value="0.5"/>
+      <param name="Cymbal Decay" value="0.5"/>
+      <param name="Open Hi Hat Tone" value="0.805"/>
+      <param name="Open Hi Hat Decay" value="0.245"/>
+      <param name="Closed Hi Hat Tone" value="0.725"/>
+      <param name="Closed Hi Hat Decay" value="0.25"/>
+      <param name="Hi Hat Filters Freq" value="0.425"/>
+    </Preset>
+    <Preset application="Nepheton" name="Club">
+      <param name="Bass Drum Level" value="0.82"/>
+      <param name="Snare Drum Level" value="0.38"/>
+      <param name="Low Conga Level" value="0.5"/>
+      <param name="Mid Conga Level" value="0.5"/>
+      <param name="Hi Conga Level" value="0.5"/>
+      <param name="Low Tom Level" value="0.5"/>
+      <param name="Mid Tom Level" value="0.5"/>
+      <param name="Hi Tom Level" value="0.5"/>
+      <param name="Claves Level" value="0.5"/>
+      <param name="Rim Shot Level" value="0.5"/>
+      <param name="Maracas Level" value="0.5"/>
+      <param name="Hand Clap Level" value="0.165"/>
+      <param name="Cow Bell Level" value="1"/>
+      <param name="Laser Gun Level" value="0.5"/>
+      <param name="Cymbal Level" value="0.5"/>
+      <param name="Open Hi Hat Level" value="0.66"/>
+      <param name="Closed Hi Hat Level" value="0.95"/>
+      <param name="Accent Level" value="0.5"/>
+      <param name="Bass Drum Tone" value="0.825"/>
+      <param name="Bass Drum Decay" value="0.235"/>
+      <param name="Bass Drum Sweep" value="0.685"/>
+      <param name="Snare Drum Tone" value="1"/>
+      <param name="Snare Drum Decay" value="0.18"/>
+      <param name="Snare Drum Snappy" value="0.855"/>
+      <param name="Low Conga Tunning" value="0.5"/>
+      <param name="Low Conga Decay" value="0.5"/>
+      <param name="Mid Conga Tunning" value="0.5"/>
+      <param name="Mid Conga Decay" value="0.5"/>
+      <param name="Hi Conga Tunning" value="0.5"/>
+      <param name="Hi Conga Decay" value="0.5"/>
+      <param name="Low Tom Tunning" value="0.5"/>
+      <param name="Low Tom Decay" value="0.5"/>
+      <param name="Low Tom Snappy" value="0.5"/>
+      <param name="Mid Tom Tunning" value="0.5"/>
+      <param name="Mid Tom Decay" value="0.5"/>
+      <param name="Mid Tom Snappy" value="0.5"/>
+      <param name="Hi Tom Tunning" value="0.5"/>
+      <param name="Hi Tom Decay" value="0.5"/>
+      <param name="Hi Tom Snappy" value="0.5"/>
+      <param name="Claves Tunning" value="0.5"/>
+      <param name="Claves Decay" value="0.5"/>
+      <param name="Rim Shot Tunning" value="0.5"/>
+      <param name="Rim Shot Decay" value="0.5"/>
+      <param name="Maracas Tone" value="0.5"/>
+      <param name="Hand Clap Tone" value="0.575"/>
+      <param name="Hand Clap Reverb" value="0"/>
+      <param name="Cow Bell Tunning" value="0.625"/>
+      <param name="Cow Bell Decay" value="0.14"/>
+      <param name="Laser Gun Depth" value="0.5"/>
+      <param name="Laser Gun Decay" value="0.5"/>
+      <param name="Laser Gun Sweep" value="0.5"/>
+      <param name="Cymbal Tone" value="0.5"/>
+      <param name="Cymbal Decay" value="0.5"/>
+      <param name="Open Hi Hat Tone" value="0.7"/>
+      <param name="Open Hi Hat Decay" value="0.115"/>
+      <param name="Closed Hi Hat Tone" value="0.64"/>
+      <param name="Closed Hi Hat Decay" value="0.34"/>
+      <param name="Hi Hat Filters Freq" value="0.5"/>
+    </Preset>
+    <Preset application="Nepheton" name="Dadada">
+      <param name="Bass Drum Level" value="0.7"/>
+      <param name="Snare Drum Level" value="0.76"/>
+      <param name="Low Conga Level" value="0.255"/>
+      <param name="Mid Conga Level" value="0.5"/>
+      <param name="Hi Conga Level" value="0.73"/>
+      <param name="Low Tom Level" value="0.5"/>
+      <param name="Mid Tom Level" value="0.5"/>
+      <param name="Hi Tom Level" value="0.5"/>
+      <param name="Claves Level" value="0.415"/>
+      <param name="Rim Shot Level" value="0.81"/>
+      <param name="Maracas Level" value="0.5"/>
+      <param name="Hand Clap Level" value="0.165"/>
+      <param name="Cow Bell Level" value="0.5"/>
+      <param name="Laser Gun Level" value="0.5"/>
+      <param name="Cymbal Level" value="0.5"/>
+      <param name="Open Hi Hat Level" value="0.705"/>
+      <param name="Closed Hi Hat Level" value="1"/>
+      <param name="Accent Level" value="0.5"/>
+      <param name="Bass Drum Tone" value="0.87"/>
+      <param name="Bass Drum Decay" value="0.17"/>
+      <param name="Bass Drum Sweep" value="0.165"/>
+      <param name="Snare Drum Tone" value="0"/>
+      <param name="Snare Drum Decay" value="0.38"/>
+      <param name="Snare Drum Snappy" value="1"/>
+      <param name="Low Conga Tunning" value="0.13"/>
+      <param name="Low Conga Decay" value="0.15"/>
+      <param name="Mid Conga Tunning" value="0"/>
+      <param name="Mid Conga Decay" value="0.07"/>
+      <param name="Hi Conga Tunning" value="1"/>
+      <param name="Hi Conga Decay" value="0.235"/>
+      <param name="Low Tom Tunning" value="0.5"/>
+      <param name="Low Tom Decay" value="0.5"/>
+      <param name="Low Tom Snappy" value="0.5"/>
+      <param name="Mid Tom Tunning" value="0.5"/>
+      <param name="Mid Tom Decay" value="0.5"/>
+      <param name="Mid Tom Snappy" value="0.5"/>
+      <param name="Hi Tom Tunning" value="0.5"/>
+      <param name="Hi Tom Decay" value="0.5"/>
+      <param name="Hi Tom Snappy" value="0.5"/>
+      <param name="Claves Tunning" value="0"/>
+      <param name="Claves Decay" value="0.45"/>
+      <param name="Rim Shot Tunning" value="0.62"/>
+      <param name="Rim Shot Decay" value="0.13"/>
+      <param name="Maracas Tone" value="0.895"/>
+      <param name="Hand Clap Tone" value="1"/>
+      <param name="Hand Clap Reverb" value="0"/>
+      <param name="Cow Bell Tunning" value="0.5"/>
+      <param name="Cow Bell Decay" value="0.5"/>
+      <param name="Laser Gun Depth" value="0.5"/>
+      <param name="Laser Gun Decay" value="0.5"/>
+      <param name="Laser Gun Sweep" value="0.5"/>
+      <param name="Cymbal Tone" value="0.5"/>
+      <param name="Cymbal Decay" value="0.5"/>
+      <param name="Open Hi Hat Tone" value="0.805"/>
+      <param name="Open Hi Hat Decay" value="0.245"/>
+      <param name="Closed Hi Hat Tone" value="0.725"/>
+      <param name="Closed Hi Hat Decay" value="0.25"/>
+      <param name="Hi Hat Filters Freq" value="0.425"/>
+    </Preset>
+    <Preset application="Nepheton" name="DNB1">
+      <param name="Bass Drum Level" value="0.7"/>
+      <param name="Snare Drum Level" value="0.87"/>
+      <param name="Low Conga Level" value="0.255"/>
+      <param name="Mid Conga Level" value="0.5"/>
+      <param name="Hi Conga Level" value="0.5"/>
+      <param name="Low Tom Level" value="0.5"/>
+      <param name="Mid Tom Level" value="0.5"/>
+      <param name="Hi Tom Level" value="0.5"/>
+      <param name="Claves Level" value="0.5"/>
+      <param name="Rim Shot Level" value="0.81"/>
+      <param name="Maracas Level" value="0.5"/>
+      <param name="Hand Clap Level" value="0.165"/>
+      <param name="Cow Bell Level" value="0.5"/>
+      <param name="Laser Gun Level" value="0.5"/>
+      <param name="Cymbal Level" value="0.13"/>
+      <param name="Open Hi Hat Level" value="0.705"/>
+      <param name="Closed Hi Hat Level" value="1"/>
+      <param name="Accent Level" value="0.5"/>
+      <param name="Bass Drum Tone" value="0.87"/>
+      <param name="Bass Drum Decay" value="0.49"/>
+      <param name="Bass Drum Sweep" value="0.51"/>
+      <param name="Snare Drum Tone" value="0.425"/>
+      <param name="Snare Drum Decay" value="0.325"/>
+      <param name="Snare Drum Snappy" value="0.4"/>
+      <param name="Low Conga Tunning" value="0.13"/>
+      <param name="Low Conga Decay" value="0.115"/>
+      <param name="Mid Conga Tunning" value="0.19"/>
+      <param name="Mid Conga Decay" value="0"/>
+      <param name="Hi Conga Tunning" value="0.5"/>
+      <param name="Hi Conga Decay" value="0.5"/>
+      <param name="Low Tom Tunning" value="0.5"/>
+      <param name="Low Tom Decay" value="0.11"/>
+      <param name="Low Tom Snappy" value="0.015"/>
+      <param name="Mid Tom Tunning" value="0.5"/>
+      <param name="Mid Tom Decay" value="0.14"/>
+      <param name="Mid Tom Snappy" value="0"/>
+      <param name="Hi Tom Tunning" value="0.5"/>
+      <param name="Hi Tom Decay" value="0.5"/>
+      <param name="Hi Tom Snappy" value="0.5"/>
+      <param name="Claves Tunning" value="0.065"/>
+      <param name="Claves Decay" value="0.305"/>
+      <param name="Rim Shot Tunning" value="0.62"/>
+      <param name="Rim Shot Decay" value="0.13"/>
+      <param name="Maracas Tone" value="0.895"/>
+      <param name="Hand Clap Tone" value="1"/>
+      <param name="Hand Clap Reverb" value="0"/>
+      <param name="Cow Bell Tunning" value="0.5"/>
+      <param name="Cow Bell Decay" value="0.5"/>
+      <param name="Laser Gun Depth" value="0.5"/>
+      <param name="Laser Gun Decay" value="0.5"/>
+      <param name="Laser Gun Sweep" value="0.5"/>
+      <param name="Cymbal Tone" value="0.955"/>
+      <param name="Cymbal Decay" value="1"/>
+      <param name="Open Hi Hat Tone" value="0.805"/>
+      <param name="Open Hi Hat Decay" value="0.245"/>
+      <param name="Closed Hi Hat Tone" value="0.725"/>
+      <param name="Closed Hi Hat Decay" value="0.25"/>
+      <param name="Hi Hat Filters Freq" value="0.425"/>
+    </Preset>
+    <Preset application="Nepheton" name="Electro">
+      <param name="Bass Drum Level" value="0.67"/>
+      <param name="Snare Drum Level" value="0.73"/>
+      <param name="Low Conga Level" value="0.5"/>
+      <param name="Mid Conga Level" value="0.5"/>
+      <param name="Hi Conga Level" value="0.5"/>
+      <param name="Low Tom Level" value="0.5"/>
+      <param name="Mid Tom Level" value="0.5"/>
+      <param name="Hi Tom Level" value="0.5"/>
+      <param name="Claves Level" value="0.5"/>
+      <param name="Rim Shot Level" value="0.5"/>
+      <param name="Maracas Level" value="0.385"/>
+      <param name="Hand Clap Level" value="0.5"/>
+      <param name="Cow Bell Level" value="0.5"/>
+      <param name="Laser Gun Level" value="1"/>
+      <param name="Cymbal Level" value="0.5"/>
+      <param name="Open Hi Hat Level" value="0.21"/>
+      <param name="Closed Hi Hat Level" value="0.5"/>
+      <param name="Accent Level" value="0.375"/>
+      <param name="Bass Drum Tone" value="1"/>
+      <param name="Bass Drum Decay" value="0"/>
+      <param name="Bass Drum Sweep" value="0.5"/>
+      <param name="Snare Drum Tone" value="0.405"/>
+      <param name="Snare Drum Decay" value="0.11"/>
+      <param name="Snare Drum Snappy" value="0.545"/>
+      <param name="Low Conga Tunning" value="0.955"/>
+      <param name="Low Conga Decay" value="0.165"/>
+      <param name="Mid Conga Tunning" value="0.05"/>
+      <param name="Mid Conga Decay" value="0.16"/>
+      <param name="Hi Conga Tunning" value="0.295"/>
+      <param name="Hi Conga Decay" value="0.18"/>
+      <param name="Low Tom Tunning" value="0.5"/>
+      <param name="Low Tom Decay" value="0.5"/>
+      <param name="Low Tom Snappy" value="0.5"/>
+      <param name="Mid Tom Tunning" value="0.57"/>
+      <param name="Mid Tom Decay" value="0.19"/>
+      <param name="Mid Tom Snappy" value="0"/>
+      <param name="Hi Tom Tunning" value="0.5"/>
+      <param name="Hi Tom Decay" value="0.5"/>
+      <param name="Hi Tom Snappy" value="0.5"/>
+      <param name="Claves Tunning" value="0.5"/>
+      <param name="Claves Decay" value="0.5"/>
+      <param name="Rim Shot Tunning" value="0.5"/>
+      <param name="Rim Shot Decay" value="0.5"/>
+      <param name="Maracas Tone" value="0.555"/>
+      <param name="Hand Clap Tone" value="0.5"/>
+      <param name="Hand Clap Reverb" value="0.5"/>
+      <param name="Cow Bell Tunning" value="1"/>
+      <param name="Cow Bell Decay" value="0.24"/>
+      <param name="Laser Gun Depth" value="0.585"/>
+      <param name="Laser Gun Decay" value="0.055"/>
+      <param name="Laser Gun Sweep" value="0.46"/>
+      <param name="Cymbal Tone" value="0.5"/>
+      <param name="Cymbal Decay" value="0.5"/>
+      <param name="Open Hi Hat Tone" value="0.685"/>
+      <param name="Open Hi Hat Decay" value="0.655"/>
+      <param name="Closed Hi Hat Tone" value="0.705"/>
+      <param name="Closed Hi Hat Decay" value="0.19"/>
+      <param name="Hi Hat Filters Freq" value="0.49"/>
+    </Preset>
+    <Preset application="Nepheton" name="Hard Elektro">
+      <param name="Bass Drum Level" value="0.5"/>
+      <param name="Snare Drum Level" value="0.79"/>
+      <param name="Low Conga Level" value="0.515"/>
+      <param name="Mid Conga Level" value="0.5"/>
+      <param name="Hi Conga Level" value="0.5"/>
+      <param name="Low Tom Level" value="0.5"/>
+      <param name="Mid Tom Level" value="0.26"/>
+      <param name="Hi Tom Level" value="0.555"/>
+      <param name="Claves Level" value="0.19"/>
+      <param name="Rim Shot Level" value="1"/>
+      <param name="Maracas Level" value="0.5"/>
+      <param name="Hand Clap Level" value="0.255"/>
+      <param name="Cow Bell Level" value="0.57"/>
+      <param name="Laser Gun Level" value="0.5"/>
+      <param name="Cymbal Level" value="0.5"/>
+      <param name="Open Hi Hat Level" value="0.5"/>
+      <param name="Closed Hi Hat Level" value="0.675"/>
+      <param name="Accent Level" value="0.5"/>
+      <param name="Bass Drum Tone" value="0.705"/>
+      <param name="Bass Drum Decay" value="0"/>
+      <param name="Bass Drum Sweep" value="0.315"/>
+      <param name="Snare Drum Tone" value="0.135"/>
+      <param name="Snare Drum Decay" value="0.34"/>
+      <param name="Snare Drum Snappy" value="0.35"/>
+      <param name="Low Conga Tunning" value="0"/>
+      <param name="Low Conga Decay" value="0.15"/>
+      <param name="Mid Conga Tunning" value="0"/>
+      <param name="Mid Conga Decay" value="0.315"/>
+      <param name="Hi Conga Tunning" value="0"/>
+      <param name="Hi Conga Decay" value="0.015"/>
+      <param name="Low Tom Tunning" value="0.72"/>
+      <param name="Low Tom Decay" value="0.43"/>
+      <param name="Low Tom Snappy" value="0.035"/>
+      <param name="Mid Tom Tunning" value="0.53"/>
+      <param name="Mid Tom Decay" value="0"/>
+      <param name="Mid Tom Snappy" value="1"/>
+      <param name="Hi Tom Tunning" value="0.375"/>
+      <param name="Hi Tom Decay" value="0.185"/>
+      <param name="Hi Tom Snappy" value="0.01"/>
+      <param name="Claves Tunning" value="0"/>
+      <param name="Claves Decay" value="0.235"/>
+      <param name="Rim Shot Tunning" value="0.145"/>
+      <param name="Rim Shot Decay" value="1"/>
+      <param name="Maracas Tone" value="0.5"/>
+      <param name="Hand Clap Tone" value="0.245"/>
+      <param name="Hand Clap Reverb" value="0"/>
+      <param name="Cow Bell Tunning" value="0"/>
+      <param name="Cow Bell Decay" value="1"/>
+      <param name="Laser Gun Depth" value="1"/>
+      <param name="Laser Gun Decay" value="1"/>
+      <param name="Laser Gun Sweep" value="0.5"/>
+      <param name="Cymbal Tone" value="0.5"/>
+      <param name="Cymbal Decay" value="0.5"/>
+      <param name="Open Hi Hat Tone" value="0.58"/>
+      <param name="Open Hi Hat Decay" value="0.145"/>
+      <param name="Closed Hi Hat Tone" value="0"/>
+      <param name="Closed Hi Hat Decay" value="0.455"/>
+      <param name="Hi Hat Filters Freq" value="0"/>
+    </Preset>
+    <Preset application="Nepheton" name="Noizy Tomz">
+      <param name="Bass Drum Level" value="0.575"/>
+      <param name="Snare Drum Level" value="0.76"/>
+      <param name="Low Conga Level" value="0.255"/>
+      <param name="Mid Conga Level" value="0.5"/>
+      <param name="Hi Conga Level" value="0.5"/>
+      <param name="Low Tom Level" value="0.5"/>
+      <param name="Mid Tom Level" value="0.5"/>
+      <param name="Hi Tom Level" value="0.5"/>
+      <param name="Claves Level" value="0.5"/>
+      <param name="Rim Shot Level" value="0.72"/>
+      <param name="Maracas Level" value="0.5"/>
+      <param name="Hand Clap Level" value="0.165"/>
+      <param name="Cow Bell Level" value="0.5"/>
+      <param name="Laser Gun Level" value="0.5"/>
+      <param name="Cymbal Level" value="0.5"/>
+      <param name="Open Hi Hat Level" value="0.705"/>
+      <param name="Closed Hi Hat Level" value="1"/>
+      <param name="Accent Level" value="0.5"/>
+      <param name="Bass Drum Tone" value="0.88"/>
+      <param name="Bass Drum Decay" value="0.36"/>
+      <param name="Bass Drum Sweep" value="0.36"/>
+      <param name="Snare Drum Tone" value="0.895"/>
+      <param name="Snare Drum Decay" value="0.28"/>
+      <param name="Snare Drum Snappy" value="0.37"/>
+      <param name="Low Conga Tunning" value="0.455"/>
+      <param name="Low Conga Decay" value="0.09"/>
+      <param name="Mid Conga Tunning" value="0.49"/>
+      <param name="Mid Conga Decay" value="0.055"/>
+      <param name="Hi Conga Tunning" value="0.715"/>
+      <param name="Hi Conga Decay" value="0.16"/>
+      <param name="Low Tom Tunning" value="0.48"/>
+      <param name="Low Tom Decay" value="0.24"/>
+      <param name="Low Tom Snappy" value="1"/>
+      <param name="Mid Tom Tunning" value="0.515"/>
+      <param name="Mid Tom Decay" value="0.225"/>
+      <param name="Mid Tom Snappy" value="1"/>
+      <param name="Hi Tom Tunning" value="0.96"/>
+      <param name="Hi Tom Decay" value="0.17"/>
+      <param name="Hi Tom Snappy" value="1"/>
+      <param name="Claves Tunning" value="0.23"/>
+      <param name="Claves Decay" value="0.305"/>
+      <param name="Rim Shot Tunning" value="0.425"/>
+      <param name="Rim Shot Decay" value="0.51"/>
+      <param name="Maracas Tone" value="0.895"/>
+      <param name="Hand Clap Tone" value="0.455"/>
+      <param name="Hand Clap Reverb" value="0"/>
+      <param name="Cow Bell Tunning" value="0.5"/>
+      <param name="Cow Bell Decay" value="0.5"/>
+      <param name="Laser Gun Depth" value="0.775"/>
+      <param name="Laser Gun Decay" value="0.68"/>
+      <param name="Laser Gun Sweep" value="0.125"/>
+      <param name="Cymbal Tone" value="0.5"/>
+      <param name="Cymbal Decay" value="0.5"/>
+      <param name="Open Hi Hat Tone" value="0.705"/>
+      <param name="Open Hi Hat Decay" value="0.37"/>
+      <param name="Closed Hi Hat Tone" value="0.725"/>
+      <param name="Closed Hi Hat Decay" value="0.355"/>
+      <param name="Hi Hat Filters Freq" value="0.425"/>
+    </Preset>
+    <Preset application="Nepheton" name="Tribal">
+      <param name="Bass Drum Level" value="0.5"/>
+      <param name="Snare Drum Level" value="0.5"/>
+      <param name="Low Conga Level" value="0.5"/>
+      <param name="Mid Conga Level" value="0.5"/>
+      <param name="Hi Conga Level" value="0.5"/>
+      <param name="Low Tom Level" value="0.5"/>
+      <param name="Mid Tom Level" value="0.5"/>
+      <param name="Hi Tom Level" value="0.5"/>
+      <param name="Claves Level" value="0.5"/>
+      <param name="Rim Shot Level" value="0.5"/>
+      <param name="Maracas Level" value="0.5"/>
+      <param name="Hand Clap Level" value="0.5"/>
+      <param name="Cow Bell Level" value="0.5"/>
+      <param name="Laser Gun Level" value="0.5"/>
+      <param name="Cymbal Level" value="0.5"/>
+      <param name="Open Hi Hat Level" value="0.5"/>
+      <param name="Closed Hi Hat Level" value="0.675"/>
+      <param name="Accent Level" value="0.5"/>
+      <param name="Bass Drum Tone" value="0.705"/>
+      <param name="Bass Drum Decay" value="0.385"/>
+      <param name="Bass Drum Sweep" value="0.315"/>
+      <param name="Snare Drum Tone" value="0.5"/>
+      <param name="Snare Drum Decay" value="0.255"/>
+      <param name="Snare Drum Snappy" value="0.765"/>
+      <param name="Low Conga Tunning" value="0"/>
+      <param name="Low Conga Decay" value="0.15"/>
+      <param name="Mid Conga Tunning" value="0"/>
+      <param name="Mid Conga Decay" value="0.315"/>
+      <param name="Hi Conga Tunning" value="0"/>
+      <param name="Hi Conga Decay" value="0.015"/>
+      <param name="Low Tom Tunning" value="0.32"/>
+      <param name="Low Tom Decay" value="0.17"/>
+      <param name="Low Tom Snappy" value="0.035"/>
+      <param name="Mid Tom Tunning" value="0.5"/>
+      <param name="Mid Tom Decay" value="0.5"/>
+      <param name="Mid Tom Snappy" value="0.5"/>
+      <param name="Hi Tom Tunning" value="0.5"/>
+      <param name="Hi Tom Decay" value="0.5"/>
+      <param name="Hi Tom Snappy" value="0.5"/>
+      <param name="Claves Tunning" value="0.005"/>
+      <param name="Claves Decay" value="0.5"/>
+      <param name="Rim Shot Tunning" value="0.5"/>
+      <param name="Rim Shot Decay" value="0.5"/>
+      <param name="Maracas Tone" value="0.5"/>
+      <param name="Hand Clap Tone" value="0.5"/>
+      <param name="Hand Clap Reverb" value="0.5"/>
+      <param name="Cow Bell Tunning" value="0.5"/>
+      <param name="Cow Bell Decay" value="0.5"/>
+      <param name="Laser Gun Depth" value="0.5"/>
+      <param name="Laser Gun Decay" value="0.5"/>
+      <param name="Laser Gun Sweep" value="0.5"/>
+      <param name="Cymbal Tone" value="0.5"/>
+      <param name="Cymbal Decay" value="0.5"/>
+      <param name="Open Hi Hat Tone" value="0.58"/>
+      <param name="Open Hi Hat Decay" value="0.145"/>
+      <param name="Closed Hi Hat Tone" value="0.6"/>
+      <param name="Closed Hi Hat Decay" value="0.5"/>
+      <param name="Hi Hat Filters Freq" value="0.5"/>
+    </Preset>
+    <Preset application="Nepheton" name="Trip Hop">
+      <param name="Bass Drum Level" value="0.5"/>
+      <param name="Snare Drum Level" value="0.675"/>
+      <param name="Low Conga Level" value="0.515"/>
+      <param name="Mid Conga Level" value="0.5"/>
+      <param name="Hi Conga Level" value="0.5"/>
+      <param name="Low Tom Level" value="0.5"/>
+      <param name="Mid Tom Level" value="0.5"/>
+      <param name="Hi Tom Level" value="0.555"/>
+      <param name="Claves Level" value="0.78"/>
+      <param name="Rim Shot Level" value="0.5"/>
+      <param name="Maracas Level" value="0.5"/>
+      <param name="Hand Clap Level" value="0.255"/>
+      <param name="Cow Bell Level" value="0.86"/>
+      <param name="Laser Gun Level" value="0.5"/>
+      <param name="Cymbal Level" value="0.5"/>
+      <param name="Open Hi Hat Level" value="0.5"/>
+      <param name="Closed Hi Hat Level" value="0.675"/>
+      <param name="Accent Level" value="0.5"/>
+      <param name="Bass Drum Tone" value="0.705"/>
+      <param name="Bass Drum Decay" value="0"/>
+      <param name="Bass Drum Sweep" value="0.315"/>
+      <param name="Snare Drum Tone" value="0.5"/>
+      <param name="Snare Drum Decay" value="0.255"/>
+      <param name="Snare Drum Snappy" value="0.59"/>
+      <param name="Low Conga Tunning" value="0"/>
+      <param name="Low Conga Decay" value="0.15"/>
+      <param name="Mid Conga Tunning" value="0"/>
+      <param name="Mid Conga Decay" value="0.315"/>
+      <param name="Hi Conga Tunning" value="0"/>
+      <param name="Hi Conga Decay" value="0.015"/>
+      <param name="Low Tom Tunning" value="0.72"/>
+      <param name="Low Tom Decay" value="0.43"/>
+      <param name="Low Tom Snappy" value="0.035"/>
+      <param name="Mid Tom Tunning" value="0.53"/>
+      <param name="Mid Tom Decay" value="0.165"/>
+      <param name="Mid Tom Snappy" value="0"/>
+      <param name="Hi Tom Tunning" value="0.375"/>
+      <param name="Hi Tom Decay" value="0.185"/>
+      <param name="Hi Tom Snappy" value="0.01"/>
+      <param name="Claves Tunning" value="0.8"/>
+      <param name="Claves Decay" value="0.32"/>
+      <param name="Rim Shot Tunning" value="0.5"/>
+      <param name="Rim Shot Decay" value="0.5"/>
+      <param name="Maracas Tone" value="0.5"/>
+      <param name="Hand Clap Tone" value="0.245"/>
+      <param name="Hand Clap Reverb" value="0"/>
+      <param name="Cow Bell Tunning" value="0.185"/>
+      <param name="Cow Bell Decay" value="0.245"/>
+      <param name="Laser Gun Depth" value="0.5"/>
+      <param name="Laser Gun Decay" value="0.5"/>
+      <param name="Laser Gun Sweep" value="0.5"/>
+      <param name="Cymbal Tone" value="0.5"/>
+      <param name="Cymbal Decay" value="0.5"/>
+      <param name="Open Hi Hat Tone" value="0.58"/>
+      <param name="Open Hi Hat Decay" value="0.145"/>
+      <param name="Closed Hi Hat Tone" value="0.6"/>
+      <param name="Closed Hi Hat Decay" value="0.5"/>
+      <param name="Hi Hat Filters Freq" value="0.5"/>
+    </Preset>
+    <Preset application="Nepheton" name="Wizball">
+      <param name="Bass Drum Level" value="0.5"/>
+      <param name="Snare Drum Level" value="0.5"/>
+      <param name="Low Conga Level" value="0.5"/>
+      <param name="Mid Conga Level" value="0.5"/>
+      <param name="Hi Conga Level" value="0.5"/>
+      <param name="Low Tom Level" value="0.5"/>
+      <param name="Mid Tom Level" value="0.5"/>
+      <param name="Hi Tom Level" value="0.5"/>
+      <param name="Claves Level" value="0.5"/>
+      <param name="Rim Shot Level" value="0.5"/>
+      <param name="Maracas Level" value="0.5"/>
+      <param name="Hand Clap Level" value="0.5"/>
+      <param name="Cow Bell Level" value="0.5"/>
+      <param name="Laser Gun Level" value="1"/>
+      <param name="Cymbal Level" value="0.5"/>
+      <param name="Open Hi Hat Level" value="0.67"/>
+      <param name="Closed Hi Hat Level" value="0.595"/>
+      <param name="Accent Level" value="0.5"/>
+      <param name="Bass Drum Tone" value="0.5"/>
+      <param name="Bass Drum Decay" value="0.5"/>
+      <param name="Bass Drum Sweep" value="0.145"/>
+      <param name="Snare Drum Tone" value="0.5"/>
+      <param name="Snare Drum Decay" value="0.5"/>
+      <param name="Snare Drum Snappy" value="0.5"/>
+      <param name="Low Conga Tunning" value="0.5"/>
+      <param name="Low Conga Decay" value="0.5"/>
+      <param name="Mid Conga Tunning" value="0.5"/>
+      <param name="Mid Conga Decay" value="0.5"/>
+      <param name="Hi Conga Tunning" value="0.5"/>
+      <param name="Hi Conga Decay" value="0.5"/>
+      <param name="Low Tom Tunning" value="0.51"/>
+      <param name="Low Tom Decay" value="0.12"/>
+      <param name="Low Tom Snappy" value="0"/>
+      <param name="Mid Tom Tunning" value="0"/>
+      <param name="Mid Tom Decay" value="0.3"/>
+      <param name="Mid Tom Snappy" value="0"/>
+      <param name="Hi Tom Tunning" value="0.5"/>
+      <param name="Hi Tom Decay" value="0.5"/>
+      <param name="Hi Tom Snappy" value="0.5"/>
+      <param name="Claves Tunning" value="0.5"/>
+      <param name="Claves Decay" value="0.5"/>
+      <param name="Rim Shot Tunning" value="0.5"/>
+      <param name="Rim Shot Decay" value="0.5"/>
+      <param name="Maracas Tone" value="0.5"/>
+      <param name="Hand Clap Tone" value="0.5"/>
+      <param name="Hand Clap Reverb" value="0.5"/>
+      <param name="Cow Bell Tunning" value="0.5"/>
+      <param name="Cow Bell Decay" value="0.5"/>
+      <param name="Laser Gun Depth" value="0.72"/>
+      <param name="Laser Gun Decay" value="0"/>
+      <param name="Laser Gun Sweep" value="0.625"/>
+      <param name="Cymbal Tone" value="0.5"/>
+      <param name="Cymbal Decay" value="0.5"/>
+      <param name="Open Hi Hat Tone" value="0.39"/>
+      <param name="Open Hi Hat Decay" value="0.035"/>
+      <param name="Closed Hi Hat Tone" value="0.41"/>
+      <param name="Closed Hi Hat Decay" value="0.645"/>
+      <param name="Hi Hat Filters Freq" value="0.475"/>
+    </Preset>
+    <Preset application="Nepheton" name="Ticky">
+      <param name="Bass Drum Level" value="0.5"/>
+      <param name="Snare Drum Level" value="0.07915"/>
+      <param name="Low Conga Level" value="0.5"/>
+      <param name="Mid Conga Level" value="0.5"/>
+      <param name="Hi Conga Level" value="0.5"/>
+      <param name="Low Tom Level" value="0.714795"/>
+      <param name="Mid Tom Level" value="0.5"/>
+      <param name="Hi Tom Level" value="0.5"/>
+      <param name="Claves Level" value="0.5"/>
+      <param name="Rim Shot Level" value="0.5"/>
+      <param name="Maracas Level" value="0.5"/>
+      <param name="Hand Clap Level" value="0.5"/>
+      <param name="Cow Bell Level" value="0.5"/>
+      <param name="Laser Gun Level" value="0.5"/>
+      <param name="Cymbal Level" value="0.5"/>
+      <param name="Open Hi Hat Level" value="0.5"/>
+      <param name="Closed Hi Hat Level" value="0.5"/>
+      <param name="Accent Level" value="1"/>
+      <param name="Bass Drum Tone" value="0.931722"/>
+      <param name="Bass Drum Decay" value="0.110166"/>
+      <param name="Bass Drum Sweep" value="0.012468"/>
+      <param name="Snare Drum Tone" value="0.896028"/>
+      <param name="Snare Drum Decay" value="0"/>
+      <param name="Snare Drum Snappy" value="1"/>
+      <param name="Low Conga Tunning" value="1"/>
+      <param name="Low Conga Decay" value="0"/>
+      <param name="Mid Conga Tunning" value="0"/>
+      <param name="Mid Conga Decay" value="0"/>
+      <param name="Hi Conga Tunning" value="0.806944"/>
+      <param name="Hi Conga Decay" value="0"/>
+      <param name="Low Tom Tunning" value="1"/>
+      <param name="Low Tom Decay" value="0"/>
+      <param name="Low Tom Snappy" value="0"/>
+      <param name="Mid Tom Tunning" value="0.5"/>
+      <param name="Mid Tom Decay" value="0.068278"/>
+      <param name="Mid Tom Snappy" value="0"/>
+      <param name="Hi Tom Tunning" value="0.682958"/>
+      <param name="Hi Tom Decay" value="0.090533"/>
+      <param name="Hi Tom Snappy" value="0"/>
+      <param name="Claves Tunning" value="0.5"/>
+      <param name="Claves Decay" value="0.5"/>
+      <param name="Rim Shot Tunning" value="0.5"/>
+      <param name="Rim Shot Decay" value="0.5"/>
+      <param name="Maracas Tone" value="0.5"/>
+      <param name="Hand Clap Tone" value="0.5"/>
+      <param name="Hand Clap Reverb" value="0.5"/>
+      <param name="Cow Bell Tunning" value="0.5"/>
+      <param name="Cow Bell Decay" value="0.5"/>
+      <param name="Laser Gun Depth" value="0.5"/>
+      <param name="Laser Gun Decay" value="0.5"/>
+      <param name="Laser Gun Sweep" value="0.5"/>
+      <param name="Cymbal Tone" value="0.5"/>
+      <param name="Cymbal Decay" value="0.5"/>
+      <param name="Open Hi Hat Tone" value="0.5"/>
+      <param name="Open Hi Hat Decay" value="0.5"/>
+      <param name="Closed Hi Hat Tone" value="0.5"/>
+      <param name="Closed Hi Hat Decay" value="0.5"/>
+      <param name="Hi Hat Filters Freq" value="0.5"/>
+    </Preset>
+    <Preset application="Nepheton" name="Houzey">
+      <param name="Bass Drum Level" value="0.561849"/>
+      <param name="Snare Drum Level" value="1"/>
+      <param name="Low Conga Level" value="0.5"/>
+      <param name="Mid Conga Level" value="0.5"/>
+      <param name="Hi Conga Level" value="0.5"/>
+      <param name="Low Tom Level" value="0.5"/>
+      <param name="Mid Tom Level" value="0.5"/>
+      <param name="Hi Tom Level" value="0.5"/>
+      <param name="Claves Level" value="0.5"/>
+      <param name="Rim Shot Level" value="0.863445"/>
+      <param name="Maracas Level" value="0.5"/>
+      <param name="Hand Clap Level" value="0.18431"/>
+      <param name="Cow Bell Level" value="0.486754"/>
+      <param name="Laser Gun Level" value="0.554606"/>
+      <param name="Cymbal Level" value="0.5"/>
+      <param name="Open Hi Hat Level" value="0.431722"/>
+      <param name="Closed Hi Hat Level" value="0.5"/>
+      <param name="Accent Level" value="0.5"/>
+      <param name="Bass Drum Tone" value="0.854484"/>
+      <param name="Bass Drum Decay" value="0.482357"/>
+      <param name="Bass Drum Sweep" value="0.278728"/>
+      <param name="Snare Drum Tone" value="0.060702"/>
+      <param name="Snare Drum Decay" value="0.068278"/>
+      <param name="Snare Drum Snappy" value="0"/>
+      <param name="Low Conga Tunning" value="0.5"/>
+      <param name="Low Conga Decay" value="0.5"/>
+      <param name="Mid Conga Tunning" value="0.5"/>
+      <param name="Mid Conga Decay" value="0.5"/>
+      <param name="Hi Conga Tunning" value="0.5"/>
+      <param name="Hi Conga Decay" value="0.5"/>
+      <param name="Low Tom Tunning" value="0.5"/>
+      <param name="Low Tom Decay" value="0.5"/>
+      <param name="Low Tom Snappy" value="0.5"/>
+      <param name="Mid Tom Tunning" value="0.5"/>
+      <param name="Mid Tom Decay" value="0.5"/>
+      <param name="Mid Tom Snappy" value="0.5"/>
+      <param name="Hi Tom Tunning" value="0.5"/>
+      <param name="Hi Tom Decay" value="0.5"/>
+      <param name="Hi Tom Snappy" value="0.5"/>
+      <param name="Claves Tunning" value="0.5"/>
+      <param name="Claves Decay" value="0.5"/>
+      <param name="Rim Shot Tunning" value="0.077239"/>
+      <param name="Rim Shot Decay" value="1"/>
+      <param name="Maracas Tone" value="0.5"/>
+      <param name="Hand Clap Tone" value="0.260004"/>
+      <param name="Hand Clap Reverb" value="0.988842"/>
+      <param name="Cow Bell Tunning" value="0.5"/>
+      <param name="Cow Bell Decay" value="0.5"/>
+      <param name="Laser Gun Depth" value="0.5"/>
+      <param name="Laser Gun Decay" value="0.5"/>
+      <param name="Laser Gun Sweep" value="0.5"/>
+      <param name="Cymbal Tone" value="0.5"/>
+      <param name="Cymbal Decay" value="0.5"/>
+      <param name="Open Hi Hat Tone" value="0.588292"/>
+      <param name="Open Hi Hat Decay" value="0"/>
+      <param name="Closed Hi Hat Tone" value="0.5"/>
+      <param name="Closed Hi Hat Decay" value="0.5"/>
+      <param name="Hi Hat Filters Freq" value="0.5"/>
+    </Preset>
+    <Preset application="Nepheton" name="TR606 setup">
+      <param name="Bass Drum Level" value="0.5"/>
+      <param name="Snare Drum Level" value="0.525"/>
+      <param name="Low Conga Level" value="0"/>
+      <param name="Mid Conga Level" value="0"/>
+      <param name="Hi Conga Level" value="0"/>
+      <param name="Low Tom Level" value="0"/>
+      <param name="Mid Tom Level" value="0.5"/>
+      <param name="Hi Tom Level" value="0.5"/>
+      <param name="Claves Level" value="0"/>
+      <param name="Rim Shot Level" value="0"/>
+      <param name="Maracas Level" value="0"/>
+      <param name="Hand Clap Level" value="0"/>
+      <param name="Cow Bell Level" value="0"/>
+      <param name="Laser Gun Level" value="0"/>
+      <param name="Cymbal Level" value="0.5"/>
+      <param name="Open Hi Hat Level" value="0.5"/>
+      <param name="Closed Hi Hat Level" value="0.5"/>
+      <param name="Accent Level" value="0.515"/>
+      <param name="Bass Drum Tone" value="0.57"/>
+      <param name="Bass Drum Decay" value="0.175"/>
+      <param name="Bass Drum Sweep" value="0.5"/>
+      <param name="Snare Drum Tone" value="0.315"/>
+      <param name="Snare Drum Decay" value="0.43"/>
+      <param name="Snare Drum Snappy" value="0.315"/>
+      <param name="Low Conga Tunning" value="0.5"/>
+      <param name="Low Conga Decay" value="0.5"/>
+      <param name="Mid Conga Tunning" value="0.5"/>
+      <param name="Mid Conga Decay" value="0.5"/>
+      <param name="Hi Conga Tunning" value="0.5"/>
+      <param name="Hi Conga Decay" value="0.5"/>
+      <param name="Low Tom Tunning" value="0.505"/>
+      <param name="Low Tom Decay" value="0.52"/>
+      <param name="Low Tom Snappy" value="0"/>
+      <param name="Mid Tom Tunning" value="0.475"/>
+      <param name="Mid Tom Decay" value="0.415"/>
+      <param name="Mid Tom Snappy" value="0.3"/>
+      <param name="Hi Tom Tunning" value="0.85"/>
+      <param name="Hi Tom Decay" value="0.48"/>
+      <param name="Hi Tom Snappy" value="0.36"/>
+      <param name="Claves Tunning" value="0.5"/>
+      <param name="Claves Decay" value="0.5"/>
+      <param name="Rim Shot Tunning" value="0.5"/>
+      <param name="Rim Shot Decay" value="0.5"/>
+      <param name="Maracas Tone" value="0.5"/>
+      <param name="Hand Clap Tone" value="0.5"/>
+      <param name="Hand Clap Reverb" value="0.5"/>
+      <param name="Cow Bell Tunning" value="0.5"/>
+      <param name="Cow Bell Decay" value="0.5"/>
+      <param name="Laser Gun Depth" value="0.5"/>
+      <param name="Laser Gun Decay" value="0.5"/>
+      <param name="Laser Gun Sweep" value="0.5"/>
+      <param name="Cymbal Tone" value="1"/>
+      <param name="Cymbal Decay" value="0"/>
+      <param name="Open Hi Hat Tone" value="0.245"/>
+      <param name="Open Hi Hat Decay" value="0.32"/>
+      <param name="Closed Hi Hat Tone" value="0.255"/>
+      <param name="Closed Hi Hat Decay" value="0.365"/>
+      <param name="Hi Hat Filters Freq" value="0.41"/>
+    </Preset>
+  </PresetGroup>
+</PresetBank>

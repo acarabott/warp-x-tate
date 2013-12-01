@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<DrumMap application="Nepheton" ver="1.1" name="General Midi">
+  <assign midiKey="35" instrument="BD"/>
+  <assign midiKey="36" instrument="BD"/>
+  <assign midiKey="38" instrument="SD"/>
+  <assign midiKey="40" instrument="SD"/>
+  <assign midiKey="61" instrument="LC"/>
+  <assign midiKey="64" instrument="LC"/>
+  <assign midiKey="63" instrument="MC"/>
+  <assign midiKey="60" instrument="HC"/>
+  <assign midiKey="62" instrument="HC"/>
+  <assign midiKey="41" instrument="LT"/>
+  <assign midiKey="45" instrument="LT"/>
+  <assign midiKey="47" instrument="MT"/>
+  <assign midiKey="48" instrument="MT"/>
+  <assign midiKey="43" instrument="HT"/>
+  <assign midiKey="50" instrument="HT"/>
+  <assign midiKey="75" instrument="CL"/>
+  <assign midiKey="37" instrument="RS"/>
+  <assign midiKey="70" instrument="MA"/>
+  <assign midiKey="39" instrument="CP"/>
+  <assign midiKey="56" instrument="CB"/>
+  <assign midiKey="58" instrument="LG"/>
+  <assign midiKey="49" instrument="CY"/>
+  <assign midiKey="51" instrument="CY"/>
+  <assign midiKey="52" instrument="CY"/>
+  <assign midiKey="59" instrument="CY"/>
+  <assign midiKey="46" instrument="OH"/>
+  <assign midiKey="42" instrument="CH"/>
+  <assign midiKey="44" instrument="CH"/>
+</DrumMap>
