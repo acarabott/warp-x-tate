@@ -11,6 +11,10 @@ WarpTrack {
 		^super.new.init(argParent, argKey, argMidiChannel);
 	}
 
+	*read {|argParent, argKey, path|
+		^super.new.init(argParent, argKey).loadPreset(path);
+	}
+
 	init {|argParent, argKey, argMidiChannel|
 		parent = argParent;
 		key = argKey;
@@ -80,16 +84,19 @@ WarpTrack {
 		parent.control(midiChannel, params[paramKey], val);
 	}
 
-	loadPreset {|preset|
-		preset.params.keysValuesDo { |paramKey, num|
+	loadPreset {|path|
+		var preset = Object.readArchive(path);
+
+		preset['params'].keysValuesDo { |paramKey, num|
 			this.assign(paramKey, num.asInteger);
 		};
-		midiChannel = preset.midiChannel;
-		sensorFuncs = preset.sensorFuncs;
-		patternTrack = preset.patternTrack;
+
+		midiChannel = preset['midiChannel'];
+		sensorFuncs = preset['sensorFuncs'];
+		patternTrack = preset['patternTrack'];
 
 		if(patternTrack) {
-			notes = preset.notes;
+			notes = preset['notes'];
 		};
 	}
 
@@ -109,17 +116,18 @@ WarpTrack {
 
 	save {
 		Dialog.savePanel({|path|
-			var preset = WarpTrackPreset()
-				.midiChannel_(midiChannel)
-				.params_(params)
-				.sensorFuncs_(sensorFuncs)
-				.patternTrack_(patternTrack);
+			var archive = IdentityDictionary[];
+
+			archive['midiChannel'] = midiChannel;
+			archive['params'] = params;
+			archive['sensorFuncs'] = sensorFuncs;
+			archive['patternTrack'] = patternTrack;
 
 			if(patternTrack) {
-				preset.notes_(notes);
+				archive['notes'] = notes;
 			};
 
-			preset.writeArchive(path);
+			archive.writeArchive(path);
 		});
 	}
 }

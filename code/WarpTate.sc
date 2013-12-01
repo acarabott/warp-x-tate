@@ -50,7 +50,15 @@ WarpTate {
 	}
 
 	addTrack {|trackKey, sensorKey, channel|
-		tracks[trackKey] = WarpTrack(this, trackKey, channel);
+		^this.prAddTrack('new', trackKey, sensorKey);
+	}
+
+	loadTrack {|trackKey, sensorKey, path|
+		^this.prAddTrack('read', trackKey, sensorKey, path);
+	}
+
+	prAddTrack {|call, trackKey, sensorKey, channel|
+		tracks[trackKey] = WarpTrack.perform(call, this, trackKey, channel);
 
 		if(sensorKey.notNil) {
 			this.addTrackToSensor(trackKey, sensorKey);
