@@ -84,6 +84,13 @@ WarpTrack {
 		preset.params.keysValuesDo { |paramKey, num|
 			this.assign(paramKey, num.asInteger);
 		};
+		midiChannel = preset.midiChannel;
+		sensorFuncs = preset.sensorFuncs;
+		patternTrack = preset.patternTrack;
+
+		if(patternTrack) {
+			notes = preset.notes;
+		};
 	}
 
 	sensor {|val|
@@ -92,11 +99,27 @@ WarpTrack {
 		}
 	}
 
-	addFunc {|key, func|
-		sensorFuncs[key] = func;
+	addFunc {|funcKey, func|
+		sensorFuncs[funcKey] = func;
 	}
 
-	removeFunc {|key|
-		sensorFuncs[key] = nil;
+	removeFunc {|funcKey|
+		sensorFuncs[funcKey] = nil;
+	}
+
+	save {
+		Dialog.savePanel({|path|
+			var preset = WarpTrackPreset()
+				.midiChannel_(midiChannel)
+				.params_(params)
+				.sensorFuncs_(sensorFuncs)
+				.patternTrack_(patternTrack);
+
+			if(patternTrack) {
+				preset.notes_(notes);
+			};
+
+			preset.writeArchive(path);
+		});
 	}
 }
