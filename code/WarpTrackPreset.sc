@@ -1,16 +1,20 @@
 WarpTrackPreset {
-	var <params;
+	var <>key;
+	var <>params;
+	var <>sensorFuncs;
+	var <>patternTrack;
+	var <>midiChannel;
+	var <>notes;
 
-	*new {|path|
-		if(path.notNil) {
-			^Object.readArchive(path);
-		};
-
+	*new {
 		^super.new.init();
 	}
 
-	init {
+	*read {|path|
+		^Object.readArchive(path);
+	}
 
+	init {
 	}
 
 	loadParams {|path|
