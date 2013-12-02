@@ -32,12 +32,15 @@ WarpTate {
 		sensorKeys = ['303a', '303b', '808a', '808b'];
 		sensorTracks = IdentityDictionary.newFrom([sensorKeys, List[]!4].lace);
 
-		availableControls = (0..120).reject({|item, i|
-			[ 0, 1, 2, 4, 5, 6, 7, 8, 10, 11, 12, 13, 64, 65, 66, 67, 68, 69,
-			70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 84, 91, 92, 93, 94, 95, 96,
-			97, 98, 99, 100, 102 ].includes(item)
-		});
-		controls = IdentityDictionary[];
+		availableControls = (0..127).collect {|channel|
+			(0..120).reject({|item, i|
+				[ 0, 1, 2, 4, 5, 6, 7, 8, 10, 11, 12, 13, 64, 65, 66, 67, 68, 69,
+				70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 84, 91, 92, 93, 94, 95, 96,
+				97, 98, 99, 100, 102 ].includes(item)
+			});
+		};
+
+		controls = (0..127).collect { IdentityDictionary[] };
 
 		this.addOSCdefs();
 
@@ -109,23 +112,26 @@ WarpTate {
 		}
 	}
 
-	isControlAvailable {|controlNum|
-		^controls.keys.includes(controlNum.asSymbol).not;
+	isControlAvailable {|channel, controlNum|
+		^controls[channel].keys.includes(controlNum.asSymbol).not;
 	}
 
-	setControl {|num, key|
-		controls[num.asSymbol] = key;
-		availableControls.remove(num);
+	setControl {|channel, num, key|
+		controls[channel][num.asSymbol] = key;
+		availableControls[channel].remove(num);
 	}
 
 	assign {|trackKey, paramKey, controlNum, learn=false|
-		if(controlNum.notNil && this.isControlAvailable(controlNum)) {
+		var channel = tracks[trackKey].settings['midiChannel'];
+
+		if(controlNum.notNil && this.isControlAvailable(channel, controlNum)) {
 			tracks[trackKey].assign(paramKey, controlNum, learn);
-			availableControls.removeAt(0);
+			availableControls[channel].removeAt(0);
+
 		} {
-			if(availableControls.size > 0) {
-				tracks[trackKey].assign(paramKey, availableControls[0], learn);
-				availableControls.removeAt(0);
+			if(availableControls[channel].size > 0) {
+				tracks[trackKey].assign(paramKey, availableControls[channel][0], learn);
+				availableControls[channel].removeAt(0);
 			} {
 				"no controls left!".postln;
 			};
