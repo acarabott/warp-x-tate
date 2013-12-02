@@ -1,11 +1,11 @@
 pitch step climbing
 key changes
 filters
-drum drop outs
-multiple 303s? low - high
-snare rush
 
-drum fills
+multiple 303s? low - high
+
+
+
 
 distort
 
@@ -25,3 +25,15 @@ http://www.youtube.com/watch?v=gAwqZO_cn94
 
 make sure computer has all crap turned off
 
+
+
+## Drums
+
+snare rush
+drum fills
+drum drop outs
+kick drum, conga, decay
+reverb
+hh freq
+kick level
+snare level
