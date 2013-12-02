@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<MidiControlMap name="Nepheton">
+  <assign CC="3" param="Bass Drum Level"/>
+  <assign CC="9" param="Snare Drum Level"/>
+  <assign CC="14" param="Low Conga Level"/>
+  <assign CC="15" param="Mid Conga Level"/>
+  <assign CC="16" param="Hi Conga Level"/>
+  <assign CC="17" param="Low Tom Level"/>
+  <assign CC="18" param="Mid Tom Level"/>
+  <assign CC="19" param="Hi Tom Level"/>
+  <assign CC="20" param="Claves Level"/>
+  <assign CC="21" param="Rim Shot Level"/>
+  <assign CC="22" param="Maracas Level"/>
+  <assign CC="23" param="Hand Clap Level"/>
+  <assign CC="24" param="Cow Bell Level"/>
+  <assign CC="25" param="Laser Gun Level"/>
+  <assign CC="26" param="Cymbal Level"/>
+  <assign CC="27" param="Open Hi Hat Level"/>
+  <assign CC="28" param="Closed Hi Hat Level"/>
+  <assign CC="29" param="Accent Level"/>
+  <assign CC="30" param="Bass Drum Tone"/>
+  <assign CC="31" param="Bass Drum Decay"/>
+  <assign CC="32" param="Bass Drum Sweep"/>
+  <assign CC="33" param="Snare Drum Tone"/>
+  <assign CC="34" param="Snare Drum Decay"/>
+  <assign CC="35" param="Snare Drum Snappy"/>
+  <assign CC="36" param="Low Conga Tunning"/>
+  <assign CC="37" param="Low Conga Decay"/>
+  <assign CC="38" param="Mid Conga Tunning"/>
+  <assign CC="39" param="Mid Conga Decay"/>
+  <assign CC="40" param="Hi Conga Tunning"/>
+  <assign CC="41" param="Hi Conga Decay"/>
+  <assign CC="42" param="Low Tom Tunning"/>
+  <assign CC="43" param="Low Tom Decay"/>
+  <assign CC="44" param="Low Tom Snappy"/>
+  <assign CC="45" param="Mid Tom Tunning"/>
+  <assign CC="46" param="Mid Tom Decay"/>
+  <assign CC="47" param="Mid Tom Snappy"/>
+  <assign CC="48" param="Hi Tom Tunning"/>
+  <assign CC="49" param="Hi Tom Decay"/>
+  <assign CC="50" param="Hi Tom Snappy"/>
+  <assign CC="51" param="Claves Tunning"/>
+  <assign CC="52" param="Claves Decay"/>
+  <assign CC="53" param="Rim Shot Tunning"/>
+  <assign CC="54" param="Rim Shot Decay"/>
+  <assign CC="55" param="Maracas Tone"/>
+  <assign CC="56" param="Hand Clap Tone"/>
+  <assign CC="57" param="Hand Clap Reverb"/>
+  <assign CC="58" param="Cow Bell Tunning"/>
+  <assign CC="59" param="Cow Bell Decay"/>
+  <assign CC="60" param="Laser Gun Depth"/>
+  <assign CC="61" param="Laser Gun Decay"/>
+  <assign CC="62" param="Laser Gun Sweep"/>
+  <assign CC="63" param="Cymbal Tone"/>
+  <assign CC="80" param="Cymbal Decay"/>
+  <assign CC="81" param="Open Hi Hat Tone"/>
+  <assign CC="82" param="Open Hi Hat Decay"/>
+  <assign CC="83" param="Closed Hi Hat Tone"/>
+  <assign CC="85" param="Closed Hi Hat Decay"/>
+  <assign CC="86" param="Hi Hat Filters Freq"/>
+  <assign CC="87" param="Main Volume"/>
+</MidiControlMap>
