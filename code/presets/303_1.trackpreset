@@ -2,7 +2,10 @@ var o, p;
 o = [
 	IdentityDictionary.prNew,  Array.prNew(24),  IdentityDictionary.prNew,  Array.prNew(132),  
 	Set.prNew,  Array.prNew(4),  IdentityDictionary.prNew,  Array.prNew(132),  
-	IdentityDictionary.prNew,  Array.prNew(4),  {|track, val|
+	IdentityDictionary.prNew,  Array.prNew(8),  IdentityDictionary.prNew,  Array.prNew(4),  
+	{|track, val|
+	track.setParam('Env Mod', val);
+},  IdentityDictionary.prNew,  Array.prNew(4),  {|track, val|
 	track.setParam('Cutoff', val);
 	track.setParam('Resonance', val.linlin(0, 127, 50, 110));
 	track.setParam('Distortion Clip', val.linlin(0, 127, 80, 50));
@@ -102,10 +105,23 @@ p = [
 		'Arpe Chord',  0,  nil,  nil,  
 		nil,  nil,  nil,  nil ],  
 	// IdentityDictionary
-	8, [ array: o[9],  size: 1,  
+	8, [ array: o[9],  size: 2,  
 		proto: nil,  parent: nil,  
 		know: false ],  
 	// Array
-	9, [ nil,  nil,  'filter',  o[10] ]
+	9, [ nil,  nil,  '303b',  o[10],  
+		nil,  nil,  '303a',  o[13] ],  
+	// IdentityDictionary
+	10, [ array: o[11],  size: 1,  
+		proto: nil,  parent: nil,  
+		know: false ],  
+	// Array
+	11, [ nil,  nil,  'wank',  o[12] ],  
+	// IdentityDictionary
+	13, [ array: o[14],  size: 1,  
+		proto: nil,  parent: nil,  
+		know: false ],  
+	// Array
+	14, [ nil,  nil,  'filter',  o[15] ]
 ];
 prUnarchive(o,p);
