@@ -148,14 +148,16 @@ WarpTrack {
 
 	assignAll {|paramControls, learn=false, callback|
 		var action = {
+			var channel = settings['midiChannel'];
+
 			paramControls.keysValuesDo { |paramKey, num|
-				if(parent.isControlAvailable(num)) {
+				if(parent.isControlAvailable(channel, num)) {
 					settings['paramControls'][paramKey] = num;
-					parent.setControl(num, paramKey);
+					parent.setControl(channel, num, paramKey);
 					if(learn) {
-						parent.control(settings['midiChannel'], num, 127);
+						parent.control(channel, num, 127);
 						0.05.wait;
-						parent.control(settings['midiChannel'], num, 0);
+						parent.control(channel, num, 0);
 					};
 					paramKey ++ " assigned to controlNum " ++ num;
 				} {
@@ -179,6 +181,9 @@ WarpTrack {
 	initParams {
 		settings['params'].keysValuesDo { |key, value|
 			this.setParam(key, value);
+		};
+		settings['paramControls'].keysValuesDo { |key, value|
+			parent.setControl(settings['midiChannel'], value, key);
 		};
 	}
 
