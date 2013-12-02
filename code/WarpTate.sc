@@ -49,16 +49,16 @@ WarpTate {
 		clock.tempo = tempo / 60;
 	}
 
-	addTrack {|trackKey, sensorKey, channel|
-		^this.prAddTrack('new', trackKey, sensorKey);
+	addTrack {|trackKey, sensorKey, channel, type|
+		^this.prAddTrack('new', trackKey, sensorKey, channel, type);
 	}
 
 	loadTrack {|trackKey, sensorKey, path|
 		^this.prAddTrack('read', trackKey, sensorKey, path);
 	}
 
-	prAddTrack {|call, trackKey, sensorKey, channel|
-		tracks[trackKey] = WarpTrack.perform(call, this, trackKey, channel);
+	prAddTrack {|call, trackKey, sensorKey, channel, type|
+		tracks[trackKey] = WarpTrack.perform(call, this, trackKey, channel, type);
 
 		if(sensorKey.notNil) {
 			this.addTrackToSensor(trackKey, sensorKey);
