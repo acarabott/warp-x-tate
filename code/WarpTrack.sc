@@ -3,55 +3,103 @@
 //
 
 WarpTrack {
+	classvar <defaults;
+
 	var <parent;
 	var <key;
 	var <sensorFuncs;
-
 	var <settings;
 
-	*new {|argParent, argKey, argMidiChannel|
-		^super.new.init(argParent, argKey, argMidiChannel);
+	*initClass {
+		defaults = IdentityDictionary[
+			'303' -> IdentityDictionary[
+				'paramControls' -> IdentityDictionary[
+					'tuning' -> 9,
+					'slidetime' -> 14,
+					'cutoff' -> 15,
+					'res' -> 16,
+					'sweep' -> 17,
+					'envmod' -> 18,
+					'envatt' -> 19,
+					'envdec' -> 20,
+					'accdec' -> 21,
+					'envacc' -> 22,
+					'accvol' -> 23,
+					'steplen' -> 24,
+					'distpre' -> 27,
+					'distsize' -> 28,
+					'distden' -> 29,
+					'distclip' -> 30,
+					'distwet' -> 31,
+					'distbright' -> 32,
+					'waveform' -> 3,
+					'diston' -> 25,
+					'distmode' -> 26,
+					'vol' -> 33,
+				],
+				'params' -> IdentityDictionary[
+					'tuning' 		-> 64,
+					'slidetime' 	-> 64,
+					'cutoff' 		-> 90,
+					'res' 			-> 127,
+					'sweep' 		-> 127,
+					'envmod' 		-> 0,
+					'envatt' 		-> 0,
+					'envdec' 		-> 0,
+					'accdec' 		-> 0,
+					'envacc' 		-> 30,
+					'accvol' 		-> 3,
+					'steplen' 		-> 77,
+					'distpre' 		-> 51,
+					'distsize' 		-> 110,
+					'distden' 		-> 23,
+					'distclip' 		-> 55,
+					'distwet' 		-> 127,
+					'distbright' 	-> 71,
+					'waveform' 		-> 30,
+					'diston' 		-> 127,
+					'distmode' 		-> 23,
+					'vol' 			-> 127
+				]
+			],
+			'808' -> IdentityDictionary[
+				'params' -> IdentityDictionary[],
+				'paramControls' -> IdentityDictionary[]
+			]
+		];
+	}
+
+	*new {|argParent, argKey, argMidiChannel, argType|
+		^super.new.init(argParent, argKey, argMidiChannel, argType);
 	}
 
 	*read {|argParent, argKey, path|
 		^super.new.init(argParent, argKey).loadPreset(path);
 	}
 
-	init {|argParent, argKey, argMidiChannel|
+	init {|argParent, argKey, argMidiChannel, argType|
 		parent = argParent;
 		key = argKey;
 
 		settings = IdentityDictionary[
 			'midiChannel'	-> argMidiChannel,
 			'notes'			-> Set[],
-			'params'		-> IdentityDictionary[
-				'tuning' 		-> 64,
-				'slidetime' 	-> 64,
-				'cutoff' 		-> 90,
-				'res' 			-> 127,
-				'sweep' 		-> 127,
-				'envmod' 		-> 0,
-				'envatt' 		-> 0,
-				'envdec' 		-> 0,
-				'accdec' 		-> 0,
-				'envacc' 		-> 30,
-				'accvol' 		-> 3,
-				'steplen' 		-> 77,
-				'distpre' 		-> 51,
-				'distsize' 		-> 110,
-				'distden' 		-> 23,
-				'distclip' 		-> 55,
-				'distwet' 		-> 127,
-				'distbright' 	-> 71,
-				'waveform' 		-> 30,
-				'diston' 		-> 127,
-				'distmode' 		-> 23,
-				'vol' 			-> 127
-			],
+			'params'		-> IdentityDictionary[],
 			'paramControls'	-> IdentityDictionary[],
 			'patternTrack'	-> true,
 			'sensorFuncs'	-> IdentityDictionary[];
 		];
+
+		if(argType.notNil) {
+			settings['type'] = argType;
+			if(WarpTrack.defaults.keys.includes(argType)) {
+				['paramControls', 'params'].do {|key, i|
+					settings[key] = WarpTrack.defaults[argType][key];
+				}
+			};
+
+			this.initParams();
+		};
 	}
 
 	on {|note, quant=4|
