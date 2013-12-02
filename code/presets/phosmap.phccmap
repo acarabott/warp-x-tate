@@ -1,26 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <MidiControlMap name="Phoscyon">
-  <assign CC="3" param="Waveform"/>
-  <assign CC="9" param="Tuning"/>
-  <assign CC="14" param="Slide Time"/>
-  <assign CC="15" param="Cutoff"/>
-  <assign CC="16" param="Resonance"/>
-  <assign CC="17" param="Sweep Time"/>
-  <assign CC="18" param="Env Mod"/>
-  <assign CC="19" param="Env Attack"/>
-  <assign CC="20" param="Env Decay"/>
-  <assign CC="21" param="Accent Decay"/>
-  <assign CC="22" param="Env Accent"/>
-  <assign CC="23" param="Accent Volume"/>
-  <assign CC="24" param="Step Length"/>
-  <assign CC="25" param="Distortion State"/>
-  <assign CC="26" param="Distortion Route"/>
-  <assign CC="27" param="Distortion Preamp"/>
-  <assign CC="28" param="Distortion Size"/>
-  <assign CC="29" param="Distortion Density"/>
-  <assign CC="30" param="Distortion Clip"/>
-  <assign CC="31" param="Distortion Wetness"/>
-  <assign CC="32" param="Distortion Brightness"/>
-  <assign CC="33" param="Main Volume"/>
+  <assign CC="3" param="Tuning"/>
+  <assign CC="9" param="Slide Time"/>
+  <assign CC="14" param="Cutoff"/>
+  <assign CC="15" param="Resonance"/>
+  <assign CC="16" param="Sweep Time"/>
+  <assign CC="17" param="Env Mod"/>
+  <assign CC="18" param="Env Attack"/>
+  <assign CC="19" param="Env Decay"/>
+  <assign CC="20" param="Accent Decay"/>
+  <assign CC="21" param="Env Accent"/>
+  <assign CC="22" param="Accent Volume"/>
+  <assign CC="23" param="Step Length"/>
+  <assign CC="24" param="Distortion Preamp"/>
+  <assign CC="25" param="Distortion Size"/>
+  <assign CC="26" param="Distortion Density"/>
+  <assign CC="27" param="Distortion Clip"/>
+  <assign CC="28" param="Distortion Wetness"/>
+  <assign CC="29" param="Distortion Brightness"/>
+  <assign CC="30" param="Waveform"/>
+  <assign CC="31" param="Accent Mode"/>
+  <assign CC="32" param="Sweep Mode"/>
+  <assign CC="33" param="Distortion State"/>
+  <assign CC="34" param="Distortion Route"/>
+  <assign CC="35" param="Main Volume"/>
+  <assign CC="36" param="Arpe Chord"/>
+  <assign CC="37" param="Arpe Mode"/>
+  <assign CC="38" param="Arpe Shuffle"/>
+  <assign CC="39" param="Arpe Range Sub 1"/>
+  <assign CC="40" param="Arpe Range Zero"/>
+  <assign CC="41" param="Arpe Range Add 1"/>
+  <assign CC="42" param="Arpe Range Add 2"/>
+  <assign CC="43" param="Arpe Multiplier"/>
+  <assign CC="44" param="Arpe Repeater"/>
 </MidiControlMap>

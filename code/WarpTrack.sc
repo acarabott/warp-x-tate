@@ -1,7 +1,3 @@
-// A WarpTrack represents a single layer in an interaction
-// e.g. a 303 playing patterns
-//
-
 WarpTrack {
 	classvar <defaults;
 
@@ -229,7 +225,7 @@ WarpTrack {
 			'params'		-> IdentityDictionary[],
 			'paramControls'	-> IdentityDictionary[],
 			'patternTrack'	-> true,
-			'sensorFuncs'	-> IdentityDictionary[];
+			'sensorFuncs'	-> IdentityDictionary[]
 		];
 
 		if(argType.notNil) {
@@ -354,18 +350,26 @@ WarpTrack {
 		}.fork;
 	}
 
-	sensor {|val|
-		settings['sensorFuncs'].do {|func, i|
+	sensor {|sensorKey, val|
+		settings['sensorFuncs'][sensorKey].do {|func, i|
 			func.(this, val);
 		}
 	}
 
-	addFunc {|funcKey, func|
-		settings['sensorFuncs'][funcKey] = func;
+	addFunc {|sensorKey, funcKey, func|
+		if(settings['sensorFuncs'].includesKey(sensorKey).not) {
+			settings['sensorFuncs'][sensorKey] = IdentityDictionary[];
+		};
+
+		settings['sensorFuncs'][sensorKey][funcKey] = func;
 	}
 
-	removeFunc {|funcKey|
-		settings['sensorFuncs'][funcKey] = nil;
+	removeFunc {|sensorKey, funcKey|
+		settings['sensorFuncs'][sensorKey].removeAt(funcKey);
+
+		if(settings['sensorFuncs'][sensorKey].isEmpty) {
+			settings['sensorFuncs'].removeAt(sensorKey);
+		};
 	}
 
 	save {

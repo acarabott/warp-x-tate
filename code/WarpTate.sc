@@ -4,7 +4,6 @@ WarpTate {
 	var <tempo;
 	var <out;
 	var <tracks;
-	var <sensorTracks;
 	var <availableControls;
 	var <controls;
 	var <sensorVals;
@@ -30,13 +29,12 @@ WarpTate {
 
 		tracks = IdentityDictionary[];
 		sensorKeys = ['303a', '303b', '808a', '808b'];
-		sensorTracks = IdentityDictionary.newFrom([sensorKeys, List[]!4].lace);
 
 		availableControls = (0..127).collect {|channel|
 			(0..120).reject({|item, i|
-				[ 0, 1, 2, 4, 5, 6, 7, 8, 10, 11, 12, 13, 64, 65, 66, 67, 68, 69,
-				70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 84, 91, 92, 93, 94, 95, 96,
-				97, 98, 99, 100, 102 ].includes(item)
+				[ 0, 1, 2, 4, 5, 6, 7, 8, 10, 11, 12, 13, 64, 65, 66, 67, 68,
+				69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 84, 91, 92, 93, 94,
+				95, 96, 97, 98, 99, 100, 102 ].includes(item)
 			});
 		};
 
@@ -52,28 +50,17 @@ WarpTate {
 		clock.tempo = tempo / 60;
 	}
 
-	addTrack {|trackKey, sensorKey, channel, type|
-		^this.prAddTrack('new', trackKey, sensorKey, channel, type);
+	addTrack {|trackKey, channel, type|
+		^this.prAddTrack('new', trackKey, channel, type);
 	}
 
-	loadTrack {|trackKey, sensorKey, path|
-		^this.prAddTrack('read', trackKey, sensorKey, path);
+	loadTrack {|trackKey, path|
+		^this.prAddTrack('read', trackKey, path);
 	}
 
-	prAddTrack {|call, trackKey, sensorKey, channel, type|
+	prAddTrack {|call, trackKey, channel, type|
 		tracks[trackKey] = WarpTrack.perform(call, this, trackKey, channel, type);
-
-		if(sensorKey.notNil) {
-			this.addTrackToSensor(trackKey, sensorKey);
-		} {
-			"Track not assigned to a sensor, make sure to do this later".postln;
-		};
-
 		^tracks[trackKey];
-	}
-
-	addTrackToSensor {|trackKey, sensorKey|
-		sensorTracks[sensorKey].add(tracks[trackKey]);
 	}
 
 	removeTrack {|trackKey|
@@ -181,9 +168,20 @@ WarpTate {
 					sensorMins[i] = sensorMins[i] + sensorMinAdj;
 				};
 
-				sensorTracks[sensorKey].do {|trk, j|
-					trk.sensor(val.linlin(sensorMins[i], sensorMaxs[i], 0, 127));
-				};
+
+				tracks.do {|track, j|
+					if(track.settings['sensorFuncs'].includesKey(sensorKey)) {
+						track.sensor(
+							sensorKey,
+							val.linlin(
+								sensorMins[i],
+								sensorMaxs[i],
+								0,
+								127
+							)
+						);
+					};
+				}
 			}, ("/prox/" ++ sensorKey).asSymbol);
 		}
 	}
