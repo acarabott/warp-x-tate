@@ -356,9 +356,11 @@ WarpTrack {
 			};
 
 			this.assignAll(preset['paramControls'], false);
-
 			this.initParams();
-			this.on(settings['notes'].asArray[0]);
+
+			if(settings['notes'].size > 0) {
+				this.on(settings['notes'].asArray[0]);
+			};
 
 		}.fork;
 	}
