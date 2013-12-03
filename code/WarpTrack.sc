@@ -240,23 +240,20 @@ WarpTrack {
 	}
 
 	on {|note, quant=4|
-
-		if(settings['patternTrack']) {
-			this.allOff();
-		} {
-			this.off(note);
-		};
-
-		settings['notes'].add(note);
-
 		{
+			if(settings['patternTrack']) {
+				this.allOff();
+			} {
+				this.off(note, quant);
+			};
+			settings['notes'].add(note);
 			parent.noteOn(settings['midiChannel'], note, 127);
 		}.fork(parent.clock, quant:quant);
 	}
 
 	off {|note, quant=1|
-		settings['notes'].remove(note);
 		{
+			settings['notes'].remove(note);
 			parent.noteOff(settings['midiChannel'], note, 0);
 		}.fork(parent.clock, quant:quant);
 	}
