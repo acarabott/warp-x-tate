@@ -328,6 +328,8 @@ WarpTrack {
 				settings['paramControls'][paramKey],
 				val
 			);
+
+			settings['params'][paramKey] = val;
 		};
 
 		if(quant.notNil) {
