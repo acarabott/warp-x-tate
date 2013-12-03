@@ -100,7 +100,7 @@ WarpTrack {
 					'Closed Hi Hat Level' -> 64,
 					'Accent Level' -> 64,
 					'Bass Drum Tone' -> 64,
-					'Bass Drum Decay' -> 64,
+					'Bass Drum Decay' -> 96,
 					'Bass Drum Sweep' -> 64,
 					'Snare Drum Tone' -> 64,
 					'Snare Drum Decay' -> 64,
