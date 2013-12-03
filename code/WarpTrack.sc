@@ -345,10 +345,11 @@ WarpTrack {
 		var preset = Object.readArchive(path);
 
 		{
-			settings['midiChannel'] 	= preset['midiChannel'];
-			settings['sensorFuncs'] 	= preset['sensorFuncs'];
-			settings['patternTrack'] 	= preset['patternTrack'];
-			settings['params'] 			= preset['params'];
+			preset.keys.reject({|settingKey, i|
+				['notes', 'paramControls'].includes(settingKey);
+			}).do {|presetKey, i|
+				settings[presetKey] = preset[presetKey];
+			};
 
 			if(settings['patternTrack']) {
 				settings['notes'] = preset['notes'];
