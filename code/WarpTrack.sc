@@ -321,8 +321,22 @@ WarpTrack {
 		};
 	}
 
-	setParam {|paramKey, val|
-		parent.control(settings['midiChannel'], settings['paramControls'][paramKey], val);
+	setParam {|paramKey, val, quant|
+		var func = {
+			parent.control(
+				settings['midiChannel'],
+				settings['paramControls'][paramKey],
+				val
+			);
+		};
+
+		if(quant.notNil) {
+			{
+				func.();
+			}.fork(parent.clock, quant:quant);
+		} {
+			func.();
+		};
 	}
 
 	loadPreset {|path|
