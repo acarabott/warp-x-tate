@@ -3,11 +3,12 @@ x = WarpTate();
 
 ~three = x.loadTrack('303', "~/Projects/13-11_warp/code/presets/303_1.trackpreset".standardizePath);
 
-~eight = x.addTrack('808', 2, '808');
+~eight = x.addTrack('808_1', 2, '808');
 
 // three i like... 12, 24
 // tuning works well on 24
-~three.on(36);
+// 37
+~three.on(rrand(12, 107).postln);
 
 ~three.setParam('Tuning', 0.5 * 127)
 
@@ -16,33 +17,58 @@ x = WarpTate();
 	track.setParam('Tuning', val.linlin(0, 127, 64, 127).round((64/3)).min(127));
 });
 
-~eight.on(24);
+
+~eight.on(14);
+
+~eight.on(14);
+
+~eight.settings['midiChannel']
+~eight.assign('snareverb', learn:true);
+~eight.setParam('snareverb', 127);
+
+~eight.addFunc('808b','snareverb', {|track, val|
+	track.setParam('snareverb', val.linlin(0, 127, 0, 90));
+});
+
 
 ~eightKick = x.addTrack('808kick', 3, '808');
 
 ~eightKick.initParams();
 ~eightKick.setParam('Bass Drum Decay', 128*0.75)
 
+
+
+~eightKick.setParam('Bass Drum Level', 0, 1);
+
+~eightKick.setParam('Bass Drum Level', 64, 4);
+
 ~eightKick.settings['fourOn'] = false;
 
 ~eightKick.addFunc('808a', 'kick', {|track, val|
-	if(val >= 0.25 && track.settings['fourOn'].not) {
+	if(val >= (0.25 * 127) && track.settings['fourOn'].not) {
 		track.on(13, 1);
 		track.settings['fourOn'] = true;
 	};
-	if(val < 0.25 && track.settings['fourOn']) {
+	if(val < (0.25 * 127) && track.settings['fourOn']) {
 		track.on(12, 1);
 		track.settings['fourOn'] = false;
 		track.parent.clock.playNextBar({
 			track.on(12, 1);
 		});
 	};
+
+	track.setParam('Bass Drum Sweep', val.linlin(0, 127, 32, 77));
 });
+
+
 
 c = EZSlider(w, 280@20, label:"label");
 c.action_({|ez|
-	NetAddr.localAddr.sendMsg("/prox/808a", ez.value * 100);
+	NetAddr.localAddr.sendMsg("/prox/808b", ez.value * 100);
 });
+
+
+128*0.25
 
 ~eightKick.on(13, 1);
 
