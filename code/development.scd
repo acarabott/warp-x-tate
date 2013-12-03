@@ -1,26 +1,102 @@
+// not playing on load...
 x = WarpTate();
 
-~three = x.loadTrack('303', '303a', "~/Projects/13-11_warp/code/presets/303a.trackpreset".standardizePath);
+~three = x.loadTrack('303', "~/Projects/13-11_warp/code/presets/303_1.trackpreset".standardizePath);
 
-~three = x.addTrack('303_1', 0, '303');
+~eight = x.addTrack('808', 2, '808');
 
-~three.on(12);
+// three i like... 12, 24
+// tuning works well on 24
+~three.on(36);
 
-~three.addFunc('303a', 'filter', {|track, val|
-	track.setParam('Cutoff', val);
-	track.setParam('Resonance', val.linlin(0, 127, 50, 110));
-	track.setParam('Distortion Clip', val.linlin(0, 127, 80, 50));
-	track.setParam('Distortion Preamp', val.linlin(0, 127, 80, 50));
+~three.setParam('Tuning', 0.5 * 127)
+
+~three.addFunc('303b', 'tuning', {|track, val|
+
+	track.setParam('Tuning', val.linlin(0, 127, 64, 127).round((64/3)).min(127));
 });
 
+~eight.on(24);
+
+~eightKick = x.addTrack('808kick', 3, '808');
+
+~eightKick.initParams();
+~eightKick.setParam('Bass Drum Decay', 128*0.75)
+
+~eightKick.settings['fourOn'] = false;
+
+~eightKick.addFunc('808a', 'kick', {|track, val|
+	if(val >= 0.25 && track.settings['fourOn'].not) {
+		track.on(13, 1);
+		track.settings['fourOn'] = true;
+	};
+	if(val < 0.25 && track.settings['fourOn']) {
+		track.on(12, 1);
+		track.settings['fourOn'] = false;
+		track.parent.clock.playNextBar({
+			track.on(12, 1);
+		});
+	};
+});
+
+c = EZSlider(w, 280@20, label:"label");
+c.action_({|ez|
+	NetAddr.localAddr.sendMsg("/prox/808a", ez.value * 100);
+});
+
+~eightKick.on(13, 1);
+
+
+~eightKick.on(12, 1);
+
+x.clock.playNextBar({
+	~eightKick.on(12, 1);
+});
+
+{
+
+	}.fork(x.clock, )
+
+
+WarpTrack.defaults['808']['paramControls'].keys.select {|key| key.asString.contains("Bass")}
+
+"hihihi".contains("i")
+
+// Turn down the kick after hit
+// Turn down kick channel after hit
+// Trigger from SC
+// Second pattern 808
+	//
+
+
+
+
+
+0.6.round(0.1)
+
+
+x.out.noteOff(14, 2, 124)
+x.out.allNotesOff(3);
+~eight.on(14);
+
+~eight.off(16);
+
 ~three.save
-~three.addFunc('303b', 'wank', {|track, val|
+
+~three.addFunc('3031', 'wank', {|track, val|
 	track.setParam('Env Mod', val);
 });
 
 a = EZSlider(w, 280@20, label:"label");
 a.action_({|ez|
 	NetAddr.localAddr.sendMsg("/prox/303a", ez.value * 100);
+});
+
+~three.settings['sensorFuncs']['303b'].removeAt('wank');
+
+b = EZSlider(w, 280@20, label:"label");
+b.action_({|ez|
+	NetAddr.localAddr.sendMsg("/prox/303b", ez.value * 100);
 });
 
 ~three.save
