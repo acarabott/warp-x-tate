@@ -287,6 +287,7 @@ WarpTrack {
 			paramControls.keysValuesDo { |paramKey, num|
 				if(parent.isControlAvailable(channel, num)) {
 					settings['paramControls'][paramKey] = num;
+					settings['params'][paramKey] = 0;
 					parent.setControl(channel, num, paramKey);
 					if(learn) {
 						parent.control(channel, num, 127);
