@@ -3,7 +3,6 @@ WarpTrack {
 
 	var <parent;
 	var <key;
-	var <sensorFuncs;
 	var <settings;
 
 	*initClass {
