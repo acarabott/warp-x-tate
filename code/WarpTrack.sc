@@ -276,7 +276,7 @@ WarpTrack {
 		if(num.notNil) {
 			this.assignAll(IdentityDictionary[paramKey -> num], learn);
 		} {
-			parent.assign(key, paramKey, learn);
+			parent.assign(key, paramKey, nil, learn);
 		};
 	}
 
