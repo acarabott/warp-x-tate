@@ -382,6 +382,10 @@ WarpTrack {
 		};
 	}
 
+	availableControls {
+		^parent.availableControls[settings['midiChannel']].copy;
+	}
+
 	save {
 		Dialog.savePanel({|path|
 			settings.writeArchive(path);
