@@ -2,7 +2,6 @@ WarpTrack {
 	classvar <defaults;
 
 	var <parent;
-	var <key;
 	var <settings;
 
 	*initClass {
@@ -210,15 +209,15 @@ WarpTrack {
 		^super.new.init(argParent, argKey, argMidiChannel, argType);
 	}
 
-	*read {|argParent, argKey, path|
-		^super.new.init(argParent, argKey).readPreset(path);
+	*read {|argParent, path|
+		^super.new.init(argParent).readPreset(path);
 	}
 
 	init {|argParent, argKey, argMidiChannel, argType|
 		parent = argParent;
-		key = argKey;
 
 		settings = IdentityDictionary[
+			'key'			-> argKey,
 			'midiChannel'	-> argMidiChannel,
 			'notes'			-> Set[],
 			'params'		-> IdentityDictionary[],
@@ -296,7 +295,7 @@ WarpTrack {
 		if(num.notNil) {
 			this.assignAll(IdentityDictionary[paramKey -> num], learn);
 		} {
-			parent.assign(key, paramKey, nil, learn);
+			parent.assign(settings['key'], paramKey, nil, learn);
 		};
 	}
 
@@ -362,17 +361,19 @@ WarpTrack {
 	}
 
 	readPreset {|path, checkAvailable=true|
-		this.loadPreset(Object.readArchive(path), checkAvailable);
+		this.loadPreset(Object.readArchive(path), checkAvailable, nil);
 	}
 
 	loadPreset {|preset, checkAvailable=true, quant=4|
-		{
+		var func = {
+			// copy all settings except notes and paramControls
 			preset.keys.reject({|settingKey, i|
 				['notes', 'paramControls'].includes(settingKey);
 			}).do {|presetKey, i|
 				settings[presetKey] = preset[presetKey];
 			};
 
+			// copy notes if it's a patternTrack
 			if(preset['patternTrack']) {
 				settings['notes'] = preset['notes'];
 			};
@@ -391,7 +392,13 @@ WarpTrack {
 				this.on(settings['notes'].asArray[0]);
 			};
 
-		}.fork(parent.clock, quant);
+		};
+
+		if(quant.notNil) {
+			func.fork(parent.clock, quant);
+		} {
+			func.();
+		}
 	}
 
 	sensor {|sensorKey, val|

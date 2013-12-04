@@ -71,15 +71,15 @@ WarpTate {
 	}
 
 	addTrack {|trackKey, channel, type|
-		^this.prAddTrack('new', trackKey, channel, type);
+		tracks[trackKey] = WarpTrack(this, trackKey, channel, type);
+		^tracks[trackKey];
 	}
 
-	loadTrack {|trackKey, path|
-		^this.prAddTrack('read', trackKey, path);
-	}
+	readTrack {|path|
+		var track = WarpTrack.read(this, path),
+			trackKey = track.settings['key'];
 
-	prAddTrack {|call, trackKey, channel, type|
-		tracks[trackKey] = WarpTrack.perform(call, this, trackKey, channel, type);
+		tracks[trackKey] = track;
 		^tracks[trackKey];
 	}
 

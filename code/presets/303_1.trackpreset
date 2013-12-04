@@ -19,13 +19,13 @@ o = [
 ];
 p = [
 	// IdentityDictionary
-	0, [ array: o[1],  size: 7,  
+	0, [ array: o[1],  size: 8,  
 		proto: nil,  parent: nil,  
 		know: false ],  
 	// Array
 	1, [ 'paramControls',  o[2],  nil,  nil,  
 		'midiChannel',  0,  'patternTrack',  true,  
-		nil,  nil,  'type',  '303',  
+		'key',  '303_1',  'type',  '303',  
 		nil,  nil,  'notes',  o[4],  
 		nil,  nil,  'params',  o[6],  
 		nil,  nil,  'sensorFuncs',  o[8] ],  
