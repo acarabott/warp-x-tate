@@ -392,11 +392,15 @@ WarpTrack {
 	}
 
 	addFunc {|sensorKey, funcKey, func|
-		if(settings['sensorFuncs'].includesKey(sensorKey).not) {
-			settings['sensorFuncs'][sensorKey] = IdentityDictionary[];
-		};
+		if(parent.sensorKeys.includes(sensorKey)) {
+			if(settings['sensorFuncs'].includesKey(sensorKey).not) {
+				settings['sensorFuncs'][sensorKey] = IdentityDictionary[];
+			};
 
-		settings['sensorFuncs'][sensorKey][funcKey] = func;
+			settings['sensorFuncs'][sensorKey][funcKey] = func;
+		} {
+			"parent doesn't have that sensor key".postln;
+		};
 	}
 
 	removeFunc {|sensorKey, funcKey|
