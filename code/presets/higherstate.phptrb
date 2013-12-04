@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PatternBank>
+  <Pattern application="Phoscyon" name="Higher State" length="16" shuffle="0"
+           tempo="120">
+    <Step note="7" octaveUp="0" octaveDown="0" gate="1" accent="0" slide="1"
+      gateLevel="0" accentLevel="0"slideLevel="0"/>
+    <Step note="7" octaveUp="0" octaveDown="1" gate="1" accent="0" slide="0"
+      gateLevel="0" accentLevel="0"slideLevel="0"/>
+    <Step note="7" octaveUp="0" octaveDown="0" gate="1" accent="0" slide="1"
+      gateLevel="0" accentLevel="0"slideLevel="0"/>
+    <Step note="7" octaveUp="0" octaveDown="0" gate="1" accent="0" slide="1"
+      gateLevel="0" accentLevel="0"slideLevel="0"/>
+    <Step note="7" octaveUp="0" octaveDown="0" gate="1" accent="0" slide="0"
+      gateLevel="0" accentLevel="0"slideLevel="0"/>
+    <Step note="7" octaveUp="0" octaveDown="0" gate="1" accent="0" slide="0"
+      gateLevel="0" accentLevel="0"slideLevel="0"/>
+    <Step note="11" octaveUp="0" octaveDown="0" gate="1" accent="0" slide="0"
+      gateLevel="0" accentLevel="0"slideLevel="0"/>
+    <Step note="7" octaveUp="0" octaveDown="0" gate="1" accent="0" slide="0"
+      gateLevel="0" accentLevel="0"slideLevel="0"/>
+    <Step note="11" octaveUp="0" octaveDown="0" gate="1" accent="0" slide="0"
+      gateLevel="0" accentLevel="0"slideLevel="0"/>
+    <Step note="7" octaveUp="0" octaveDown="0" gate="1" accent="0" slide="1"
+      gateLevel="0" accentLevel="0"slideLevel="0"/>
+    <Step note="7" octaveUp="0" octaveDown="0" gate="1" accent="0" slide="0"
+      gateLevel="0" accentLevel="0"slideLevel="0"/>
+    <Step note="11" octaveUp="0" octaveDown="0" gate="1" accent="0" slide="0"
+      gateLevel="0" accentLevel="0"slideLevel="0"/>
+    <Step note="7" octaveUp="0" octaveDown="0" gate="1" accent="0" slide="1"
+      gateLevel="0" accentLevel="0"slideLevel="0"/>
+    <Step note="7" octaveUp="0" octaveDown="0" gate="1" accent="0" slide="1"
+      gateLevel="0" accentLevel="0"slideLevel="0"/>
+    <Step note="7" octaveUp="0" octaveDown="0" gate="1" accent="0" slide="0"
+      gateLevel="0" accentLevel="0"slideLevel="0"/>
+    <Step note="11" octaveUp="0" octaveDown="0" gate="1" accent="0" slide="0"
+      gateLevel="0" accentLevel="0"slideLevel="0"/>
+  </Pattern>
+</PatternBank>
+
+
