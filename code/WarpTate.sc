@@ -39,7 +39,8 @@ WarpTate {
 		// 		]
 		sensorKeys = ['303a', '303b', '808a', '808b'];
 
-		availableControls = (0..127).collect {|channel|
+		// channel 16 reserved for tempo changes
+		availableControls = 15.collect {|channel|
 			(0..120).reject({|item, i|
 				[ 0, 1, 2, 4, 5, 6, 7, 8, 10, 11, 12, 13, 64, 65, 66, 67, 68,
 				69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 84, 91, 92, 93, 94,
