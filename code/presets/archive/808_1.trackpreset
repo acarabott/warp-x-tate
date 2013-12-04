@@ -1,60 +1,30 @@
 var o, p;
 o = [
-	IdentityDictionary.prNew,  Array.prNew(32),  IdentityDictionary.prNew,  Array.prNew(4),  
-	IdentityDictionary.prNew,  Array.prNew(4),  {|track, val|
-	if(val >= (0.25 * 127) && track.settings['fourOn'].not) {
-		track.on(13, 1);
-		track.settings['fourOn'] = true;
-	};
-	if(val < (0.25 * 127) && track.settings['fourOn']) {
-		track.on(12, 1);
-		track.settings['fourOn'] = false;
-		track.parent.clock.playNextBar({
-			track.on(12, 1);
-		});
-	};
-
-	track.setParam('Bass Drum Sweep', val.linlin(0, 127, 32, 77));
-},  Set.prNew,  
-	Array.prNew(4),  IdentityDictionary.prNew,  Array.prNew(236),  IdentityDictionary.prNew,  
-	Array.prNew(236)
+	IdentityDictionary.prNew,  Array.prNew(24),  IdentityDictionary.prNew,  Array.prNew(236),  
+	Set.prNew,  Array.prNew(4),  IdentityDictionary.prNew,  Array.prNew(236),  
+	IdentityDictionary.prNew,  Array.prNew(4),  IdentityDictionary.prNew,  Array.prNew(4),  
+	{|track, val|
+	track.setParam('snareverb', val.linlin(0, 127, 0, 90));
+}
 ];
 p = [
 	// IdentityDictionary
-	0, [ array: o[1],  size: 9,  
+	0, [ array: o[1],  size: 7,  
 		proto: nil,  parent: nil,  
 		know: false ],  
 	// Array
-	1, [ 'sensorFuncs',  o[2],  nil,  nil,  
-		nil,  nil,  'notes',  o[7],  
-		nil,  nil,  nil,  nil,  
-		nil,  nil,  'key',  '808_2',  
-		nil,  nil,  nil,  nil,  
-		'midiChannel',  3,  'patternTrack',  true,  
-		'paramControls',  o[9],  'type',  '808',  
-		'fourOn',  false,  'params',  o[11] ],  
+	1, [ 'paramControls',  o[2],  nil,  nil,  
+		'midiChannel',  2,  'patternTrack',  true,  
+		nil,  nil,  'type',  '808',  
+		nil,  nil,  'notes',  o[4],  
+		nil,  nil,  'params',  o[6],  
+		nil,  nil,  'sensorFuncs',  o[8] ],  
 	// IdentityDictionary
-	2, [ array: o[3],  size: 1,  
+	2, [ array: o[3],  size: 60,  
 		proto: nil,  parent: nil,  
 		know: false ],  
 	// Array
-	3, [ '808a',  o[4],  nil,  nil ],  
-	// IdentityDictionary
-	4, [ array: o[5],  size: 1,  
-		proto: nil,  parent: nil,  
-		know: false ],  
-	// Array
-	5, [ 'kick',  o[6],  nil,  nil ],  
-	// Set
-	7, [ array: o[8],  size: 0 ],  
-	// Array
-	8, [ nil,  nil,  nil,  nil ],  
-	// IdentityDictionary
-	9, [ array: o[10],  size: 60,  
-		proto: nil,  parent: nil,  
-		know: false ],  
-	// Array
-	10, [ 'Mid Tom Decay',  46,  nil,  nil,  
+	3, [ 'Mid Tom Decay',  46,  nil,  nil,  
 		'Cymbal Level',  26,  nil,  nil,  
 		'Mid Tom Level',  18,  nil,  nil,  
 		nil,  nil,  'Snare Drum Snappy',  35,  
@@ -113,12 +83,16 @@ p = [
 		nil,  nil,  nil,  nil,  
 		nil,  nil,  'Laser Gun Depth',  60,  
 		nil,  nil,  nil,  nil ],  
+	// Set
+	4, [ array: o[5],  size: 0 ],  
+	// Array
+	5, [ nil,  nil,  nil,  nil ],  
 	// IdentityDictionary
-	11, [ array: o[12],  size: 60,  
+	6, [ array: o[7],  size: 60,  
 		proto: nil,  parent: nil,  
 		know: false ],  
 	// Array
-	12, [ 'Mid Tom Decay',  64,  nil,  nil,  
+	7, [ 'Mid Tom Decay',  64,  nil,  nil,  
 		'Cymbal Level',  64,  nil,  nil,  
 		'Mid Tom Level',  64,  nil,  nil,  
 		nil,  nil,  'Snare Drum Snappy',  64,  
@@ -176,6 +150,18 @@ p = [
 		'Rim Shot Level',  64,  'Bass Drum Sweep',  64,  
 		nil,  nil,  nil,  nil,  
 		nil,  nil,  'Laser Gun Depth',  127,  
-		nil,  nil,  nil,  nil ]
+		nil,  nil,  nil,  nil ],  
+	// IdentityDictionary
+	8, [ array: o[9],  size: 1,  
+		proto: nil,  parent: nil,  
+		know: false ],  
+	// Array
+	9, [ nil,  nil,  '808b',  o[10] ],  
+	// IdentityDictionary
+	10, [ array: o[11],  size: 1,  
+		proto: nil,  parent: nil,  
+		know: false ],  
+	// Array
+	11, [ nil,  nil,  'snareverb',  o[12] ]
 ];
 prUnarchive(o,p);
