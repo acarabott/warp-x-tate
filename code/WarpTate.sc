@@ -2,6 +2,8 @@ WarpTate {
 	var <sensorKeys;
 	var <clock;
 	var <tempo;
+	var <>tempoChannel;
+	var <>tempoControl;
 	var <out;
 	var <tracks;
 	var <sections;
@@ -20,6 +22,8 @@ WarpTate {
 
 	init {
 		tempo = 120;
+		tempoChannel = 15;
+		tempoControl = 3;
 		clock = TempoClock.default
 			.tempo_(2)
 			.permanent_(true);
@@ -55,9 +59,15 @@ WarpTate {
 		CmdPeriod.add({this.stop});
 	}
 
-	tempo_ {|aTempo|
-		tempo = aTempo;
-		clock.tempo = tempo / 60;
+	tempo_ {|argTempo|
+		if(argTempo >= 50 && argTempo <= 177) {
+			tempo = argTempo;
+			clock.tempo = tempo / 60;
+
+			out.control(tempoChannel, tempoControl, tempo - 50);
+		} {
+			"Tempo out of Logic's range :(".postln;
+		};
 	}
 
 	addTrack {|trackKey, channel, type|
