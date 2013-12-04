@@ -46,8 +46,70 @@ z = {
 }.fork(AppClock);
 
 
-// x = WarpTate();
+x = WarpTate();
 
-// x.loadTrack('303_1', "~/Projects/13-11_warp/code/presets/303_1.trackpreset".standardizePath);
-// x.loadTrack('808_1', "~/Projects/13-11_warp/code/presets/808_1.trackpreset".standardizePath);
-// x.loadTrack('808_2', "~/Projects/13-11_warp/code/presets/808_2.trackpreset".standardizePath);
+~three.assign('vibe', learn:true);
+
+~three.addFunc('303b', 'vibe', {|track, val|
+	track.setParam('vibe', val.linlin(0, 50, 0, 90));
+});
+~three.save
+
+~three = x.loadTrack('303_1', "~/Projects/13-11_warp/code/presets/303_1.trackpreset".standardizePath);
+~eightone = x.loadTrack('808_1', "~/Projects/13-11_warp/code/presets/808_1.trackpreset".standardizePath);
+~eighttwo = x.loadTrack('808_2', "~/Projects/13-11_warp/code/presets/808_2.trackpreset".standardizePath);
+
+~eightone.settings['params']['snareverb']
+
+~eightone.on(14);
+~eighttwo.on(13);
+~eighttwo.settings['params']
+
+x.tracks['303_1'].on(24)
+
+x.tracks['303_1'].initParams();
+x.tracks['303_1'].settings['paramControls']
+
+~preset = Object.readArchive("~/Projects/13-11_warp/code/presets/303_1.trackpreset".standardizePath);
+
+x.tracks['303_1'].settings['params'] = WarpTrack.defaults['303']['params']
+
+
+x.tracks['303_1'].save
+
+x.loadTrack('303_1', "~/Desktop/test.trackpreset".standardizePath);
+
+~preset = Object.readArchive("~/Desktop/test.trackpreset".standardizePath);
+
+~preset['params']
+
+x.tracks['303_1']
+~preset.keys.reject{ |settingKey, i| ['notes', 'paramControls'].includes(settingKey)}.do {|presetKey, i|
+
+}
+
+
+s.boot;
+
+r = Routine {
+	inf.do {|i|
+		Synth(\beep, [\freq, [1320, 880, 880, 880].wrapAt(i), \amp, 0.2, \pan, 0, \out, 0]);
+		1.wait;
+	}
+};
+
+r.play(quant:4);
+
+
+
+
+TempoClock.default.schedAbs(TempoClock.default.nextBar - 0.5, {Synth(\beep, [\freq, 440, \amp, 0.2, \pan, 0, \out, 0]);})
+
+TempoClock.default.beats2bars(3.5)
+this.bars2beats(this.beats2bars(beat).ceil);
+
+(TempoClock.beats % TempoClock.beatsPerBar) +
+
+(TempoClock.bar * TempoClock.beatsPerBar) + .postln; TempoClock.beats.postln;
+
+TempoClock.beats + (TempoClock.timeToNextBeat(quant) - 0.1)
