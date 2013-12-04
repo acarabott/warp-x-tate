@@ -1,0 +1,115 @@
+var o, p;
+o = [
+	IdentityDictionary.prNew,  Array.prNew(24),  IdentityDictionary.prNew,  Array.prNew(132),  
+	Set.prNew,  Array.prNew(4),  IdentityDictionary.prNew,  Array.prNew(132),  
+	IdentityDictionary.prNew,  Array.prNew(4),  IdentityDictionary.prNew,  Array.prNew(4),  
+	{|track, val|
+	track.setParam('Cutoff', val);
+}
+];
+p = [
+	// IdentityDictionary
+	0, [ array: o[1],  size: 7,  
+		proto: nil,  parent: nil,  
+		know: false ],  
+	// Array
+	1, [ 'paramControls',  o[2],  nil,  nil,  
+		'midiChannel',  0,  'patternTrack',  true,  
+		nil,  nil,  'type',  '303',  
+		nil,  nil,  'notes',  o[4],  
+		nil,  nil,  'params',  o[6],  
+		nil,  nil,  'sensorFuncs',  o[8] ],  
+	// IdentityDictionary
+	2, [ array: o[3],  size: 33,  
+		proto: nil,  parent: nil,  
+		know: false ],  
+	// Array
+	3, [ 'Sweep Time',  16,  'Distortion Brightness',  29,  
+		'Arpe Shuffle',  38,  'Env Attack',  18,  
+		'Accent Volume',  22,  'Accent Decay',  20,  
+		'Env Mod',  17,  'Distortion State',  33,  
+		'Arpe Range Add 1',  41,  'Step Length',  23,  
+		'Distortion Preamp',  24,  'Arpe Range Add 2',  42,  
+		nil,  nil,  nil,  nil,  
+		'Accent Mode',  31,  'Arpe Repeater',  44,  
+		nil,  nil,  'Distortion Route',  34,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		'Arpe Range Sub 1',  39,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		'Resonance',  15,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  'Waveform',  30,  
+		'Arpe Multiplier',  43,  nil,  nil,  
+		'Slide Time',  9,  'Distortion Density',  26,  
+		nil,  nil,  nil,  nil,  
+		'Env Accent',  21,  nil,  nil,  
+		'Env Decay',  19,  nil,  nil,  
+		'Cutoff',  14,  'Distortion Clip',  27,  
+		'Distortion Wetness',  28,  'Sweep Mode',  32,  
+		'Arpe Mode',  37,  nil,  nil,  
+		nil,  nil,  'Main Volume',  35,  
+		'Tuning',  3,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		'Arpe Range Zero',  40,  'Distortion Size',  25,  
+		nil,  nil,  nil,  nil,  
+		'Arpe Chord',  36,  nil,  nil,  
+		nil,  nil,  nil,  nil ],  
+	// Set
+	4, [ array: o[5],  size: 1 ],  
+	// Array
+	5, [ nil,  nil,  12,  nil ],  
+	// IdentityDictionary
+	6, [ array: o[7],  size: 33,  
+		proto: nil,  parent: nil,  
+		know: false ],  
+	// Array
+	7, [ 'Sweep Time',  127,  'Distortion Brightness',  70,  
+		'Arpe Shuffle',  0,  'Env Attack',  0,  
+		'Accent Volume',  3,  'Accent Decay',  0,  
+		'Env Mod',  0,  'Distortion State',  127,  
+		'Arpe Range Add 1',  127,  'Step Length',  76,  
+		'Distortion Preamp',  100,  'Arpe Range Add 2',  127,  
+		nil,  nil,  nil,  nil,  
+		'Accent Mode',  0,  'Arpe Repeater',  0,  
+		nil,  nil,  'Distortion Route',  23,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		'Arpe Range Sub 1',  127,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		'Resonance',  127,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  'Waveform',  29,  
+		'Arpe Multiplier',  0,  nil,  nil,  
+		'Slide Time',  64,  'Distortion Density',  23,  
+		nil,  nil,  nil,  nil,  
+		'Env Accent',  30,  nil,  nil,  
+		'Env Decay',  0,  nil,  nil,  
+		'Cutoff',  0,  'Distortion Clip',  40,  
+		'Distortion Wetness',  126,  'Sweep Mode',  127,  
+		'Arpe Mode',  0,  nil,  nil,  
+		nil,  nil,  'Main Volume',  95,  
+		'Tuning',  64,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		'Arpe Range Zero',  127,  'Distortion Size',  110,  
+		nil,  nil,  nil,  nil,  
+		'Arpe Chord',  0,  nil,  nil,  
+		nil,  nil,  nil,  nil ],  
+	// IdentityDictionary
+	8, [ array: o[9],  size: 1,  
+		proto: nil,  parent: nil,  
+		know: false ],  
+	// Array
+	9, [ nil,  nil,  '303a',  o[10] ],  
+	// IdentityDictionary
+	10, [ array: o[11],  size: 1,  
+		proto: nil,  parent: nil,  
+		know: false ],  
+	// Array
+	11, [ 'cutoff',  o[12],  nil,  nil ]
+];
+prUnarchive(o,p);
