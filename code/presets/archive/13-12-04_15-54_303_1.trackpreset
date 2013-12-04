@@ -2,15 +2,13 @@ var o, p;
 o = [
 	IdentityDictionary.prNew,  Array.prNew(24),  IdentityDictionary.prNew,  Array.prNew(128),  
 	Set.prNew,  Array.prNew(4),  IdentityDictionary.prNew,  Array.prNew(132),  
-	IdentityDictionary.prNew,  Array.prNew(8),  IdentityDictionary.prNew,  Array.prNew(16),  
+	IdentityDictionary.prNew,  Array.prNew(8),  IdentityDictionary.prNew,  Array.prNew(8),  
 	{|track, val|
 	track.setParam('Tuning', val.linlin(0, 127, 64, 127).round((64/3)).min(127));
 },  {|track, val|
-	track.setParam('vibe', val.linlin(0, 50, 0, 90));
-},  {|track, val|
 	track.setParam('Env Mod', val);
-},  IdentityDictionary.prNew,  
-	Array.prNew(4),  {|track, val|
+},  IdentityDictionary.prNew,  Array.prNew(4),  
+	{|track, val|
 	track.setParam('Cutoff', val);
 	track.setParam('Resonance', val.linlin(0, 127, 50, 110));
 	track.setParam('Distortion Clip', val.linlin(0, 127, 80, 50));
@@ -30,7 +28,7 @@ p = [
 		nil,  nil,  'params',  o[6],  
 		nil,  nil,  'sensorFuncs',  o[8] ],  
 	// IdentityDictionary
-	2, [ array: o[3],  size: 34,  
+	2, [ array: o[3],  size: 33,  
 		proto: nil,  parent: nil,  
 		know: false ],  
 	// Array
@@ -40,7 +38,7 @@ p = [
 		nil,  nil,  'Accent Decay',  20,  
 		'Waveform',  30,  'Env Attack',  18,  
 		'Tuning',  3,  'Distortion Brightness',  29,  
-		'Arpe Range Zero',  40,  'vibe',  45,  
+		'Arpe Range Zero',  40,  nil,  nil,  
 		nil,  nil,  nil,  nil,  
 		'Arpe Range Add 1',  41,  nil,  nil,  
 		'Env Decay',  19,  nil,  nil,  
@@ -71,7 +69,7 @@ p = [
 	// Array
 	5, [ nil,  24,  nil,  nil ],  
 	// IdentityDictionary
-	6, [ array: o[7],  size: 34,  
+	6, [ array: o[7],  size: 33,  
 		proto: nil,  parent: nil,  
 		know: false ],  
 	// Array
@@ -80,8 +78,8 @@ p = [
 		'Accent Volume',  3,  'Accent Decay',  0,  
 		'Env Mod',  127,  'Distortion State',  127,  
 		'Arpe Range Add 1',  127,  'Step Length',  76,  
-		'Distortion Preamp',  78.923565,  'Arpe Range Add 2',  127,  
-		'vibe',  90,  nil,  nil,  
+		'Distortion Preamp',  50.232455,  'Arpe Range Add 2',  127,  
+		nil,  nil,  nil,  nil,  
 		'Accent Mode',  0,  'Arpe Repeater',  0,  
 		nil,  nil,  'Distortion Route',  23,  
 		nil,  nil,  nil,  nil,  
@@ -89,7 +87,7 @@ p = [
 		'Arpe Range Sub 1',  127,  nil,  nil,  
 		nil,  nil,  nil,  nil,  
 		nil,  nil,  nil,  nil,  
-		'Resonance',  52.152871,  nil,  nil,  
+		'Resonance',  109.535090,  nil,  nil,  
 		nil,  nil,  nil,  nil,  
 		nil,  nil,  nil,  nil,  
 		nil,  nil,  'Waveform',  29,  
@@ -98,7 +96,7 @@ p = [
 		nil,  nil,  nil,  nil,  
 		'Env Accent',  30,  nil,  nil,  
 		'Env Decay',  0,  nil,  nil,  
-		'Cutoff',  4.556910,  'Distortion Clip',  78.923565,  
+		'Cutoff',  126.015939,  'Distortion Clip',  50.232455,  
 		'Distortion Wetness',  126,  'Sweep Mode',  127,  
 		'Arpe Mode',  0,  nil,  nil,  
 		nil,  nil,  'Main Volume',  95,  
@@ -114,21 +112,19 @@ p = [
 		know: false ],  
 	// Array
 	9, [ nil,  nil,  '303b',  o[10],  
-		nil,  nil,  '303a',  o[15] ],  
+		nil,  nil,  '303a',  o[14] ],  
 	// IdentityDictionary
-	10, [ array: o[11],  size: 3,  
+	10, [ array: o[11],  size: 2,  
 		proto: nil,  parent: nil,  
 		know: false ],  
 	// Array
-	11, [ nil,  nil,  nil,  nil,  
-		nil,  nil,  nil,  nil,  
-		'tuning',  o[12],  'vibe',  o[13],  
-		nil,  nil,  'wank',  o[14] ],  
+	11, [ 'tuning',  o[12],  nil,  nil,  
+		nil,  nil,  'wank',  o[13] ],  
 	// IdentityDictionary
-	15, [ array: o[16],  size: 1,  
+	14, [ array: o[15],  size: 1,  
 		proto: nil,  parent: nil,  
 		know: false ],  
 	// Array
-	16, [ nil,  nil,  'filter',  o[17] ]
+	15, [ nil,  nil,  'filter',  o[16] ]
 ];
 prUnarchive(o,p);
