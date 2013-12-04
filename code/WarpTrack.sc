@@ -300,14 +300,16 @@ WarpTrack {
 		};
 	}
 
-	assignAll {|paramControls, learn=false, callback|
+	assignAll {|paramControls, learn=false, init=true|
 		var action = {
 			var channel = settings['midiChannel'];
 
 			paramControls.keysValuesDo { |paramKey, num|
 				if(parent.isControlAvailable(channel, num)) {
 					settings['paramControls'][paramKey] = num;
-					settings['params'][paramKey] = 0;
+					if(init) {
+						settings['params'][paramKey] = 0;
+					};
 					parent.setControl(channel, num, paramKey);
 					if(learn) {
 						parent.control(channel, num, 127);
@@ -319,14 +321,10 @@ WarpTrack {
 					("this controlNum " ++ num ++ " is already assigned!").postln;
 				};
 			};
-
-			callback.();
 		};
 
 		if(learn) {
-			{
-				action.();
-			}.fork;
+			action.fork;
 		} {
 			action.();
 		};
@@ -372,11 +370,12 @@ WarpTrack {
 				settings[presetKey] = preset[presetKey];
 			};
 
-			if(settings['patternTrack']) {
+			if(preset['patternTrack']) {
 				settings['notes'] = preset['notes'];
 			};
 
-			this.assignAll(preset['paramControls'], false);
+			// assign all without learn or init
+			this.assignAll(preset['paramControls'], false, false);
 			this.initParams();
 
 			if(settings['notes'].size > 0) {
