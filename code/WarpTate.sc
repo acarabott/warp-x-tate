@@ -4,6 +4,7 @@ WarpTate {
 	var <tempo;
 	var <out;
 	var <tracks;
+	var <sections;
 	var <availableControls;
 	var <controls;
 	var <sensorVals;
@@ -28,6 +29,14 @@ WarpTate {
 		out.latency = 0;
 
 		tracks = IdentityDictionary[];
+		sections = List[];
+		// sections is a List of IdentityDictionary to be mapped to
+		// WarpTrack settings var
+		// e.g. List[IdentityDictionary[
+		//	 			'303_1' -> IdentityDictionary['notes' -> List[42]],
+		// 				'808_1'	-> IdentityDictionary['notes' -> List[24]]
+		// 			]
+		// 		]
 		sensorKeys = ['303a', '303b', '808a', '808b'];
 
 		availableControls = (0..127).collect {|channel|
