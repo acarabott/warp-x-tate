@@ -240,36 +240,56 @@ WarpTrack {
 	}
 
 	on {|note, quant=4|
-		{
+		var clock = parent.clock;
+		var sub = 1 / (parent.clock.tempo * 16); // one sub division
+
+		clock.schedAbs(clock.beats + (clock.timeToNextBeat(quant) - sub), {
 			if(settings['patternTrack']) {
 				this.allOff();
 			} {
-				this.off(note, quant);
+				this.off(note);
 			};
+		});
+
+		{
 			settings['notes'].add(note);
 			parent.noteOn(settings['midiChannel'], note, 127);
 		}.fork(parent.clock, quant:quant);
 	}
 
-	off {|note, quant=1|
-		{
+	off {|note, quant|
+		var func = {
 			settings['notes'].remove(note);
 			parent.noteOff(settings['midiChannel'], note, 0);
-		}.fork(parent.clock, quant:quant);
+		};
+
+		if(quant.notNil) {
+			func.fork(parent.clock, quant:quant);
+		} {
+			func.();
+		};
 	}
 
-	hit {|note=60, vel=127, dur=1|
+	hit {|note=60, vel=127, dur=1, quant=0|
 		{
 			parent.noteOn(settings['midiChannel'], note, vel);
 			dur.wait;
 			parent.noteOff(settings['midiChannel'], note, vel);
-		}.fork(parent.clock);
+		}.fork(parent.clock, quant:quant);
 	}
 
-	allOff {
-		settings['notes'].do {|note, i|
-			this.off(note);
-		}
+	allOff {|quant|
+		var func = {
+			settings['notes'].do {|note, i|
+				this.off(note);
+			}
+		};
+
+		if(quant.notNil) {
+			func.fork(parent.clock, quant:quant);
+		} {
+			func.();
+		};
 	}
 
 	assign {|paramKey, num, learn=false|
