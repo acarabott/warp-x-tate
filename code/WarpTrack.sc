@@ -211,7 +211,7 @@ WarpTrack {
 	}
 
 	*read {|argParent, argKey, path|
-		^super.new.init(argParent, argKey).loadPreset(path);
+		^super.new.init(argParent, argKey).readPreset(path);
 	}
 
 	init {|argParent, argKey, argMidiChannel, argType|
@@ -300,12 +300,13 @@ WarpTrack {
 		};
 	}
 
-	assignAll {|paramControls, learn=false, init=true|
+	assignAll {|paramControls, learn=false, init=true, checkAvailable=true|
 		var action = {
 			var channel = settings['midiChannel'];
 
 			paramControls.keysValuesDo { |paramKey, num|
-				if(parent.isControlAvailable(channel, num)) {
+				if(checkAvailable.not ||
+					(checkAvailable && parent.isControlAvailable(channel, num))) {
 					settings['paramControls'][paramKey] = num;
 					if(init) {
 						settings['params'][paramKey] = 0;
@@ -360,9 +361,11 @@ WarpTrack {
 		};
 	}
 
-	loadPreset {|path|
-		var preset = Object.readArchive(path);
+	readPreset {|path, checkAvailable=true|
+		this.loadPreset(Object.readArchive(path), checkAvailable);
+	}
 
+	loadPreset {|preset, checkAvailable=true, quant=4|
 		{
 			preset.keys.reject({|settingKey, i|
 				['notes', 'paramControls'].includes(settingKey);
@@ -375,14 +378,20 @@ WarpTrack {
 			};
 
 			// assign all without learn or init
-			this.assignAll(preset['paramControls'], false, false);
+			this.assignAll(
+				preset['paramControls'],
+				false,
+				false,
+				checkAvailable
+			);
+
 			this.initParams();
 
 			if(settings['notes'].size > 0) {
 				this.on(settings['notes'].asArray[0]);
 			};
 
-		}.fork;
+		}.fork(parent.clock, quant);
 	}
 
 	sensor {|sensorKey, val|
