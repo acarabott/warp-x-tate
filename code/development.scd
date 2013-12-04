@@ -1,7 +1,13 @@
-// not playing on load...
 x = WarpTate();
 
 ~three = x.addTrack('303', 0, '303');
+
+
+~three = x.loadTrack('303_1', "~/Projects/13-11_warp/code/presets/303_1.trackpreset".standardizePath);
+
+~eightone = x.loadTrack('808_1', "~/Projects/13-11_warp/code/presets/808_1.trackpreset".standardizePath);
+~eighttwo = x.loadTrack('808_2', "~/Projects/13-11_warp/code/presets/808_2.trackpreset".standardizePath);
+
 
 
 
@@ -17,6 +23,7 @@ x = WarpTate();
 // maybe 19
 
 ~eightone.on(51);
+~three.on(12);
 
 ~eight.on(51);
 
@@ -37,7 +44,7 @@ x = WarpTate();
 // 49
 // 42 add more claps
 
-~three.on(12, 4);
+
 // good 303
 // acid tracks with screeaaaaming
 // acid tracks, da funk
@@ -104,9 +111,6 @@ x = WarpTate();
 });
 ~three.save
 
-~three = x.loadTrack('303_1', "~/Projects/13-11_warp/code/presets/303_1.trackpreset".standardizePath);
-~eightone = x.loadTrack('808_1', "~/Projects/13-11_warp/code/presets/808_1.trackpreset".standardizePath);
-~eighttwo = x.loadTrack('808_2', "~/Projects/13-11_warp/code/presets/808_2.trackpreset".standardizePath);
 
 ~eightone.settings['params']['snareverb']
 
@@ -152,15 +156,95 @@ r.play(quant:4);
 
 
 
-TempoClock.default.schedAbs(TempoClock.default.nextBar - 0.5, {Synth(\beep, [\freq, 440, \amp, 0.2, \pan, 0, \out, 0]);})
 
-TempoClock.default.beats2bars(3.5)
-this.bars2beats(this.beats2bars(beat).ceil);
+x = WarpTate();
 
-(TempoClock.beats % TempoClock.beatsPerBar) +
+~three_1 = x.addTrack('303_1', 0, '303');
+~three_1.initParams();
 
-(TempoClock.bar * TempoClock.beatsPerBar) + .postln; TempoClock.beats.postln;
+~three_1.on(24);
+~three_1.setParam('Distortion State', 0);
+~three_1.setParam('Cutoff', 110);
+~three_1.setParam('Resonance', 100);
+~three_1.setParam('Env Mod', 100);
+~three_1.setParam('Env Attack', 100);
 
-TempoClock.beats + (TempoClock.timeToNextBeat(quant) - 0.1)
 
+~three_1.addFunc('303a', 'step', {|track, val|
+	track.setParam('Step Length', val);
+});
+
+~three_1.removeFunc('303a', 'cutoff');
+
+~three_1.save
+
+w = Window("Fake Sensors", Rect(100, 100, 400, 300)).front;
+w.view.addFlowLayout;
+
+~sliders = ["303a", "303b", "808a", "808b"].collect {|sensorKey, i|
+	var slider = EZSlider(w, 280@20, label:sensorKey);
+
+	slider.action_({|ez|
+		NetAddr.localAddr.sendMsg("/prox/" ++ sensorKey, ez.value * 100);
+	});
+};
+
+~eight_1 = x.addTrack('808_1', 2, '808');
+~eight_1.on(51);
+~eight_1.setParam('Hand Clap Level', 127);
+~eight_1.setParam('Hand Clap Level', 127)
+
+~eight_1.addFunc('808a', 'clapverb', {|track, val|
+	track.setParam('Hand Clap Reverb', val);
+});
+
+~eight_1.save
+
+~eight_2 = x.addTrack('808_1', 2, '808');
+
+~eight_2.on(51);
+~eight_2.setParam('Bass Drum Decay', 127);
+~eight_2.setParam('Bass Drum Sweep', 127);
+
+~eight_2.assign('snarebig', 89, false);
+
+~eight_2.addFunc('808a', 'clapverb', {|track, val|
+	track.setParam('snarebig', val.linlin(0, 127, 0, 90));
+});
+
+~eight_2.save
+
+x = WarpTate();
+
+~presets = IdentityDictionary[];
+
+"~/Projects/13-11_warp/code/presets/seq/*".standardizePath.pathMatch.sort.do {|path, i|
+	var name = path.basename.splitext[0],
+		key = name.asSymbol,
+		preset = Object.readArchive(path);
+
+	~presets.add(key -> preset);
+
+};
+
+
+x.sections.add([~presets['00_808_1'], ~presets['00_303_1']]);
+x.sections.add([~presets['01_808_1'], ~presets['01_303_1']]);
+
+x.addTrack('303_1', 0, '303');
+x.addTrack('808_1', 2, '808');
+
+{
+	x.sections.do {|section, i|
+		x.tracks['303_1'].loadPreset(section[0], false);
+		x.tracks['808_1'].loadPreset(section[1], false);
+
+		"change".postln;
+		16.wait;
+	}
+}.fork;
+
+x.tracks['303_1'].loadPreset(~presets['00_303_1'], false)
+
+x.tracks['808_1'].loadPreset(~presets['00_808_1'], false)
 
