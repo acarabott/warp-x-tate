@@ -21,4 +21,25 @@
     <CH>OO.OOO.OOO.OOO.O</CH>
     <AC>................</AC>
   </Pattern>
+  <Pattern application="Nepheton" name="Da Funk" type="hostPattern"
+           length="16" scale="4" shuffle="0" tempo="111">
+    <BD>O...O...O...O...</BD>
+    <SD>....O.......O...</SD>
+    <LC>.....OooO.......</LC>
+    <MC>...Oo....oO.....</MC>
+    <HC>.Oo........O.O.O</HC>
+    <LT>................</LT>
+    <MT>................</MT>
+    <HT>................</HT>
+    <CL>....O.......O...</CL>
+    <RS>....O.......O...</RS>
+    <MA>OoooOoooOoooOooo</MA>
+    <CP>....O.......O...</CP>
+    <CB>.....O.......O.O</CB>
+    <LG>....O.......O...</LG>
+    <CY>................</CY>
+    <OH>................</OH>
+    <CH>..O...O...O...Oo</CH>
+    <AC>................</AC>
+  </Pattern>
 </PatternBank>

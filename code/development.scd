@@ -1,105 +1,31 @@
 x = WarpTate();
+// 13:12
 
-~three = x.readTrack("~/Projects/13-11_warp/code/presets/final/00_303_1_acidtracks.trackpreset".standardizePath);
-~eight = x.readTrack("~/Projects/13-11_warp/code/presets/final/00_808_1_acidtracks.trackpreset".standardizePath);
+
+~eight.off(13);
+
+
+
+
+
+
+x.sensorMins[0] = 0
+x.sensorMaxs[2] = 0;
+
+x.doAdjusts.do {|adjust, i|
+	x.sensorMaxs[i] = 0;
+	x.sensorMins[i] = 9999;
+	x.doAdjusts[i] = true;
+};
 
 x.doAdjusts.do {|adjust, i|
 	x.doAdjusts[i] = false;
-}
+};
 
-~three_1.setParam('Cutoff', 90.lincurve(0, 127, 20, 127, 2));
-~three_1.setParam('Bus 2', 90.lincurve(30, 127, 0, 90, 2));
-~three_1.setParam('Env Mod', 90.lincurve(0, 100, 50, 100, 2));
-~three_1.setParam('Env Attack', 90.lincurve(0, 100, 50, 100, 2));
-~three_1.setParam('Tuning', 90.round(63.5/2).max(64));
-~three_1.setParam('Distortion Preamp', 90.lincurve(0, 127, 40, 100, 2));
-~three_1.setParam('Distortion Clip', 90.lincurve(0, 127, 90, 45, 2));
-~three_1.setParam('Distortion Size', 90.lincurve(0, 127, 50, 85, 2));
-~three_1.setParam('Distortion Density', 90.lincurve(0, 127, 30, 90, 2));
-
-~three_1.on(12);
-
-x.doAdjusts[x.sensorKeys.indexOf('808b')] = false;
-
-~eight = x.addTrack('808_1', 2, '808_1');
-~eight.on(12);
-~eight.setParam('Low Tom Tunning', 25);
-~eight.setParam('Low Tom Decay', 86);
-~eight.setParam('Low Tom Snappy', 25);
-~eight.addFunc('808a', 'bass', {|track, val|
-	if(val < 32) {
-		track.setParam('Low Tom Level', 100);
-		track.setParam('Bass Drum Level', 0);
-	} {
-		track.setParam('Low Tom Level', 0);
-		track.setParam('Bass Drum Level', 100);
-	};
-});
-
-~eight.addFunc('808b', 'clapverb', {|track, val|
-	var thresh = 10;
-
-	if(val > thresh) {
-		track.setParam('Hand Clap Level', 127);
-		track.setParam('Claves Level', 127);
-		track.setParam('Closed Hi Hat Level', 127);
-	} {
-		track.setParam('Hand Clap Level', 0);
-		track.setParam('Claves Level', 0);
-		track.setParam('Closed Hi Hat Level', 0);
-	};
-
-	track.setParam('Send 1', val.lincurve(thresh, 127, 0, 90, 2));
-	track.setParam('Closed Hi Hat Decay', val.lincurve(thresh, 127, 64, 127, 2));
-	track.setParam('Hi Hat Filters Freq', val.lincurve(thresh, 127, 20, 110, 2));
-});
-
-~eight.save
-
-
-
-
-~three_1.settings['sensorFuncs'] = IdentityDictionary[]
-
-~three_1.setParam('Tuning', 64);
-
-// upper end
-~three_1.setParam('Distortion Preamp', 100);
-~three_1.setParam('Distortion Clip', 45);
-~three_1.setParam('Distortion Size', 85);
-~three_1.setParam('Distortion Density', 90);
-
-// lower end
-~three_1.setParam('Distortion Preamp', 20);
-~three_1.setParam('Distortion Clip', 110);
-~three_1.setParam('Distortion Size', 50);
-~three_1.setParam('Distortion Density', 30);
-
-
-
-
-
-
-
-// 303b acid tracks fixed params
-~three_1.setParam('Distortion Brightness', 64);
-~three_1.setParam('Distortion Wetness', 50);
-
-
-
-~three_1.setParam('Cutoff', 0);
-~three_1.setParam('Bus 2', 0);
-~three_1.setParam('Env Mod', 50);
-~three_1.setParam('Env Attack', 50);
-
-
-x.tempo = 120
-
-x.doAdjusts[0] = false;
 
 (
 if(w.notNil){w.close};
-w = Window("Sensor Inspector", Rect(100, 100, 400, 300)).front;
+w = Window("Sensor Inspector", Rect(256, 10, 370, 424)).front;
 w.view.addFlowLayout;
 
 ~texts = IdentityDictionary[];
@@ -114,6 +40,15 @@ w.view.addFlowLayout;
 	w.view.decorator.nextLine;
 };
 ~slider = EZSlider(w, 280@20, label:~sensor.asString);
+w.view.decorator.nextLine;
+
+~sliders = ["303a", "303b", "808a", "808b"].collect {|sensorKey, i|
+	var slider = EZSlider(w, 280@20, label:sensorKey);
+
+	slider.action_({|ez|
+		NetAddr.localAddr.sendMsg("/prox/" ++ sensorKey, ez.value * 100);
+	});
+};
 
 
 Tdef(\foo, {
@@ -135,6 +70,7 @@ Tdef(\foo, {
 }).play(AppClock);
 
 );
+
 
 x.sensorMaxs[x.sensorKeys.indexOf('303a')];
 
@@ -245,14 +181,6 @@ nil.writeArchive("~/Desktop/fuck.test".standardizePath);
 w = Window("Fake Sensors", Rect(100, 100, 400, 300)).front;
 w.view.addFlowLayout;
 
-x.doAdjusts[x.sensorKeys.indexOf('303b')] = false;
-~sliders = ["303a", "303b", "808a", "808b"].collect {|sensorKey, i|
-	var slider = EZSlider(w, 280@20, label:sensorKey);
-
-	slider.action_({|ez|
-		NetAddr.localAddr.sendMsg("/prox/" ++ sensorKey, ez.value * 100);
-	});
-};
 
 ~start = nil;
 ~rec = List[];
