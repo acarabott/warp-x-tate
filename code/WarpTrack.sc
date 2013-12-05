@@ -317,9 +317,9 @@ WarpTrack {
 		};
 	}
 
-	assign {|paramKey, num, learn=false|
+	assign {|paramKey, num, learn=false, init=true, checkAvailable=true|
 		if(num.notNil) {
-			this.assignAll(IdentityDictionary[paramKey -> num], learn);
+			this.assignAll(IdentityDictionary[paramKey -> num], learn, init, checkAvailable);
 		} {
 			parent.assign(settings['key'], paramKey, nil, learn);
 		};
