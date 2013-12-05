@@ -76,6 +76,14 @@ WarpTate {
 		^tracks[trackKey];
 	}
 
+	loadTrack {|preset, checkAvailable|
+		var track = WarpTrack.load(this, preset, checkAvailable),
+			trackKey = track.settings['key'];
+
+		tracks[trackKey] = track;
+		^tracks[trackKey];
+	}
+
 	readTrack {|path|
 		var track = WarpTrack.read(this, path),
 			trackKey = track.settings['key'];

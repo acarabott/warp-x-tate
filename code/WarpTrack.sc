@@ -224,6 +224,10 @@ WarpTrack {
 		^super.new.init(argParent).readPreset(path);
 	}
 
+	*load {|argParent, preset, checkAvailable|
+		^super.new.init(argParent).loadPreset(preset, checkAvailable, nil);
+	}
+
 	init {|argParent, argKey, argMidiChannel, argType|
 		parent = argParent;
 
