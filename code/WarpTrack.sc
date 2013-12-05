@@ -203,6 +203,17 @@ WarpTrack {
 				]
 			]
 		];
+
+		defaults['303_1'] = defaults['303'].copy;
+		defaults['303_1']['paramControls'].putPairs([
+			'Bus 1', 46,
+			'Bus 2', 45
+		]);
+
+		defaults['808_1'] = defaults['808'].copy;
+		defaults['808_1']['paramControls'].putPairs([
+			'Send 1', 89
+		]);
 	}
 
 	*new {|argParent, argKey, argMidiChannel, argType|
