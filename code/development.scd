@@ -1,24 +1,204 @@
 x = WarpTate();
 
-~three = x.addTrack('303', 0, '303');
+~three = x.readTrack("~/Projects/13-11_warp/code/presets/final/00_303_1_acidtracks.trackpreset".standardizePath);
+~eight = x.readTrack("~/Projects/13-11_warp/code/presets/final/00_808_1_acidtracks.trackpreset".standardizePath);
+
+x.doAdjusts.do {|adjust, i|
+	x.doAdjusts[i] = false;
+}
+
+~three_1.setParam('Cutoff', 90.lincurve(0, 127, 20, 127, 2));
+~three_1.setParam('Bus 2', 90.lincurve(30, 127, 0, 90, 2));
+~three_1.setParam('Env Mod', 90.lincurve(0, 100, 50, 100, 2));
+~three_1.setParam('Env Attack', 90.lincurve(0, 100, 50, 100, 2));
+~three_1.setParam('Tuning', 90.round(63.5/2).max(64));
+~three_1.setParam('Distortion Preamp', 90.lincurve(0, 127, 40, 100, 2));
+~three_1.setParam('Distortion Clip', 90.lincurve(0, 127, 90, 45, 2));
+~three_1.setParam('Distortion Size', 90.lincurve(0, 127, 50, 85, 2));
+~three_1.setParam('Distortion Density', 90.lincurve(0, 127, 30, 90, 2));
+
+~three_1.on(12);
+
+x.doAdjusts[x.sensorKeys.indexOf('808b')] = false;
+
+~eight = x.addTrack('808_1', 2, '808_1');
+~eight.on(12);
+~eight.setParam('Low Tom Tunning', 25);
+~eight.setParam('Low Tom Decay', 86);
+~eight.setParam('Low Tom Snappy', 25);
+~eight.addFunc('808a', 'bass', {|track, val|
+	if(val < 32) {
+		track.setParam('Low Tom Level', 100);
+		track.setParam('Bass Drum Level', 0);
+	} {
+		track.setParam('Low Tom Level', 0);
+		track.setParam('Bass Drum Level', 100);
+	};
+});
+
+~eight.addFunc('808b', 'clapverb', {|track, val|
+	var thresh = 10;
+
+	if(val > thresh) {
+		track.setParam('Hand Clap Level', 127);
+		track.setParam('Claves Level', 127);
+		track.setParam('Closed Hi Hat Level', 127);
+	} {
+		track.setParam('Hand Clap Level', 0);
+		track.setParam('Claves Level', 0);
+		track.setParam('Closed Hi Hat Level', 0);
+	};
+
+	track.setParam('Send 1', val.lincurve(thresh, 127, 0, 90, 2));
+	track.setParam('Closed Hi Hat Decay', val.lincurve(thresh, 127, 64, 127, 2));
+	track.setParam('Hi Hat Filters Freq', val.lincurve(thresh, 127, 20, 110, 2));
+});
+
+~eight.save
 
 
-~three = x.loadTrack('303_1', "~/Projects/13-11_warp/code/presets/303_1.trackpreset".standardizePath);
-
-~eightone = x.loadTrack('808_1', "~/Projects/13-11_warp/code/presets/808_1.trackpreset".standardizePath);
-~eighttwo = x.loadTrack('808_2', "~/Projects/13-11_warp/code/presets/808_2.trackpreset".standardizePath);
 
 
+~three_1.settings['sensorFuncs'] = IdentityDictionary[]
 
+~three_1.setParam('Tuning', 64);
+
+// upper end
+~three_1.setParam('Distortion Preamp', 100);
+~three_1.setParam('Distortion Clip', 45);
+~three_1.setParam('Distortion Size', 85);
+~three_1.setParam('Distortion Density', 90);
+
+// lower end
+~three_1.setParam('Distortion Preamp', 20);
+~three_1.setParam('Distortion Clip', 110);
+~three_1.setParam('Distortion Size', 50);
+~three_1.setParam('Distortion Density', 30);
+
+
+
+
+
+
+
+// 303b acid tracks fixed params
+~three_1.setParam('Distortion Brightness', 64);
+~three_1.setParam('Distortion Wetness', 50);
+
+
+
+~three_1.setParam('Cutoff', 0);
+~three_1.setParam('Bus 2', 0);
+~three_1.setParam('Env Mod', 50);
+~three_1.setParam('Env Attack', 50);
+
+
+x.tempo = 120
+
+x.doAdjusts[0] = false;
+
+(
+if(w.notNil){w.close};
+w = Window("Sensor Inspector", Rect(100, 100, 400, 300)).front;
+w.view.addFlowLayout;
+
+~texts = IdentityDictionary[];
+~sensor = '808a';
+['sensorVals', 'sensorPrevs', 'sensorMins',
+'sensorMaxs'].do {|label, i|
+	StaticText(w, (w.bounds.width * 0.5)@20)
+		.string_(label.asString);
+	w.view.decorator.nextLine;
+	~texts[label] = StaticText(w, (w.bounds.width / 2)@40)
+		.string_("\t" ++ x.perform(label)[x.sensorKeys.indexOf(~sensor)]);
+	w.view.decorator.nextLine;
+};
+~slider = EZSlider(w, 280@20, label:~sensor.asString);
+
+
+Tdef(\foo, {
+	inf.do {|i|
+		var index = x.sensorKeys.indexOf(~sensor);
+		['sensorVals', 'sensorPrevs', 'sensorMins', 'sensorMaxs'].do {|label, i|
+			~texts[label]
+				.string_("\t" ++ x.perform(label)[index]);
+		};
+
+		~slider.value = x.sensorVals[index].linlin(
+			x.sensorMins[index],
+			x.sensorMaxs[index],
+			0,
+			1
+		);
+		0.05.wait;
+	}
+}).play(AppClock);
+
+);
+
+x.sensorMaxs[x.sensorKeys.indexOf('303a')];
+
+x.sensorMaxAdj = 0.01
+x.sensorMinAdj = 0.001
+
+
+
+
+
+
+
+~three = x.readTrack("~/Projects/13-11_warp/code/presets/303_1.trackpreset".standardizePath);
+~eightone = x.readTrack("~/Projects/13-11_warp/code/presets/808_1.trackpreset".standardizePath);
+
+x.addSection(0, 120, ~three.settings, ~eightone.settings);
+
+~threetwo = ~three.settings.copy;
+~threetwo['params']['Distortion Clip'] = 10;
+~eighttwo = ~eightone.settings.copy;
+~eighttwo['params']['Main Volume'] = 90;
+
+x.addSection(1, 140, ~threetwo, ~eighttwo);
+
+x.sections[0].keys
+
+{
+	x.sections.do {|section, i|
+		x.tempo = section['tempo'];
+		['303_1', '808_1'].do {|trackKey, j|
+			x.tracks[trackKey].loadPreset(section[trackKey], false);
+		};
+		16.wait;
+	}
+}.fork;
+// TODO at error wtf
+// TODO addsection has 'tempo' and 'tracks'
+
+~three.settings
+
+~eightonePreset = Object.readArchive("~/Projects/13-11_warp/code/presets/808_1.trackpreset".standardizePath);
+
+~eightonePreset['key'] = '808_1'
+
+~eighttwoPreset = Object.readArchive("~/Projects/13-11_warp/code/presets/808_2.trackpreset".standardizePath);
+~eighttwoPreset['key'] = '808_2'
+
+
+
+~eighttwo = x.readTrack("~/Projects/13-11_warp/code/presets/808_2.trackpreset".standardizePath);
+
+nil.writeArchive("~/Desktop/fuck.test".standardizePath);
+~eightonePreset.writeArchive("~/Projects/13-11_warp/code/presets/808_1.trackpreset".standardizePath)
+
+~eighttwoPreset.writeArchive("~/Projects/13-11_warp/code/presets/808_2.trackpreset".standardizePath)
 
 // phuture
 // daft punk
 // higher state
-// 24
-// 17
-// 53
-// 71
-// 12
+// 24 - 12 = 12
+// 17 - 12 = 5
+// 53 - 12 = 41
+// 71 - 12 = 59
+// 12 - 12 = 0
 
 // maybe 19
 
@@ -65,6 +245,7 @@ x = WarpTate();
 w = Window("Fake Sensors", Rect(100, 100, 400, 300)).front;
 w.view.addFlowLayout;
 
+x.doAdjusts[x.sensorKeys.indexOf('303b')] = false;
 ~sliders = ["303a", "303b", "808a", "808b"].collect {|sensorKey, i|
 	var slider = EZSlider(w, 280@20, label:sensorKey);
 
@@ -248,3 +429,14 @@ x.tracks['303_1'].loadPreset(~presets['00_303_1'], false)
 
 x.tracks['808_1'].loadPreset(~presets['00_808_1'], false)
 
+
+x.control(2, 3, 100);
+
+x.out.control(15, 3, 120 - 50);
+
+120
+
+x.tracks['303_1']
+
+
+x.tempo = 120
