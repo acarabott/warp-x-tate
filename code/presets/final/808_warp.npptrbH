@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PatternBank type="hostPattern">
+  <Pattern application="Nepheton" name="Acid Tracks" type="hostPattern"
+           length="16" scale="4" shuffle="0" tempo="120">
+    <BD>O...O...O...O...</BD>
+    <SD>................</SD>
+    <LC>................</LC>
+    <MC>................</MC>
+    <HC>................</HC>
+    <LT>O...............</LT>
+    <MT>................</MT>
+    <HT>................</HT>
+    <CL>.............Oo.</CL>
+    <RS>................</RS>
+    <MA>................</MA>
+    <CP>..O..O..O.......</CP>
+    <CB>................</CB>
+    <LG>................</LG>
+    <CY>................</CY>
+    <OH>..O...O...O...O.</OH>
+    <CH>OO.OOO.OOO.OOO.O</CH>
+    <AC>................</AC>
+  </Pattern>
+</PatternBank>
