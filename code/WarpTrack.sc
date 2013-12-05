@@ -207,12 +207,23 @@ WarpTrack {
 		defaults['303_1'] = defaults['303'].copy;
 		defaults['303_1']['paramControls'].putPairs([
 			'Bus 1', 46,
-			'Bus 2', 45
+			'Bus 2', 45,
+			'Bus 3', 48
+		]);
+		defaults['303_1']['params'].putPairs([
+			'Bus 1', 0,
+			'Bus 2', 0,
+			'Bus 3', 0
 		]);
 
 		defaults['808_1'] = defaults['808'].copy;
 		defaults['808_1']['paramControls'].putPairs([
+			'bitcrusher', 88,
 			'Send 1', 89
+		]);
+		defaults['808_1']['params'].putPairs([
+			'bitcrusher', 0,
+			'Send 1', 0
 		]);
 	}
 
