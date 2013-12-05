@@ -15,6 +15,7 @@ WarpTate {
 	var <sensorMaxs;
 	var <>sensorMinAdj;
 	var <>sensorMaxAdj;
+	var <doAdjusts;
 
 	*new {
 		^super.new.init;
@@ -168,6 +169,7 @@ WarpTate {
 		sensorMaxs = 0!sensorKeys.size;
 		sensorMinAdj = sensorMinAdj ?? { 0.005 };
 		sensorMaxAdj = sensorMaxAdj ?? { 0.01 };
+		doAdjusts = false!sensorKeys.size;
 
 		sensorKeys.do {|sensorKey, i|
 			OSCdef(("sensor_" ++ sensorKey).asSymbol, {|msg, time, addr, recvPort|
@@ -177,15 +179,19 @@ WarpTate {
 				sensorPrevs[i] = sensorVals[i];
 				sensorVals[i] = val;
 
-				sensorMins[i] = min(val, sensorMins[i]);
-				sensorMaxs[i] = max(val, sensorMaxs[i]);
+				if(doAdjusts[i]) {
+					sensorMins[i] = min(val, sensorMins[i]);
+					sensorMaxs[i] = max(val, sensorMaxs[i]);
 
-				if(val < sensorMaxs[i]) {
-					sensorMaxs[i] = sensorMaxs[i] - sensorMaxAdj;
-				};
+					if(val < sensorMaxs[i]) {
+						sensorMaxs[i] = sensorMaxs[i] - sensorMaxAdj;
+					};
 
-				if(val > sensorMins[i]) {
-					sensorMins[i] = sensorMins[i] + sensorMinAdj;
+					if(val > sensorMins[i]) {
+						sensorMins[i] = sensorMins[i] + sensorMinAdj;
+					};
+				} {
+					val = val.clip(sensorMins[i], sensorMaxs[i]);
 				};
 
 
@@ -196,8 +202,8 @@ WarpTate {
 							val.linlin(
 								sensorMins[i],
 								sensorMaxs[i],
-								0,
-								127
+								127,
+								0
 							)
 						);
 					};
