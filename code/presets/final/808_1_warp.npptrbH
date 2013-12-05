@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PatternBank type="hostPattern">
+  <Pattern application="Nepheton" name="Acid Tracks 808_1" type="hostPattern"
+           length="16" scale="4" shuffle="0" tempo="120">
+    <BD>O...O...O...O...</BD>
+    <SD>................</SD>
+    <LC>................</LC>
+    <MC>................</MC>
+    <HC>................</HC>
+    <LT>O...............</LT>
+    <MT>................</MT>
+    <HT>................</HT>
+    <CL>.............Oo.</CL>
+    <RS>................</RS>
+    <MA>................</MA>
+    <CP>..O..O..O.......</CP>
+    <CB>................</CB>
+    <LG>................</LG>
+    <CY>................</CY>
+    <OH>..O...O...O...O.</OH>
+    <CH>OO.OOO.OOO.OOO.O</CH>
+    <AC>................</AC>
+  </Pattern>
+  <Pattern application="Nepheton" name="Da Funk 808_1" type="hostPattern"
+           length="16" scale="4" shuffle="0" tempo="111">
+    <BD>O...O...O...O...</BD>
+    <SD>....O.......O...</SD>
+    <LC>.....OooO.......</LC>
+    <MC>...Oo....oO.....</MC>
+    <HC>.Oo........O.O.O</HC>
+    <LT>................</LT>
+    <MT>................</MT>
+    <HT>................</HT>
+    <CL>....O.......O...</CL>
+    <RS>....O.......O...</RS>
+    <MA>OoooOoooOoooOooo</MA>
+    <CP>....O.......O...</CP>
+    <CB>.....O.......O.O</CB>
+    <LG>....O.......O...</LG>
+    <CY>................</CY>
+    <OH>................</OH>
+    <CH>..O...O...O...Oo</CH>
+    <AC>................</AC>
+  </Pattern>
+  <Pattern application="Nepheton" name="Are You There 808_1" type="hostPattern"
+           length="16" scale="4" shuffle="0.174922" tempo="132">
+    <BD>O...O...O...O...</BD>
+    <SD>...o..o....o..O.</SD>
+    <LC>................</LC>
+    <MC>................</MC>
+    <HC>................</HC>
+    <LT>................</LT>
+    <MT>................</MT>
+    <HT>................</HT>
+    <CL>................</CL>
+    <RS>..O....o.O......</RS>
+    <MA>................</MA>
+    <CP>..O...........Oo</CP>
+    <CB>................</CB>
+    <LG>................</LG>
+    <CY>................</CY>
+    <OH>..O...O...O...O.</OH>
+    <CH>.o.......o.O...o</CH>
+    <AC>O.......O.......</AC>
+  </Pattern>
+</PatternBank>
