@@ -415,7 +415,7 @@ WarpTrack {
 			this.initParams();
 
 			if(settings['notes'].size > 0) {
-				this.on(settings['notes'].asArray[0]);
+				this.on(settings['notes'].asArray[0], quant);
 			};
 
 		};
