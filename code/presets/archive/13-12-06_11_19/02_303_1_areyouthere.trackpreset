@@ -1,0 +1,127 @@
+var o, p;
+o = [
+	IdentityDictionary.prNew,  Array.prNew(28),  IdentityDictionary.prNew,  Array.prNew(132),  
+	Set.prNew,  Array.prNew(4),  IdentityDictionary.prNew,  Array.prNew(132),  
+	IdentityDictionary.prNew,  Array.prNew(4),  IdentityDictionary.prNew,  Array.prNew(4),  
+	{|track, val|
+	var thresh = 117;
+
+	track.setParam('Cutoff', val.lincurve(0, thresh, 30, 120, 2));
+	// track.setParam('Bus 2', val.lincurve(30, 127, 0, 90, 2));
+	track.setParam('Env Mod', val.lincurve(0, 100, 50, 100, 2));
+	track.setParam('Env Attack', val.lincurve(0, 100, 50, 100, 2));
+
+	if(track.settings['areyouthereprev'] < thresh && (val >= thresh)) {
+		track.parent.tracks['exs_1'].hit([36, 37].wchoose([0.7, 0.3]));
+	};
+
+	track.settings['areyouthereprev'] = val;
+}
+];
+p = [
+	// IdentityDictionary
+	0, [ array: o[1],  size: 9,  
+		proto: nil,  parent: nil,  
+		know: false ],  
+	// Array
+	1, [ nil,  nil,  'patternTrack',  true,  
+		nil,  nil,  nil,  nil,  
+		'paramControls',  o[2],  'areyouthereprev',  77.955622,  
+		nil,  nil,  'key',  '303_1',  
+		nil,  nil,  'notes',  o[4],  
+		'midiChannel',  0,  'params',  o[6],  
+		'type',  '303_1',  'sensorFuncs',  o[8] ],  
+	// IdentityDictionary
+	2, [ array: o[3],  size: 37,  
+		proto: nil,  parent: nil,  
+		know: false ],  
+	// Array
+	3, [ 'Sweep Time',  16,  'Distortion Brightness',  29,  
+		'Arpe Shuffle',  38,  'Env Attack',  18,  
+		'Accent Volume',  22,  'Accent Decay',  20,  
+		'Env Mod',  17,  'Distortion State',  33,  
+		'Arpe Range Add 1',  41,  'Step Length',  23,  
+		'Distortion Preamp',  24,  'Arpe Range Add 2',  42,  
+		'Bus 1',  46,  'Bus 3',  48,  
+		'Accent Mode',  31,  'Arpe Repeater',  44,  
+		nil,  nil,  'Distortion Route',  34,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		'Arpe Range Sub 1',  39,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		'Resonance',  15,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  'Waveform',  30,  
+		'Arpe Multiplier',  43,  'Bus 2',  45,  
+		'Slide Time',  9,  'Distortion Density',  26,  
+		nil,  nil,  nil,  nil,  
+		'Env Accent',  21,  nil,  nil,  
+		'Env Decay',  19,  nil,  nil,  
+		'Cutoff',  14,  'Distortion Clip',  27,  
+		'Distortion Wetness',  28,  'Sweep Mode',  32,  
+		'Arpe Mode',  37,  nil,  nil,  
+		nil,  nil,  'Main Volume',  35,  
+		'Tuning',  3,  'echovol',  47,  
+		nil,  nil,  nil,  nil,  
+		'Arpe Range Zero',  40,  'Distortion Size',  25,  
+		nil,  nil,  nil,  nil,  
+		'Arpe Chord',  36,  nil,  nil,  
+		nil,  nil,  nil,  nil ],  
+	// Set
+	4, [ array: o[5],  size: 1 ],  
+	// Array
+	5, [ nil,  nil,  nil,  15 ],  
+	// IdentityDictionary
+	6, [ array: o[7],  size: 37,  
+		proto: nil,  parent: nil,  
+		know: false ],  
+	// Array
+	7, [ 'Sweep Time',  127,  'Distortion Brightness',  70,  
+		'Arpe Shuffle',  0,  'Env Attack',  79.383052,  
+		'Accent Volume',  3,  'Accent Decay',  0,  
+		'Env Mod',  79.383052,  'Distortion State',  127,  
+		'Arpe Range Add 1',  127,  'Step Length',  115,  
+		'Distortion Preamp',  50,  'Arpe Range Add 2',  127,  
+		'Bus 1',  0,  'Bus 3',  0,  
+		'Accent Mode',  0,  'Arpe Repeater',  0,  
+		nil,  nil,  'Distortion Route',  127,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		'Arpe Range Sub 1',  0,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		'Resonance',  100,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  'Waveform',  127,  
+		'Arpe Multiplier',  0,  'Bus 2',  0,  
+		'Slide Time',  110,  'Distortion Density',  30,  
+		nil,  nil,  nil,  nil,  
+		'Env Accent',  45,  nil,  nil,  
+		'Env Decay',  10,  nil,  nil,  
+		'Cutoff',  69.312724,  'Distortion Clip',  110,  
+		'Distortion Wetness',  127,  'Sweep Mode',  127,  
+		'Arpe Mode',  50,  nil,  nil,  
+		nil,  nil,  'Main Volume',  63.195041,  
+		'Tuning',  96,  'echovol',  0,  
+		nil,  nil,  nil,  nil,  
+		'Arpe Range Zero',  127,  'Distortion Size',  110,  
+		nil,  nil,  nil,  nil,  
+		'Arpe Chord',  30,  nil,  nil,  
+		nil,  nil,  nil,  nil ],  
+	// IdentityDictionary
+	8, [ array: o[9],  size: 1,  
+		proto: nil,  parent: nil,  
+		know: false ],  
+	// Array
+	9, [ nil,  nil,  '303a',  o[10] ],  
+	// IdentityDictionary
+	10, [ array: o[11],  size: 1,  
+		proto: nil,  parent: nil,  
+		know: false ],  
+	// Array
+	11, [ nil,  nil,  'sweep',  o[12] ]
+];
+prUnarchive(o,p);
