@@ -1,10 +1,14 @@
 x = WarpTate();
 y = WarpUtil(x);
 
+
+
 y.curSensor = '808b';
 y.calibrate;
 y.stopCalibrate;
 
+
+~track.save;
 
 // phuture
 // daft punk
