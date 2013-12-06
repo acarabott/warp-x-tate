@@ -1,7 +1,32 @@
 x = WarpTate();
 y = WarpUtil(x);
 
+(
+~sections = [];
+~tempos = [120, 111, 132];
+"~/Projects/13-11_warp/code/presets/final/*.trackpreset".standardizePath.pathMatch.do {|path, i|
+	var index = path.basename[0..1].asInteger,
+		new;
 
+	if(index > (~sections.size - 1)) {
+		new = Array.newClear(index + 1);
+		~sections.do {|section, i|
+			new[i] = section;
+		};
+
+		~sections = new;
+		~sections[index] = List[];
+	};
+	~sections[index].add(Object.readArchive(path));
+};
+)
+
+~sections.do {|section, i|
+	x.addSection(i, ~tempos[i], section);
+}
+
+x.tracks
+x.play
 
 y.curSensor = '808b';
 y.calibrate;
