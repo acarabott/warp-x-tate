@@ -102,12 +102,12 @@ WarpTate {
 		tracks[trackKey] = nil;
 	}
 
-	on {|trackKey, note, quant=1|
-		tracks[trackKey].on(note, quant);
+	on {|trackKey, note|
+		tracks[trackKey].on(note);
 	}
 
-	off {|trackKey, note, quant=1|
-		tracks[trackKey].off(note, quant);
+	off {|trackKey, note|
+		tracks[trackKey].off(note);
 	}
 
 	hit {|trackKey, note=60, vel=127, dur=1|
@@ -206,7 +206,7 @@ WarpTate {
 			}
 		};
 
-		playRout.play(clock, quant:4);
+		clock.playNextBar(playRout);
 	}
 
 	stop {
@@ -214,7 +214,7 @@ WarpTate {
 
 		tracks.do {|track|
 			track.allOff();
-			out.allNotesOff(track.channel);
+			out.allNotesOff(track.settings['midiChannel']);
 		}
 	}
 

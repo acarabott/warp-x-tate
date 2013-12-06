@@ -264,35 +264,27 @@ WarpTrack {
 		};
 	}
 
-	on {|note, quant=4|
+	on {|note|
 		var clock = parent.clock;
 		var sub = 1 / (parent.clock.tempo * 16); // one sub division
 
-		clock.schedAbs(clock.beats + (clock.timeToNextBeat(quant) - sub), {
+		clock.schedAbs(clock.nextBar - sub, {
 			if(settings['patternTrack']) {
 				this.allOff();
 			} {
 				this.off(note);
 			};
 		});
-		// TODO try next bar scheduling
-		{
+
+		parent.clock.playNextBar({
 			settings['notes'].add(note);
 			parent.noteOn(settings['midiChannel'], note, 127);
-		}.fork(parent.clock, quant:quant);
+		});
 	}
 
-	off {|note, quant|
-		var func = {
-			settings['notes'].remove(note);
-			parent.noteOff(settings['midiChannel'], note, 0);
-		};
-
-		if(quant.notNil) {
-			func.fork(parent.clock, quant:quant);
-		} {
-			func.();
-		};
+	off {|note|
+		settings['notes'].remove(note);
+		parent.noteOff(settings['midiChannel'], note, 0);
 	}
 
 	hit {|note=60, vel=127, dur=1, quant=0|
@@ -303,17 +295,9 @@ WarpTrack {
 		}.fork(parent.clock, quant:quant);
 	}
 
-	allOff {|quant|
-		var func = {
-			settings['notes'].do {|note, i|
-				this.off(note);
-			}
-		};
-
-		if(quant.notNil) {
-			func.fork(parent.clock, quant:quant);
-		} {
-			func.();
+	allOff {
+		settings['notes'].do {|note, i|
+			this.off(note);
 		};
 	}
 
@@ -414,7 +398,7 @@ WarpTrack {
 		this.initParams();
 
 		// if(settings['notes'].size > 0) {
-		// 	this.on(settings['notes'].asArray[0], quant);
+		// 	this.on(settings['notes'].asArray[0]);
 		// };
 	}
 
@@ -454,9 +438,9 @@ WarpTrack {
 		});
 	}
 
-	play {|quant=4|
+	play {
 		if(settings['patternTrack'] && settings['notes'].notEmpty) {
-			this.on(settings['notes'].choose, quant);
+			this.on(settings['notes'].choose);
 		};
 	}
 }
