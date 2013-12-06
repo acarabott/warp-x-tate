@@ -307,7 +307,7 @@ WarpTrack {
 	}
 
 	off {|note|
-		settings['notes'].remove(note);
+		// settings['notes'].remove(note);
 		parent.noteOff(settings['midiChannel'], note, 0);
 	}
 
