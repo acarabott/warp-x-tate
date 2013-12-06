@@ -44,7 +44,7 @@
   </Pattern>
   <Pattern application="Nepheton" name="Are You There 808_2" type="hostPattern"
            length="16" scale="4" shuffle="0.174922" tempo="132">
-    <BD>................</BD>
+    <BD>...oO......oO...</BD>
     <SD>................</SD>
     <LC>................</LC>
     <MC>................</MC>
@@ -55,7 +55,7 @@
     <CL>................</CL>
     <RS>................</RS>
     <MA>................</MA>
-    <CP>.....O..O..O....</CP>
+    <CP>O...O...O...O...</CP>
     <CB>................</CB>
     <LG>................</LG>
     <CY>................</CY>
