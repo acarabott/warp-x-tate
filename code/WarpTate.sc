@@ -1,4 +1,8 @@
 WarpTate {
+	classvar <numSections = 8;
+	// classvar <sectionDur = 3 * 60;
+	classvar <sectionDur = 16;
+
 	var <sensorKeys;
 	var <clock;
 	var <tempo;
@@ -6,7 +10,7 @@ WarpTate {
 	var <>tempoControl;
 	var <out;
 	var <tracks;
-	var <sections;
+	var <>sections;
 	var <availableControls;
 	var <controls;
 	var <sensorVals;
@@ -16,6 +20,7 @@ WarpTate {
 	var <>sensorMinAdj;
 	var <>sensorMaxAdj;
 	var <doAdjusts;
+	var <playRout;
 
 	*new {
 		^super.new.init;
@@ -34,7 +39,7 @@ WarpTate {
 		out.latency = 0;
 
 		tracks = IdentityDictionary[];
-		sections = List[];
+		sections = Array.newClear(WarpTate.numSections);
 		// sections is a List of IdentityDictionary to be mapped to
 		// WarpTrack settings var
 		// e.g. List[IdentityDictionary[
@@ -121,13 +126,6 @@ WarpTate {
 		out.control(midiChannel, num, val);
 	}
 
-	stop {
-		tracks.do {|track|
-			track.allOff();
-			out.allNotesOff(track.channel);
-		}
-	}
-
 	isControlAvailable {|channel, controlNum|
 		^controls[channel].keys.includes(controlNum.asSymbol).not;
 	}
@@ -168,6 +166,56 @@ WarpTate {
 		} {
 			"track key doesn't exist".postln;
 		};
+	}
+
+	// sec takes IdentityDictionarys of WarpTrack settings
+	addSection {|index, tempo=120, presets|
+		// Add section with tempo
+		sections[index] = IdentityDictionary[
+			'tempo' 	-> tempo,
+			'tracks'	-> presets
+		];
+
+		presets.do {|preset, i|
+			// create track if there ain't one with this key
+			if(tracks.includesKey(preset['key']).not) {
+				this.loadTrack(preset, true);
+			};
+
+			// store the preset
+			// sections[index]['tracks'][preset['key']] = preset;
+		};
+
+		^sections;
+	}
+
+	play {
+		playRout = Routine {
+			inf.do {|i|
+				sections.do {|section|
+					if(section.notNil) {
+						this.tempo = section['tempo'];
+						section['tracks'].do {|track, i|
+							var newTrack = this.loadTrack(track, false);
+							newTrack.play(4);
+						};
+						sectionDur.wait;
+					};
+
+				};
+			}
+		};
+
+		playRout.play(clock, quant:4);
+	}
+
+	stop {
+		playRout.stop;
+
+		tracks.do {|track|
+			track.allOff();
+			out.allNotesOff(track.channel);
+		}
 	}
 
 	addOSCdefs {

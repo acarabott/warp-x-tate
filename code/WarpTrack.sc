@@ -236,7 +236,7 @@ WarpTrack {
 	}
 
 	*load {|argParent, preset, checkAvailable|
-		^super.new.init(argParent).loadPreset(preset, checkAvailable, nil);
+		^super.new.init(argParent).loadPreset(preset, checkAvailable);
 	}
 
 	init {|argParent, argKey, argMidiChannel, argType|
@@ -275,7 +275,7 @@ WarpTrack {
 				this.off(note);
 			};
 		});
-
+		// TODO try next bar scheduling
 		{
 			settings['notes'].add(note);
 			parent.noteOn(settings['midiChannel'], note, 127);
@@ -387,44 +387,35 @@ WarpTrack {
 	}
 
 	readPreset {|path, checkAvailable=true|
-		this.loadPreset(Object.readArchive(path), checkAvailable, nil);
+		this.loadPreset(Object.readArchive(path), checkAvailable);
 	}
 
-	loadPreset {|preset, checkAvailable=true, quant=4|
-		var func = {
-			// copy all settings except notes and paramControls
-			preset.keys.reject({|settingKey, i|
-				['notes', 'paramControls'].includes(settingKey);
-			}).do {|presetKey, i|
-				settings[presetKey] = preset[presetKey];
-			};
-
-			// copy notes if it's a patternTrack
-			if(preset['patternTrack']) {
-				settings['notes'] = preset['notes'];
-			};
-
-			// assign all without learn or init
-			this.assignAll(
-				preset['paramControls'],
-				false,
-				false,
-				checkAvailable
-			);
-
-			this.initParams();
-
-			if(settings['notes'].size > 0) {
-				this.on(settings['notes'].asArray[0], quant);
-			};
-
+	loadPreset {|preset, checkAvailable=true|
+		// copy all settings except notes and paramControls
+		preset.keys.reject({|settingKey, i|
+			['notes', 'paramControls'].includes(settingKey);
+		}).do {|presetKey, i|
+			settings[presetKey] = preset[presetKey];
 		};
 
-		if(quant.notNil) {
-			func.fork(parent.clock, quant);
-		} {
-			func.();
-		}
+		// copy notes if it's a patternTrack
+		if(preset['patternTrack']) {
+			settings['notes'] = preset['notes'];
+		};
+
+		// assign all without learn or init
+		this.assignAll(
+			preset['paramControls'],
+			false,
+			false,
+			checkAvailable
+		);
+
+		this.initParams();
+
+		// if(settings['notes'].size > 0) {
+		// 	this.on(settings['notes'].asArray[0], quant);
+		// };
 	}
 
 	sensor {|sensorKey, val|
@@ -461,5 +452,11 @@ WarpTrack {
 		Dialog.savePanel({|path|
 			settings.writeArchive(path);
 		});
+	}
+
+	play {|quant=4|
+		if(settings['patternTrack'] && settings['notes'].notEmpty) {
+			this.on(settings['notes'].choose, quant);
+		};
 	}
 }
