@@ -201,6 +201,10 @@ WarpTrack {
 					'Hi Hat Filters Freq' -> 86,
 					'Main Volume' -> 87,
 				]
+			],
+			'exs' -> IdentityDictionary[
+				'params' -> IdentityDictionary[],
+				'paramControls' -> IdentityDictionary[]
 			]
 		];
 
