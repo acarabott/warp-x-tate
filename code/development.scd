@@ -1,35 +1,108 @@
 x = WarpTate();
-// 13:12
+
+~three = x.readTrack("~/Projects/13-11_warp/code/presets/final/00_303_1_acidtracks.trackpreset".standardizePath);
+~eight = x.readTrack("~/Projects/13-11_warp/code/presets/final/00_808_1_acidtracks.trackpreset".standardizePath);
 
 
-~eight.off(13);
+~three.on(~three.settings['notes'].choose);
+~eight.on(~eight.settings['notes'].choose);
+
+x.tempo = 120;
+
+~three = x.addTrack('303_1', 0, '303_1');
+
+~eight.on(12);
+
+x.tempo = 111;
+
+~three.settings['areyouthereprev'] = 0;
+
+~three.addFunc('303a', 'sweep', {|track, val|
+	var thresh = 115;
+
+	track.setParam('Cutoff', val.lincurve(0, 127, 20, 127, 2));
+	// track.setParam('Bus 2', val.lincurve(30, 127, 0, 90, 2));
+	track.setParam('Env Mod', val.lincurve(0, 100, 50, 100, 2));
+	track.setParam('Env Attack', val.lincurve(0, 100, 50, 100, 2));
+
+	if(track.settings['areyouthereprev'] < thresh && (val >= thresh)) {
+		~three.parent.tracks['exs_1'].hit([36, 37].wchoose([0.7, 0.3]));
+	};
+
+	track.settings['areyouthereprev'] = val;
+});
 
 
+~exs = x.addTrack('exs_1', 4);
+~exs.settings['patternTrack'] = false;
 
 
+~eight = x.addTrack('808_1', 2, '808_1');
+~eight.setParam('Send 1', 0);
+
+x.tempo = 132;
+
+~eight.on(51);
+
+~eight.addFunc('808a', 'basscrush', {|track, val|
+	track.setParam('bitcrusher', val.lincurve(0, 110, 0, 60, 2)); // 0- 60
+	track.setParam('Bass Drum Decay', val.lincurve(0, 110, 70, 50, 2)); // 50
+});
+
+~eight.addFunc('808b', 'clapvol', {|track, val|
+	track.setParam('Hand Clap Level', val.lincurve(0, 60, 0, 80, 2));
+});
+
+~eight2 = x.addTrack('808_2', 3, '808_2');
+~eight2.on(14);
+
+~three.setParam('echovol', 47);
+// 51, 18, 22, 24, 27no laser, 29, 33, 35
+
+~calibrate.();
+~stopCalibrate.();
 
 
-x.sensorMins[0] = 0
-x.sensorMaxs[2] = 0;
+x.out
 
-x.doAdjusts.do {|adjust, i|
-	x.sensorMaxs[i] = 0;
-	x.sensorMins[i] = 9999;
-	x.doAdjusts[i] = true;
-};
+~three.settings['sensorFuncs']['303b']
 
-x.doAdjusts.do {|adjust, i|
-	x.doAdjusts[i] = false;
-};
 
 
 (
+	~sensor = '808b';
+	// ~sensor = 'duff';
+	~calibrate = {
+		{
+			x.doAdjusts.do {|adjust, i|
+				x.sensorMaxs[i] = 0;
+				x.sensorMins[i] = 9999;
+				x.doAdjusts[i] = true;
+			};
+
+			if(~sliders.notNil) {
+				~sliders.do {|slider, i|
+					// if(x.sensorKeys[i] !== ~sensor) {
+						slider.valueAction_(0);
+						0.1.wait;
+						slider.valueAction_(1);
+					// };
+				}
+			};
+		}.fork(AppClock);
+	};
+	~stopCalibrate = {
+		x.doAdjusts.do {|adjust, i|
+			x.doAdjusts[i] = false;
+		};
+
+	};
 if(w.notNil){w.close};
 w = Window("Sensor Inspector", Rect(256, 10, 370, 424)).front;
 w.view.addFlowLayout;
 
 ~texts = IdentityDictionary[];
-~sensor = '808a';
+
 ['sensorVals', 'sensorPrevs', 'sensorMins',
 'sensorMaxs'].do {|label, i|
 	StaticText(w, (w.bounds.width * 0.5)@20)
@@ -362,7 +435,6 @@ x.control(2, 3, 100);
 
 x.out.control(15, 3, 120 - 50);
 
-120
 
 x.tracks['303_1']
 
