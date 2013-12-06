@@ -202,7 +202,7 @@ WarpTrack {
 					'Main Volume' -> 87,
 				]
 			],
-			'exs' -> IdentityDictionary[
+			'exs_1' -> IdentityDictionary[
 				'params' -> IdentityDictionary[],
 				'paramControls' -> IdentityDictionary[]
 			]
