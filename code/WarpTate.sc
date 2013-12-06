@@ -1,7 +1,7 @@
 WarpTate {
 	classvar <numSections = 8;
 	// classvar <sectionDur = 3 * 60;
-	classvar <sectionDur = 16;
+	classvar <sectionDur = 60;
 
 	var <sensorKeys;
 	var <clock;
@@ -102,6 +102,10 @@ WarpTate {
 		tracks[trackKey] = nil;
 	}
 
+	removeAllTracks {
+		tracks = IdentityDictionary[];
+	}
+
 	on {|trackKey, note|
 		tracks[trackKey].on(note);
 	}
@@ -190,23 +194,35 @@ WarpTate {
 	}
 
 	play {
-		playRout = Routine {
-			inf.do {|i|
-				sections.do {|section|
-					if(section.notNil) {
-						this.tempo = section['tempo'];
-						section['tracks'].do {|track, i|
-							var newTrack = this.loadTrack(track, false);
-							newTrack.play(4);
-						};
-						sectionDur.wait;
-					};
 
-				};
-			}
+		if(sections.any {|item, i| item.notNil; }) {
+			playRout = Routine {
+				inf.do {|i|
+					sections.do {|section|
+						if(section.notNil) {
+							if(i !== 0) {
+								tracks.do {|track|
+									track.allOff();
+								};
+								this.removeAllTracks();
+							};
+
+							this.tempo = section['tempo'];
+
+							section['tracks'].do {|track, i|
+								var newTrack = this.loadTrack(track, false);
+								newTrack.play();
+							};
+							sectionDur.wait;
+						};
+					};
+				}
+			};
+			clock.playNextBar(playRout);
+		} {
+			"no sections added!".postln;
 		};
 
-		clock.playNextBar(playRout);
 	}
 
 	stop {
