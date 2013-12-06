@@ -29,7 +29,7 @@ WarpUtil {
 			};
 
 			sliders.do {|slider, i|
-				if(parent.senorKeys[i] !== curSensor) {
+				if(parent.sensorKeys[i] !== curSensor) {
 					slider.valueAction_(1);
 					0.1.wait;
 					slider.valueAction_(0);
