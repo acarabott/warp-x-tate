@@ -30,9 +30,9 @@ WarpUtil {
 
 			sliders.do {|slider, i|
 				if(parent.sensorKeys[i] !== curSensor) {
-					slider.valueAction_(1);
-					0.1.wait;
 					slider.valueAction_(0);
+					0.1.wait;
+					slider.valueAction_(1);
 				};
 			}
 		}.fork(AppClock);
