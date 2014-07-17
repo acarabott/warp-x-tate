@@ -243,12 +243,8 @@ WarpTrack {
 		]);
 
 		defaults['808_2'] = defaults['808_1'].copy;
-		defaults['808_2']['paramControls'].putPairs([
-
-		]);
-
-		defaults['808_2']['params'].putPairs([
-		]);
+		defaults['808_2']['paramControls'].putPairs([]);
+		defaults['808_2']['params'].putPairs([]);
 	}
 
 	*new {|argParent, argKey, argMidiChannel, argType|
