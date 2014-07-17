@@ -1,0 +1,135 @@
+var o, p;
+o = [
+	IdentityDictionary.prNew,  Array.prNew(28),  IdentityDictionary.prNew,  Array.prNew(128),  
+	Set.prNew,  Array.prNew(4),  IdentityDictionary.prNew,  Array.prNew(132),  
+	IdentityDictionary.prNew,  Array.prNew(8),  IdentityDictionary.prNew,  Array.prNew(4),  
+	{|track, val|
+	// poss 2, octave
+	track.setParam('Tuning', val.round(63.5/2).max(64));
+
+	track.setParam('Distortion Preamp', val.lincurve(0, 127, 40, 100, 2));
+	track.setParam('Distortion Clip', val.lincurve(0, 127, 90, 45, 2));
+	track.setParam('Distortion Size', val.lincurve(0, 127, 50, 85, 2));
+	track.setParam('Distortion Density', val.lincurve(0, 127, 30, 90, 2));
+
+},  IdentityDictionary.prNew,  Array.prNew(4),  {|track, val|
+	// 1
+	track.setParam('Cutoff', val.lincurve(0, 127, 20, 127, 2));
+	track.setParam('Bus 2', val.lincurve(30, 127, 0, 90, 2));
+	track.setParam('Env Mod', val.lincurve(0, 100, 50, 100, 2));
+	track.setParam('Env Attack', val.lincurve(0, 100, 50, 100, 2));
+}
+];
+p = [
+	// IdentityDictionary
+	0, [ array: o[1],  size: 8,  
+		proto: nil,  parent: nil,  
+		know: false ],  
+	// Array
+	1, [ nil,  nil,  'patternTrack',  true,  
+		nil,  nil,  nil,  nil,  
+		'paramControls',  o[2],  nil,  nil,  
+		nil,  nil,  'key',  '303_1',  
+		nil,  nil,  'notes',  o[4],  
+		'params',  o[6],  'midiChannel',  0,  
+		'type',  '303_1',  'sensorFuncs',  o[8] ],  
+	// IdentityDictionary
+	2, [ array: o[3],  size: 37,  
+		proto: nil,  parent: nil,  
+		know: false ],  
+	// Array
+	3, [ nil,  nil,  nil,  nil,  
+		nil,  nil,  'Step Length',  23,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  'Accent Decay',  20,  
+		'Waveform',  30,  'Env Attack',  18,  
+		'Tuning',  3,  'Distortion Brightness',  29,  
+		'Arpe Range Zero',  40,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		'Arpe Range Add 1',  41,  nil,  nil,  
+		'Env Decay',  19,  'echovol',  47,  
+		'Arpe Chord',  36,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		'Arpe Range Sub 1',  39,  nil,  nil,  
+		'Distortion State',  33,  nil,  nil,  
+		nil,  nil,  'Sweep Mode',  32,  
+		'Env Mod',  17,  nil,  nil,  
+		'Env Accent',  21,  'Distortion Route',  34,  
+		nil,  nil,  'Distortion Size',  25,  
+		nil,  nil,  nil,  nil,  
+		'Bus 1',  46,  'Distortion Density',  26,  
+		'Accent Mode',  31,  'Arpe Multiplier',  43,  
+		'Accent Volume',  22,  'Cutoff',  14,  
+		'Sweep Time',  16,  'Arpe Repeater',  44,  
+		'Slide Time',  9,  'Arpe Mode',  37,  
+		nil,  nil,  'Distortion Clip',  27,  
+		'Arpe Shuffle',  38,  'Arpe Range Add 2',  42,  
+		'Resonance',  15,  'Distortion Preamp',  24,  
+		'Main Volume',  35,  nil,  nil,  
+		'Bus 3',  48,  nil,  nil,  
+		nil,  nil,  'Bus 2',  45,  
+		nil,  nil,  nil,  nil,  
+		'Distortion Wetness',  28,  nil,  nil ],  
+	// Set
+	4, [ array: o[5],  size: 1 ],  
+	// Array
+	5, [ nil,  nil,  12,  nil ],  
+	// IdentityDictionary
+	6, [ array: o[7],  size: 37,  
+		proto: nil,  parent: nil,  
+		know: false ],  
+	// Array
+	7, [ 'Sweep Time',  127,  'Distortion Brightness',  70,  
+		'Arpe Shuffle',  0,  'Env Attack',  50,  
+		'Accent Volume',  3,  'Accent Decay',  0,  
+		'Env Mod',  50,  'Distortion State',  127,  
+		'Arpe Range Add 1',  127,  'Step Length',  76,  
+		'Distortion Preamp',  40.182861,  'Arpe Range Add 2',  127,  
+		'Bus 1',  0,  'Bus 3',  0,  
+		'Accent Mode',  0,  'Arpe Repeater',  0,  
+		nil,  nil,  'Distortion Route',  23,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		'Arpe Range Sub 1',  127,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		'Resonance',  115,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  'Waveform',  127,  
+		'Arpe Multiplier',  0,  'Bus 2',  0,  
+		'Slide Time',  64,  'Distortion Density',  30.182861,  
+		nil,  nil,  nil,  nil,  
+		'Env Accent',  30,  nil,  nil,  
+		'Env Decay',  0,  nil,  nil,  
+		'Cutoff',  20,  'Distortion Clip',  89.862854,  
+		'Distortion Wetness',  126,  'Sweep Mode',  127,  
+		'Arpe Mode',  0,  nil,  nil,  
+		nil,  nil,  'Main Volume',  95,  
+		'Tuning',  64.000000,  'echovol',  0,  
+		nil,  nil,  nil,  nil,  
+		'Arpe Range Zero',  127,  'Distortion Size',  50.106669,  
+		nil,  nil,  nil,  nil,  
+		'Arpe Chord',  0,  nil,  nil,  
+		nil,  nil,  nil,  nil ],  
+	// IdentityDictionary
+	8, [ array: o[9],  size: 2,  
+		proto: nil,  parent: nil,  
+		know: false ],  
+	// Array
+	9, [ nil,  nil,  '303b',  o[10],  
+		nil,  nil,  '303a',  o[13] ],  
+	// IdentityDictionary
+	10, [ array: o[11],  size: 1,  
+		proto: nil,  parent: nil,  
+		know: false ],  
+	// Array
+	11, [ nil,  nil,  'tunedist',  o[12] ],  
+	// IdentityDictionary
+	13, [ array: o[14],  size: 1,  
+		proto: nil,  parent: nil,  
+		know: false ],  
+	// Array
+	14, [ nil,  nil,  'sweep',  o[15] ]
+];
+prUnarchive(o,p);

@@ -1,0 +1,43 @@
+var o, p;
+o = [
+	IdentityDictionary.prNew,  Array.prNew(28),  IdentityDictionary.prNew,  Array.prNew(4),  
+	Set.prNew,  Array.prNew(4),  IdentityDictionary.prNew,  Array.prNew(4),  
+	IdentityDictionary.prNew,  Array.prNew(4)
+];
+p = [
+	// IdentityDictionary
+	0, [ array: o[1],  size: 8,  
+		proto: nil,  parent: nil,  
+		know: false ],  
+	// Array
+	1, [ nil,  nil,  'patternTrack',  false,  
+		nil,  nil,  nil,  nil,  
+		'paramControls',  o[2],  nil,  nil,  
+		nil,  nil,  'key',  'exs_1',  
+		nil,  nil,  'notes',  o[4],  
+		'midiChannel',  4,  'params',  o[6],  
+		'type',  'exs',  'sensorFuncs',  o[8] ],  
+	// IdentityDictionary
+	2, [ array: o[3],  size: 0,  
+		proto: nil,  parent: nil,  
+		know: false ],  
+	// Array
+	3, [ nil,  nil,  nil,  nil ],  
+	// Set
+	4, [ array: o[5],  size: 0 ],  
+	// Array
+	5, [ nil,  nil,  nil,  nil ],  
+	// IdentityDictionary
+	6, [ array: o[7],  size: 0,  
+		proto: nil,  parent: nil,  
+		know: false ],  
+	// Array
+	7, [ nil,  nil,  nil,  nil ],  
+	// IdentityDictionary
+	8, [ array: o[9],  size: 0,  
+		proto: nil,  parent: nil,  
+		know: false ],  
+	// Array
+	9, [ nil,  nil,  nil,  nil ]
+];
+prUnarchive(o,p);
