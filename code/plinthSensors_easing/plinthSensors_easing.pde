@@ -14,7 +14,7 @@ float a2, b2, c2, d2;                            // Sensor values
 float easing = 0.5;
 
 //String[] sensorKeys = {"303a", "303b", "808a", "808b"};
-String[] sensorKeys = {"303a", "fuck1", "fuck2", "fuck3"};
+String[] sensorKeys = {"808b", "fuck1", "fuck2", "fuck3"};
 OscP5 oscP5;
 NetAddress sclang;
 
