@@ -1,3 +1,5 @@
+This project has a split license: all SuperCollider code is licensed under the [http://www.gnu.org/licenses/](GNU General Public License) - info in the supercollider folder, the rest is under the MIT License.
+
 The MIT License (MIT)
 
 Copyright (c) 2014 Hellicar&Lewis Ltd.
